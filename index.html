@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data from PHP</title>
+  </head>
+  <body>
+    <h1>Data from PHP</h1>
+    <div id="loginForm">
+      <h2>Login</h2>
+      <form id="login">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required /><br /><br />
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <div id="dataContainer"></div>
+
+    <script>
+      // 데이터를 가져오고 화면에 표시하는 함수
+      async function fetchData() {
+        try {
+          const response = await fetch("http://localhost/test/dbconn.php");
+          const data = await response.json();
+          const dataContainer = document.getElementById("dataContainer");
+
+          // 데이터를 화면에 표시
+          data.forEach((item) => {
+            const div = document.createElement("div");
+            div.innerHTML = `
+                        <div>ID: ${item.id}</div>
+                        <div>Username: ${item.name}</div>
+                        <div>Email : ${item.email}</div>
+                        <div>Password: ${item.password}</div>
+                    `;
+            dataContainer.appendChild(div);
+          });
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      }
+
+      // 로그인 폼 제출 시 실행되는 함수
+      document
+        .getElementById("login")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault(); // 폼 기본 동작 방지
+
+          const formData = new FormData(this);
+
+          try {
+            const response = await fetch("http://localhost/test/dbconn.php", {
+              method: "POST",
+              body: formData,
+            });
+
+            if (response.ok) {
+              document.getElementById("loginForm").style.display = "none"; // 로그인 폼 숨기기
+              fetchData(); // 데이터 가져오기 함수 호출
+              alert("성공");
+            } else {
+              alert("Login failed. Please check your email and password.");
+            }
+          } catch (error) {
+            console.error("Error logging in:", error);
+          }
+        });
+    </script>
+  </body>
+</html>
