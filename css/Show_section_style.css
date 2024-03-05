@@ -14,12 +14,15 @@
 #show_title_div h5 {
   text-align: end;
   font-size: 20px;
+  position: relative;
 }
 #show_title_div h5::before {
+  position: absolute;
+  inset: 13px 61px 0 auto;
   content: "";
-  display: block;
-  height: 1px;
-  width: 100px;
+  display: inline-block;
+  height: 2px;
+  width: 150px;
   background-color: black;
 }
 #main_img_div {
