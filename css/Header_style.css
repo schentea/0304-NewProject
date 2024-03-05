@@ -25,7 +25,7 @@ header nav {
     backdrop-filter: blur(3px);
 }
 
-#logo{
+#logo {
     width: 120px;
 }
 /* 보이는 나브안에 있는 로고 */
@@ -34,7 +34,7 @@ nav #logo img {
     height: auto;
 }
 /* 숨겨진 나브안에 있는 로고 */
-#hidden_logo{
+#hidden_logo {
     width: 70px;
 }
 /* 보이는 나브안에 있는 GNB_MENU */
@@ -46,16 +46,15 @@ nav #logo img {
     display: flex;
     gap: 50px;
 }
-.gnb_menu li{
+.gnb_menu li {
     font-size: 25px;
     cursor: pointer;
 }
-.gnb_menu a{
+.gnb_menu a {
     color: black;
 }
-.gnb_menu span{
+.gnb_menu span {
     font-size: 25px;
-
 }
 
 #Header_title h2 {
@@ -77,12 +76,12 @@ video {
     cursor: pointer;
 }
 /* 헤더 타이틀 */
-#Header_title{
+#Header_title {
     position: absolute;
     top: 30%;
     left: 10vw;
     color: white;
-    font-size: 50px;    
+    font-size: 50px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -98,7 +97,8 @@ video {
         font-size: 24px;
         font-weight: bold;
         overflow-x: hidden;
-        transition: right 0.9s ease; /
+        transition: right 0.9s ease;
+        z-index: 10;
     }
     /* X 로고 */
     #xmark {
@@ -112,7 +112,14 @@ video {
     #rogin {
         position: absolute;
         top: 10%;
-        left: 50px;
+        right: 10px;
+    }
+    #rogin li {
+        font-size: 20px;
+    }
+    .rogin {
+        display: flex;
+        gap: 40px;
     }
     /* 보이는 글로벌 메뉴 */
     #gnb_menu {
