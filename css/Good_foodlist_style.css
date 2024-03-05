@@ -1,33 +1,142 @@
 #Good_foodlist {
-    width: 100%;
-    height: 100vh;
-    background: #eee;
+  width: 100%;
+  height: 100vh;
+  background: #eee;
+  display: flex;
+  justify-content: center;
 }
-/* 위에있는 캐러셀 */
-#up_carusel_div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#container {
+  width: 100%;
+  max-width: 1300px;
+  height: auto;
+
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
-#up_carusel_div #text_div {
-    width: 300px;
-    height: 200px;
-    background: red;
-    margin-right: 10px;
+/* 위쪽공간 */
+#up_container {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
-/* 캐러셀 */
-#carousel {
-    width: 80%;
-    margin: 0 auto;
-    overflow: hidden;
+#left_message {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-/* 캐러셀 버튼 없앰 */
-.owl-nav {
-    display: none;
+#down_container {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#carousel_div {
-    width: 70%;
+#right_carousel1 {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-left: 10px;
+  background: red;
+  border-radius: 20px;
+}
+#right_carousel2 {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-left: 10px;
+  background: red;
+  border-radius: 20px;
+}
+#right_carousel3 {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-left: 10px;
+  background: red;
+  border-radius: 20px;
+}
+/* 위쪽 말풍선 */
+.balloon_03 {
+  position: relative;
+  margin-right: 10px;
+  width: 100%;
+  height: 50%;
+  background: #333333;
+  border-radius: 10px;
 }
 
+/* 왼쪽 말풍선 */
+.balloon_04 {
+  position: relative;
+  margin: 10px;
+  width: 100%;
+  height: 50%;
+  background: #333333;
+  border-radius: 10px;
+}
+
+#left_carousel1 {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-right: 10px;
+  background: red;
+  border-radius: 20px;
+}
+#left_carousel2 {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-right: 10px;
+  background: red;
+  border-radius: 20px;
+}
+#left_carousel3 {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-right: 10px;
+  background: red;
+  border-radius: 20px;
+}
+#right_carousel2,
+#left_carousel2,
+#right_carousel3,
+#left_carousel3 {
+  display: none;
+}
 @media screen and (min-width: 768px) {
+  #left_carousel2,
+  #right_carousel2 {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #left_carousel3,
+  #right_carousel3 {
+    display: flex;
+  }
 }
