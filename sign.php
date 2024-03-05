@@ -1,4 +1,7 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
 // 데이터베이스 연결 정보
 $servername = "localhost"; // MySQL 호스트 이름
 $username = "root"; // MySQL 사용자 이름
@@ -8,7 +11,7 @@ $dbname = "test"; // 사용할 데이터베이스 이름
 // POST로부터 받은 사용자 입력값
 $name = $_POST['name'];
 $email = $_POST['email'];
-$password = $_POST['password'];
+$password2 = $_POST['password'];
 
 // 데이터베이스 연결 생성
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -25,7 +28,7 @@ $sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
 $stmt = $conn->prepare($sql);
 
 // 매개변수에 사용자 입력값을 바인딩합니다.
-$stmt->bind_param("sss", $name, $email, $password);
+$stmt->bind_param("sss", $name, $email, $password2);
 
 // SQL 쿼리를 실행합니다.
 if ($stmt->execute()) {
