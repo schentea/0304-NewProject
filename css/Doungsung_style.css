@@ -1,51 +1,51 @@
 /* 동성로 메인 섹션 */
 #dongsungro {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 /* 동성로 메인 타이틀의 설정부분 */
 #dongsungro h2,
 h3 {
-    text-align: center;
+  text-align: center;
 }
 #dongsungro h2 {
-    font-size: 40px;
+  font-size: 40px;
 }
 #dongsungro h3 {
-    font-size: 25px;
+  font-size: 25px;
 }
 #dongsungro h4 {
-    font-size: 20px;
-    margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 /* 아티클 부분 */
 #dongsungro article {
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin-top: 30px;
 }
 /* 각각의 div에 스타일을 주기 위함 */
 article div {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 /* 이미지을 감싸고있는 div */
 #dongsungro_img_div {
-    width: 100%;
-    height: 50%;
+  width: 100%;
+  height: 50%;
 }
 /* 동성로 이미지에 대한 부분  */
 #dongsungro_img_div img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media screen and (min-width: 768px) {
-    #dongsungro article {
-        max-width: 1300px;
-    }
+  #dongsungro article {
+    max-width: 1300px;
+  }
 }
