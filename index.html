@@ -24,6 +24,12 @@
     <link rel="stylesheet" href="./css/Doungsung_style.css" />
     <!-- 맛집 css -->
     <link rel="stylesheet" href="./css/Good_foodlist_style.css" />
+    <!-- 공연정보 css -->
+    <link rel="stylesheet" href="./css/Show_section_style.css" />
+    <!-- 유튜브 css -->
+    <link rel="stylesheet" href="./css/Youtube_style.css" />
+    <!-- 푸터 css -->
+    <link rel="stylesheet" href="./css/Footer_style.css" />
   </head>
   <body>
     <!-- 헤더부분 -->
@@ -103,23 +109,77 @@
     </section>
     <!-- 맛집 목록 -->
     <section id="Good_foodlist">
-      <!-- 위쪽 캐러셀 -->
-      <div id="up_carusel_div">
-        <div id="text_div">zz</div>
-        <div id="carousel_div">
-          <div class="owl-carousel">
-            <div class="item"><img src="./image/bg.jpg" alt="이미지 1" /></div>
-            <div class="item"><img src="./image/bg.jpg" alt="이미지 2" /></div>
-            <div class="item"><img src="./image/bg.jpg" alt="이미지 3" /></div>
-            <!-- test -->
-            <!-- test -->
-            <!-- test -->
+      <!-- 컨테이너-->
+      <div id="container">
+        <!-- 위쪽 공간 -->
+        <div id="up_container">
+          <!-- 왼쪽 메세지 박스부분 -->
+          <div id="left_message">
+            <div class="balloon_03"></div>
+          </div>
+          <!-- 오른쪽 캐러셀 부분 -->
+          <div id="right_carousel1">오른쪽캐러셀</div>
+          <div id="right_carousel2">오른쪽캐러셀</div>
+          <div id="right_carousel3">오른쪽캐러셀</div>
+        </div>
+        <!-- 아래쪽 공간 -->
+        <div id="down_container">
+          <!-- 왼쪽 메세지 박스부분 -->
+          <div id="left_carousel1">왼쪽캐러셀</div>
+          <div id="left_carousel2">왼쪽캐러셀</div>
+          <div id="left_carousel3">왼쪽캐러셀</div>
+          <!-- 오른쪽 캐러셀 부분 -->
+          <div id="left_message">
+            <div class="balloon_04"></div>
           </div>
         </div>
       </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- 공연 정보 -->
+    <section id="Show_section">
+      <div id="Show_container">
+        <!-- Show 타이틀 -->
+        <div id="show_title_div">
+          <h4>---------------------부제목</h4>
+          <h2>공연 정보</h2>
+        </div>
+        <!-- 왼쪽 이미지 -->
+        <div id="main_img_div">
+          <div id="show_left_img_div">
+            <!-- 위 -->
+            <div class="uip">
+              <img src="" alt="" />
+            </div>
+            <!-- 아래 -->
+            <div class="uip">
+              <img src="" alt="" />
+            </div>
+          </div>
+          <!-- 오른쪽 이미지 -->
+          <div id="show_right_img_div">
+            <img src="" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 동성로 유튜브 -->
+    <section id="youtube_section">
+      <div id="youtube_container">
+        <!-- 유튜브 타이틀 -->
+        <div>
+          <h2>동성로 유튜브</h2>
+        </div>
+        <div id="Main_Grid">
+          <div>z</div>
+          <div>z</div>
+          <div>z</div>
+          <div>z</div>
+          <div>z</div>
+        </div>
+      </div>
+    </section>
+    <!-- 푸터 -->
+    <footer>푸터</footer>
     <!-- 헤더 스크립트 -->
     <script src="./js/Header_script.js"></script>
     <!-- 맛집 캐러셀 -->
