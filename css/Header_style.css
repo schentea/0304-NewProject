@@ -6,6 +6,7 @@
     list-style: none;
     text-decoration: none;
     font-family: 'SCoreDream';
+    word-break: keep-all;
 }
 header {
     width: 100%;
@@ -20,7 +21,8 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px;
+    padding: 10px 30px;
+    backdrop-filter: blur(3px);
 }
 
 #logo{
@@ -28,12 +30,12 @@ header nav {
 }
 /* 보이는 나브안에 있는 로고 */
 nav #logo img {
-    width: 50%;
+    width: 60%;
     height: auto;
 }
 /* 숨겨진 나브안에 있는 로고 */
 #hidden_logo{
-    width: 100px;
+    width: 70px;
 }
 /* 보이는 나브안에 있는 GNB_MENU */
 .gnb_menu {
@@ -55,6 +57,7 @@ nav #logo img {
     font-size: 25px;
 
 }
+
 #Header_title h2 {
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
 }
@@ -67,6 +70,7 @@ video {
     left: 0;
     z-index: -1;
 }
+
 /* 숨겨진 나브안에 있는 토글메뉴 */
 #hidden_nav i {
     font-size: 30px;
