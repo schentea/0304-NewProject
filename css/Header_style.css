@@ -46,7 +46,10 @@ nav #logo img {
 }
 .gnb_menu li{
     font-size: 25px;
-
+    cursor: pointer;
+}
+.gnb_menu a{
+    color: black;
 }
 .gnb_menu span{
     font-size: 25px;
