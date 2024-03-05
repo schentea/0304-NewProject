@@ -1,7 +1,6 @@
 /* 동성로 메인 섹션 */
 #dongsungro {
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
 }
@@ -10,12 +9,7 @@
 h3 {
   text-align: center;
 }
-#dongsungro h2 {
-  font-size: 40px;
-}
-#dongsungro h3 {
-  font-size: 25px;
-}
+
 #dongsungro h4 {
   font-size: 20px;
   margin-bottom: 10px;
@@ -28,7 +22,7 @@ h3 {
   width: 100%;
   height: 100%;
   padding: 10px;
-  margin-top: 30px;
+  margin-top: 0px;
 }
 /* 각각의 div에 스타일을 주기 위함 */
 article div {
@@ -50,5 +44,12 @@ article div {
 @media screen and (min-width: 768px) {
   #dongsungro article {
     max-width: 1300px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #dongsungro {
+    height: 100vh;
   }
 }

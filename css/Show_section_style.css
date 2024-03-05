@@ -11,18 +11,17 @@
   padding: 10px;
 }
 /* Show 타이틀 */
-#show_title_div h5 {
+#show_title_div h3 {
   text-align: end;
-  font-size: 20px;
   position: relative;
 }
-#show_title_div h5::before {
+#show_title_div h3::before {
   position: absolute;
-  inset: 13px 61px 0 auto;
+  inset: 24px 105px 0 auto;
   content: "";
   display: inline-block;
   height: 2px;
-  width: 150px;
+  width: 160px;
   background-color: black;
 }
 #main_img_div {
