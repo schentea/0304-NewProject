@@ -34,7 +34,7 @@
     <!-- 회원가입 css -->
     <link rel="stylesheet" href="./css/Sign.css" />
     <!-- 로그인 -->
-    <link rel="stylesheet" href="./css/Login.css">
+    <link rel="stylesheet" href="./css/Login.css" />
     <!-- 공통 속성 css -->
     <link rel="stylesheet" href="./css/style.css" />
     <!-- 폰트 -->
@@ -233,29 +233,43 @@
       </div>
     </div>
     <!-- 로그인 모달창 -->
-<div id="loginModal" class="modal2">
-  <div class="modal-content2">
-    <span class="close2">&times;</span>
-    <p id="loginTitle">로그인</p>
-    <form id="loginForm">
-      <input class="loginInput" type="text" id="username2" name="username" placeholder="사용자명" required><br /><br />
-      <input class="loginInput" type="password" id="password2" name="password" placeholder="비밀번호" required><br /><br />
-      <button id="loginSubmitBtn" type="submit">로그인</button>
-      <div id="loginBox">
-        <div id="searchIDPW">
-          <p>아이디 찾기</p>
-          <p>|</p>
-          <p>비밀번호 찾기</p>
-        </div>
-        <div id="goSign">회원 가입</div>
+    <div id="loginModal" class="modal2">
+      <div class="modal-content2">
+        <span class="close2">&times;</span>
+        <p id="loginTitle">로그인</p>
+        <form id="loginForm">
+          <input
+            class="loginInput"
+            type="text"
+            id="username2"
+            name="username"
+            placeholder="사용자명"
+            required
+          /><br /><br />
+          <input
+            class="loginInput"
+            type="password"
+            id="password2"
+            name="password"
+            placeholder="비밀번호"
+            required
+          /><br /><br />
+          <button id="loginSubmitBtn" type="submit">로그인</button>
+          <div id="loginBox">
+            <div id="searchIDPW">
+              <p>아이디 찾기</p>
+              <p>|</p>
+              <p>비밀번호 찾기</p>
+            </div>
+            <div id="goSign">회원 가입</div>
+          </div>
+          <br /><br /><br />
+          <button class="naverBtn" type="button">네이버로 로그인</button>
+          <br />
+          <button class="googleBtn" type="button">구글로 로그인</button>
+        </form>
       </div>
-      <br /><br /><br />
-      <button class="naverBtn" type="button">네이버로 로그인</button>
-      <br />
-      <button class="googleBtn" type="button">구글로 로그인</button>
-    </form>
-  </div>
-</div>
+    </div>
     <!-- 헤더 스크립트 -->
     <script src="./js/Header_script.js"></script>
     <!-- 맛집 캐러셀 -->
