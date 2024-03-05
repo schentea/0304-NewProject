@@ -1,0 +1,78 @@
+#Show_section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+#Show_container {
+  width: 100%;
+  max-width: 1300px;
+  height: 100%;
+  padding: 10px;
+}
+/* Show 타이틀 */
+#show_title_div h4 {
+  text-align: end;
+  font-size: 20px;
+}
+#main_img_div {
+  width: 100%;
+  height: 100%;
+}
+#show_title_div h2 {
+  text-align: center;
+}
+/* 왼쪽이미지  */
+#show_left_img_div {
+  background: red;
+  width: 100%;
+  height: 67%;
+  border-radius: 20px;
+  margin: 10px;
+}
+#show_right_img_div {
+  background: blue;
+  width: 100%;
+  height: 33%;
+  border-radius: 20px;
+  margin: 10px;
+}
+@media screen and (min-width: 768px) {
+  #main_img_div {
+    display: flex;
+  }
+  #show_left_img_div {
+    background: red;
+    width: 100%;
+    height: 80%;
+  }
+  #show_right_img_div {
+    background: blue;
+    width: 100%;
+    height: 80%;
+  }
+  #show_title_div h2 {
+    text-align: end;
+    margin-right: 50px;
+  }
+  #show_left_img_div {
+    margin-top: 100px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #Show_container {
+    position: relative;
+    display: flex;
+  }
+  #main_img_div {
+    margin-top: 5%;
+  }
+  #show_title_div {
+    position: absolute;
+    top: 100px;
+    right: 0;
+  }
+  #main_img_div {
+    width: 70%;
+  }
+}
