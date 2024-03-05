@@ -4,9 +4,9 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 // 데이터베이스 연결 정보
 $servername = "localhost"; // MySQL 호스트 이름
-$username = "root"; // MySQL 사용자 이름
-$password = "1220"; // MySQL 비밀번호
-$dbname = "sign"; // 사용할 데이터베이스 이름
+$username = "yj4newproject"; // MySQL 사용자 이름
+$password = "ghflqud1220!"; // MySQL 비밀번호
+$dbname = "yj4newproject"; // 사용할 데이터베이스 이름
 
 // POST로부터 받은 사용자 입력값
 $username2 = $_POST['username'];

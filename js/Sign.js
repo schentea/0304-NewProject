@@ -32,7 +32,7 @@ document
     var formData = new FormData(this);
 
     // 여기서부터는 회원가입 데이터를 서버로 보내는 등의 작업을 수행합니다.
-    fetch("http://localhost/test/sign.php", {
+    fetch("http://yj4newproject.dothome.co.kr/sign.php", {
       method: "POST",
       body: formData,
     })
