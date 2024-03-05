@@ -31,29 +31,28 @@
     "a a d e";
 }
 
+#Main_Grid div {
+  padding: 5px;
+}
+
 #Main_Grid div:nth-child(1) {
   grid-area: a;
-  background: #111;
   height: 600px;
 }
 #Main_Grid div:nth-child(2) {
   grid-area: b;
-  background: #222;
   height: 300px;
 }
 #Main_Grid div:nth-child(3) {
   grid-area: c;
-  background: #333;
   height: 300px;
 }
 #Main_Grid div:nth-child(4) {
   grid-area: d;
-  background: #444;
   height: 300px;
 }
 #Main_Grid div:nth-child(5) {
   grid-area: e;
-  background: #555;
   height: 300px;
 }
 #CarouselButton {

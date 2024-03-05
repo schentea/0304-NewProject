@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "2.0.0",
 
   "command": "chrome",
 
@@ -7,5 +7,20 @@
     "command": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
   },
 
-  "args": ["localhost\\${workspaceRootFolderName}\\${fileBasename}"]
+  "args": [
+    "localhost\\${workspaceRootFolderName}\\${fileBasename}"
+  ],
+  "tasks": [
+    {
+      "label": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "args": [
+        "localhost\\${workspaceRootFolderName}\\${fileBasename}"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "_id": "build",
+        "isDefault": false
+      }
+    }
+  ]
 }
