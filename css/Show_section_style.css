@@ -11,9 +11,16 @@
   padding: 10px;
 }
 /* Show 타이틀 */
-#show_title_div h4 {
+#show_title_div h5 {
   text-align: end;
   font-size: 20px;
+}
+#show_title_div h5::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100px;
+  background-color: black;
 }
 #main_img_div {
   width: 100%;
