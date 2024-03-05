@@ -1,92 +1,92 @@
 #youtube_section {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 #youtube_container {
-  width: 100%;
-  height: 100%;
-  max-width: 1300px;
-  background: #eee;
-  padding: 10px;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    background: #eee;
+    padding: 10px;
 }
 #youtube_container div {
-  width: auto;
-  height: auto;
+    width: auto;
+    height: auto;
 }
 /* 유튜브 섹션의 타이틀 */
 #youtube_container h2 {
-  text-align: center;
-  margin: 50px;
+    text-align: center;
+    margin: 50px;
 }
 #Main_Grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 
-  grid-template-areas:
-    "a a b c"
-    "a a b c"
-    "a a d e"
-    "a a d e";
+    grid-template-areas:
+        'a a b c'
+        'a a b c'
+        'a a d e'
+        'a a d e';
 }
 
 #Main_Grid div {
-  padding: 5px;
+    padding: 5px;
 }
 
 #Main_Grid div:nth-child(1) {
-  grid-area: a;
-  height: 600px;
+    grid-area: a;
+    height: 600px;
 }
 #Main_Grid div:nth-child(2) {
-  grid-area: b;
-  height: 300px;
+    grid-area: b;
+    height: 300px;
 }
 #Main_Grid div:nth-child(3) {
-  grid-area: c;
-  height: 300px;
+    grid-area: c;
+    height: 300px;
 }
 #Main_Grid div:nth-child(4) {
-  grid-area: d;
-  height: 300px;
+    grid-area: d;
+    height: 300px;
 }
 #Main_Grid div:nth-child(5) {
-  grid-area: e;
-  height: 300px;
+    grid-area: e;
+    height: 300px;
 }
 #CarouselButton {
-  display: none;
+    display: none;
 }
 @media screen and (max-width: 1024px) {
-  #Main_Grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas:
-      "a a a a"
-      "a a a a"
-      "b b c c"
-      "d d e e";
-  }
+    #Main_Grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            'a a a a'
+            'a a a a'
+            'b b c c'
+            'd d e e';
+    }
 
-  #Main_Grid div:nth-child(1) {
-    grid-area: a;
-    height: 300px;
-  }
-  #Main_Grid div:nth-child(2) {
-    grid-area: b; /* 'b'에 해당하는 영역 추가 */
-    height: 200px;
-  }
-  #Main_Grid div:nth-child(3) {
-    grid-area: c;
-    height: 200px;
-  }
-  #Main_Grid div:nth-child(4) {
-    grid-area: d; /* 'd'에 해당하는 영역 추가 */
-    height: 200px;
-  }
-  #Main_Grid div:nth-child(5) {
-    grid-area: e;
-    height: 200px;
-  }
+    #Main_Grid div:nth-child(1) {
+        grid-area: a;
+        height: 300px;
+    }
+    #Main_Grid div:nth-child(2) {
+        grid-area: b; /* 'b'에 해당하는 영역 추가 */
+        height: 200px;
+    }
+    #Main_Grid div:nth-child(3) {
+        grid-area: c;
+        height: 200px;
+    }
+    #Main_Grid div:nth-child(4) {
+        grid-area: d; /* 'd'에 해당하는 영역 추가 */
+        height: 200px;
+    }
+    #Main_Grid div:nth-child(5) {
+        grid-area: e;
+        height: 200px;
+    }
 }
