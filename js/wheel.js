@@ -36,7 +36,7 @@ window.onload = function () {
             scrollTop: moveTop + "px",
           },
           {
-            duration: 600,
+            duration: 30,
             complete: function () {},
           }
         );
