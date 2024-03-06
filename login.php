@@ -42,13 +42,15 @@ if ($result->num_rows > 0) {
     // 사용자가 존재하는 경우, 비밀번호를 확인합니다.
     $row = $result->fetch_assoc();
     if ($password2 == $row['password']) {
-        echo "로그인 성공";
-        $_SESSION['username'] = $username2; // 세션에 사용자명 저장
+        // 세션에 사용자명 저장
+        $_SESSION['username'] = $username2;
+        // JSON 응답으로 반환
+        echo json_encode(array('success' => true, 'message' => '로그인 성공', 'username' => $username2));
     } else {
-        echo "사용자명 또는 비밀번호가 잘못되었습니다.";
+        echo json_encode(array('success' => false, 'message' => '사용자명 또는 비밀번호가 잘못되었습니다.'));
     }
 } else {
-    echo "사용자명 또는 비밀번호가 잘못되었습니다.";
+    echo json_encode(array('success' => false, 'message' => '사용자명 또는 비밀번호가 잘못되었습니다.'));
 }
 
 // 데이터베이스 연결 종료
