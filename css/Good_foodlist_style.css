@@ -8,7 +8,7 @@
   align-items: center;
 }
 #Good_foodlist #foodTitWrap {
-  margin: 0 auto 0 10px;
+  margin: 0 auto 50px 10px;
 }
 #Good_foodlist #foodTitWrap * {
   text-align: start;
@@ -34,21 +34,18 @@
   display: flex;
   flex-direction: column;
 }
-/* 위쪽공간 */
+
+/* 위쪽 공간 */
 #up_container {
   width: 100%;
   height: 50%;
   overflow: hidden;
   display: flex;
   align-items: center;
+  margin-bottom: 30px;
 }
-#left_message {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
+/* 아래쪽 공간 */
 #down_container {
   width: 100%;
   height: 50%;
@@ -56,107 +53,44 @@
   align-items: center;
   justify-content: center;
 }
-#right_carousel1 {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin-left: 10px;
-  background: red;
-  border-radius: 20px;
-}
-#right_carousel2 {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin-left: 10px;
-  background: red;
-  border-radius: 20px;
-}
-#right_carousel3 {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin-left: 10px;
-  background: red;
-  border-radius: 20px;
-}
-/* 위쪽 말풍선 */
-.balloon_03 {
+
+/* 말풍선 */
+.balloon {
   position: relative;
-  margin-right: 10px;
-  width: 100%;
-  height: 50%;
+  margin: 0 30px 0 0;
+  width: 30%;
+  height: 100%;
   background: #333333;
   border-radius: 10px;
-}
-
-/* 왼쪽 말풍선 */
-.balloon_04 {
-  position: relative;
-  margin: 10px;
-  width: 100%;
-  height: 50%;
-  background: #333333;
-  border-radius: 10px;
-}
-
-#left_carousel1 {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin-right: 10px;
-  background: red;
-  border-radius: 20px;
-}
-#left_carousel2 {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin-right: 10px;
-  background: red;
-  border-radius: 20px;
-}
-#left_carousel3 {
-  width: 50%;
-  height: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin-right: 10px;
-  background: red;
-  border-radius: 20px;
-}
-#right_carousel2,
-#left_carousel2,
-#right_carousel3,
-#left_carousel3 {
   display: none;
 }
-@media screen and (min-width: 768px) {
-  #left_carousel2,
-  #right_carousel2 {
+
+#Good_foodlist #balloon2 {
+  margin: 0 0 0 30px;
+}
+
+/* 캐러셀 */
+#Good_foodlist .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+#Good_foodlist .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  .left_message {
     display: flex;
   }
-}
-@media screen and (min-width: 1024px) {
-  #left_carousel3,
-  #right_carousel3 {
-    display: flex;
+
+  .balloon {
+    display: block;
   }
 }
