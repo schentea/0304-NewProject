@@ -9,6 +9,9 @@ $(document).ready(function () {
 
       const event = data.eventData;
       console.log("이벤트 정보:", event);
+
+      const event2 = data.performData;
+      console.log(data);
     },
     error: function (xhr, status, error) {
       console.error("Error fetching data:", error);
