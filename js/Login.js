@@ -15,9 +15,9 @@ document
   .getElementById("loginForm")
   .addEventListener("submit", function (event) {
     event.preventDefault(); // 기본 동작 방지
-    var formData2 = new FormData(this); // 폼 데이터를 가져옴
+    let formData2 = new FormData(this); // 폼 데이터를 가져옴
 
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.open("POST", "http://yj4newproject.dothome.co.kr/login.php", true);
     xhr.onreadystatechange = function () {
       if (xhr.readyState === XMLHttpRequest.DONE) {

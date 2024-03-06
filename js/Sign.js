@@ -29,7 +29,7 @@ document
   .getElementById("signupForm")
   .addEventListener("submit", function (event) {
     event.preventDefault(); // 폼 제출 기본 동작 막기 (페이지 새로고침)
-    var formData = new FormData(this);
+    let formData = new FormData(this);
 
     // 여기서부터는 회원가입 데이터를 서버로 보내는 등의 작업을 수행합니다.
     fetch("http://yj4newproject.dothome.co.kr/sign.php", {
@@ -39,6 +39,7 @@ document
       .then((response) => {
         if (response.ok) {
           console.log("회원가입이 완료되었습니다.");
+          alert("회원가입이 완료되었습니다.");
           modal.style.display = "none"; // 모달 닫기
         } else {
           console.error("회원가입에 실패했습니다.");
