@@ -2,8 +2,10 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
+$currentDate = date("Y-m");
+
 $url1 = "https://www.daegufood.go.kr/kor/api/tasty.html?mode=json&addr=%EC%A4%91%EA%B5%AC";
-$url2 = "https://dgfca.or.kr/ajax/event/list.json?event_gubun=DP&start_date=2023-03";
+$url2 = "https://dgfca.or.kr/ajax/event/list.json?event_gubun=DP&start_date=" . $currentDate;
 
 $curl1 = curl_init();
 curl_setopt($curl1, CURLOPT_URL, $url1);
