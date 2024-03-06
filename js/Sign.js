@@ -29,7 +29,7 @@ document
   .getElementById("signupForm")
   .addEventListener("submit", function (event) {
     event.preventDefault(); // 폼 제출 기본 동작 막기 (페이지 새로고침)
-    let formData = new FormData(this);
+    formData = new FormData(this);
 
     // 여기서부터는 회원가입 데이터를 서버로 보내는 등의 작업을 수행합니다.
     fetch("http://yj4newproject.dothome.co.kr/sign.php", {
