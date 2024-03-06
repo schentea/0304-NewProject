@@ -7,6 +7,7 @@
   text-decoration: none;
   font-family: "SCoreDream";
   word-break: keep-all;
+  scroll-behavior: smooth;
 }
 header {
   width: 100%;
@@ -47,14 +48,14 @@ nav #logo img {
   gap: 50px;
 }
 .gnb_menu li {
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
 }
 .gnb_menu a {
   color: black;
 }
 .gnb_menu span {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 video {
