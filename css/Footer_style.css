@@ -1,8 +1,32 @@
 footer {
-  width: 100%;
-  height: 120px;
-  background: gray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    height: 150px;
+    background: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#footer_container {
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+}
+#footer_top {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 30px;
+}
+#footer_top img {
+    width: 50px;
+}
+#footer_mid {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 30px;
 }
