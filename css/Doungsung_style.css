@@ -3,6 +3,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  background: #fff;
 }
 /* 동성로 메인 타이틀의 설정부분 */
 #dongsungro h2,

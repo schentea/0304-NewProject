@@ -3,6 +3,7 @@
   height: 100vh;
   display: flex;
   justify-content: center;
+  background: #fff;
 }
 #Show_container {
   width: 100%;
