@@ -128,7 +128,8 @@
               <div class="swiper-slide">Slide 8</div>
               <div class="swiper-slide">Slide 9</div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
         </div>
         <!-- 아래쪽 공간 -->
@@ -147,7 +148,8 @@
               <div class="swiper-slide">Slide 8</div>
               <div class="swiper-slide">Slide 9</div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
           <!-- 오른쪽 메시지 박스 부분 -->
           <div class="balloon" id="balloon2"></div>
@@ -252,9 +254,9 @@
         slidesPerView: 2,
         spaceBetween: 30,
         loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
         breakpoints: {
           700: {
