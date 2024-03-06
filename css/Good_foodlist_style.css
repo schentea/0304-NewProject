@@ -7,8 +7,23 @@
   flex-direction: column;
   align-items: center;
 }
+#Good_foodlist #foodTitWrap {
+  margin: 0 auto 0 10px;
+}
 #Good_foodlist #foodTitWrap * {
   text-align: start;
+}
+#Good_foodlist #foodTitWrap h3 {
+  position: relative;
+}
+#Good_foodlist #foodTitWrap h3::before {
+  position: absolute;
+  inset: 24px 0 0 105px;
+  content: "";
+  display: inline-block;
+  height: 2px;
+  width: 160px;
+  background-color: black;
 }
 
 #container {

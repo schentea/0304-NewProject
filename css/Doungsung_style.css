@@ -48,7 +48,7 @@ article div {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1500px) {
   #dongsungro {
     height: 100vh;
   }
