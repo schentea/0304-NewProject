@@ -63,6 +63,20 @@
   color: var(--mainColor);
   font-weight: bold;
 }
+
+.naverBtn {
+  background: none;
+  border: 2px solid #03c75a;
+  color: #03c75a;
+  font-weight: bold;
+}
+
+.googleBtn {
+  background: none;
+  border: 2px solid gray;
+  color: gray;
+  font-weight: bold;
+}
 /* 닫기 버튼 스타일 */
 .close2 {
   color: #aaaaaa;
