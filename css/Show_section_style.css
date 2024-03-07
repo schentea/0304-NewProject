@@ -39,6 +39,15 @@
   height: 50%;
   border-radius: 20px;
 }
+#show_left_img_div #show_left1,
+#show_left_img_div #show_left2 {
+  background: url("../image//show2.jpg");
+  background-size: 100%;
+  position: relative;
+  display: grid;
+  overflow: hidden;
+}
+
 #show_right_img_div {
   position: relative;
   width: 90%;
@@ -53,7 +62,7 @@
   display: grid;
 }
 
-#show_right_img_div > p {
+.showImgName {
   color: white;
   font-weight: bold;
   font-size: 35px;
@@ -61,10 +70,14 @@
   margin: 20px 0 0 25px;
   z-index: 10;
 }
-#show_right_img_div #showBlack {
+
+.showLeName {
+  font-size: 30px;
+  padding: 10px 0 0 0;
+}
+
+#showBlack {
   display: grid;
-  width: 0;
-  height: 0;
 }
 #showBlack p {
   justify-self: end;
@@ -75,20 +88,24 @@
   font-size: 22px;
   transform: translateY(50px);
   transition: transform 0.3s;
+  position: relative;
 }
 
+#show_left1:hover #showBlack,
+#show_left2:hover #showBlack,
 #show_right_img_div:hover #showBlack {
-  position: absolute;
   width: 100%;
   height: 100%;
+  position: absolute;
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(2px);
   transition: all 0.2s;
 }
+#show_left1:hover #showBlack p,
+#show_left2:hover #showBlack p,
 #show_right_img_div:hover #showBlack p {
   transform: translateY(-10px);
 }
-
 .uip {
   max-width: 600px;
   width: 90%;
