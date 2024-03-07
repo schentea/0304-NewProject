@@ -66,13 +66,17 @@
   justify-self: end;
   align-self: flex-end;
   color: white;
+  font-weight: 500;
+  margin: 0 20px 20px;
+  font-size: 20px;
 }
 
 #show_right_img_div:hover #showBlack {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
   transition: all 0.2s;
   display: grid;
 }
