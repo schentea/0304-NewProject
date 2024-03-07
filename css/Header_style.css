@@ -37,6 +37,7 @@ nav #logo img {
   display: flex;
   gap: 30px;
   margin: 0;
+  align-items: center;
 }
 #gnb_menu {
   display: flex;
@@ -45,10 +46,11 @@ nav #logo img {
 .gnb_menu li {
   font-size: 20px;
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 10px 15px;
 }
 .gnb_menu a {
   color: black;
+  padding: 0 5px;
 }
 .gnb_menu span {
   font-size: 20px;
@@ -163,10 +165,10 @@ video {
     display: block;
     content: "";
     width: 0;
-    height: 2px;
-    background: black;
+    top: 49px;
+    height: 5px;
+    background: var(--mainColor);
     transition: all 0.2s;
-    transform-origin: left;
   }
   .gnb_menu li:hover a::after {
     width: 100%;
