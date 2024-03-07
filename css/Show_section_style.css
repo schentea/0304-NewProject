@@ -61,14 +61,20 @@
   margin: 20px 0 0 25px;
   z-index: 10;
 }
+#show_right_img_div #showBlack {
+  display: grid;
+  width: 0;
+  height: 0;
+}
 #showBlack p {
-  display: none;
   justify-self: end;
   align-self: flex-end;
   color: white;
   font-weight: 500;
-  margin: 0 20px 20px;
-  font-size: 20px;
+  margin: 0 40px 20px;
+  font-size: 22px;
+  transform: translateY(50px);
+  transition: transform 0.3s;
 }
 
 #show_right_img_div:hover #showBlack {
@@ -78,10 +84,9 @@
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(2px);
   transition: all 0.2s;
-  display: grid;
 }
 #show_right_img_div:hover #showBlack p {
-  display: inline-block;
+  transform: translateY(-10px);
 }
 
 .uip {
