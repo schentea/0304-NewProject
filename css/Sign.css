@@ -6,19 +6,19 @@
   top: 0;
   width: 100%;
   height: 100%;
-
   background-color: rgb(0, 0, 0); /* 검은색 배경 */
   background-color: rgba(0, 0, 0, 0.4); /* 반투명 효과 */
 }
 
 /* 모달 내부 스타일 */
 .modal-content {
+  border-radius: 5px;
   background-color: #fefefe; /* 모달 내부 배경색 */
   margin: 5% auto; /* 모달이 화면 상단에서 10% 내려오도록 설정 */
   padding: 20px;
   border: 1px solid #888;
   width: 500px; /* 모달의 너비 */
-  height: 800px;
+  height: 666px;
 }
 #signupForm {
   width: 100%;
@@ -28,10 +28,18 @@
   align-items: center;
   justify-content: center;
 }
+#signupForm .signupInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
 .signInput {
   width: 406px;
   height: 60px;
-  border-radius: 13px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(156, 163, 175);
+  border-radius: 10px;
 }
 .signInput[type="text"],
 .signInput[type="password"] {
@@ -39,12 +47,40 @@
   font-size: 20px;
 }
 
+.label-custom {
+  position: absolute;
+  font-size: 20px;
+  color: #6b7280;
+  top: 16px;
+  left: 5px;
+  background-color: white;
+  padding: 0 0.5rem;
+  transition: all 0.25s;
+  transform-origin: left;
+}
+
+.loginInput:focus,
+.signInput:focus {
+  box-shadow: 0 0 0 2px dodgerblue;
+}
+
+.loginInput:focus + .label-custom,
+.signInput:focus + .label-custom {
+  color: dodgerblue;
+  transform: translateY(-1rem) scale(0.7);
+  top: 0;
+}
+
 #signSubmitBtn {
   width: 406px;
   height: 60px;
   font-size: 20px;
   border-radius: 13px;
-  margin-top: 100px;
+  margin-top: 80px;
+  background: none;
+  border: 2px solid var(--mainColor);
+  color: var(--mainColor);
+  font-weight: bold;
 }
 #signTitle {
   font-size: 40px;

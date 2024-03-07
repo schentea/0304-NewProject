@@ -1,6 +1,14 @@
+:root {
+  --mainColor: #eb102c;
+}
+
 h2 {
   font-size: 60px;
 }
 h3 {
   font-size: 35px;
+}
+
+button {
+  cursor: pointer;
 }
