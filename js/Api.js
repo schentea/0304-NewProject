@@ -68,10 +68,11 @@ $(document).ready(function () {
           // console.log(swiperWrapper);
 
           sameNameItems.slice(0, 10).forEach((item, index) => {
+            const imgArr1 = imgArr.slice(0, 10);
             const div = document.createElement("div");
             const slideImg = document.createElement("img");
             const swiperText = document.createElement("p");
-            slideImg.src = `../${imgArr[index]["이미지 경로"]}/${imgArr[index]["파일명"]}`;
+            slideImg.src = `../${imgArr1[index]["이미지 경로"]}/${imgArr1[index]["파일명"]}`;
             div.classList.add("swiper-slide");
             swiperText.textContent = item.BZ_NM; // 예시로 업소명을 텍스트로 추가
 
@@ -81,10 +82,11 @@ $(document).ready(function () {
           });
           const leftSlide = document.querySelector("#leftSlide");
           sameNameItems.slice(11, 20).forEach((item, index) => {
+            const imgArr2 = imgArr.slice(11, 20);
             const div = document.createElement("div");
             const slideImg = document.createElement("img");
             const swiperText = document.createElement("p");
-            slideImg.src = `/${imgArr[index]["이미지 경로"]}/${imgArr[index]["파일명"]}`;
+            slideImg.src = `/${imgArr2[index]["이미지 경로"]}/${imgArr2[index]["파일명"]}`;
             div.classList.add("swiper-slide");
             swiperText.textContent = item.BZ_NM; // 예시로 업소명을 텍스트로 추가
 
