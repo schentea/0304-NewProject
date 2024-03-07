@@ -2,11 +2,22 @@
   --mainColor: #eb102c;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "SCoreDream";
+  word-break: keep-all;
+  scroll-behavior: smooth;
+}
+
 h2 {
-    font-size: 60px !important;
+  font-size: 60px;
 }
 h3 {
-    font-size: 35px !important;
+  font-size: 35px;
 }
 
 button {

@@ -21,7 +21,7 @@
   padding: 20px;
   border: 1px solid #888;
   width: 500px;
-  height: 666px;
+  height: 700px;
 }
 
 #loginForm {
@@ -58,6 +58,10 @@
   font-size: 20px;
   border-radius: 13px;
   margin-top: 10px;
+  background: none;
+  border: 2px solid var(--mainColor);
+  color: var(--mainColor);
+  font-weight: bold;
 }
 /* 닫기 버튼 스타일 */
 .close2 {
