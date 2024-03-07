@@ -51,16 +51,21 @@
   font-size: 20px;
 }
 
-.label-custom {
-  position: absolute;
-  font-size: 20px;
+.loginInput:placeholder-shown + .label-custom,
+.signInput:placeholder-shown + .label-custom {
   color: #6b7280;
   top: 16px;
+  font-size: 20px;
+}
+
+.label-custom {
+  position: absolute;
+  font-size: 16px;
+  top: -9px;
   left: 5px;
   background-color: white;
   padding: 0 0.5rem;
   transition: all 0.25s;
-  transform-origin: left;
 }
 
 .loginInput:focus,
@@ -71,10 +76,9 @@
 .loginInput:focus + .label-custom,
 .signInput:focus + .label-custom {
   color: dodgerblue;
-  transform: translateY(-1rem) scale(0.7);
-  top: 0;
+  top: -11px;
+  font-size: 16px;
 }
-
 #signSubmitBtn {
   width: 406px;
   height: 60px;
