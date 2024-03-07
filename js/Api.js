@@ -11,7 +11,7 @@ $(document).ready(function () {
       console.log("이벤트 정보:", event);
 
       const event2 = data.performData;
-      console.log(event2);
+      console.log("이벤트 정보 2:", event2);
     },
     error: function (xhr, status, error) {
       console.error("Error fetching data:", error);

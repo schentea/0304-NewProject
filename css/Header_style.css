@@ -4,8 +4,8 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-    text-decoration: none;
-    font-family: 'SCoreDream';
+    text-decoration: none !important;
+    font-family: 'SCoreDream' !important;
     word-break: keep-all;
     scroll-behavior: smooth;
 }
@@ -13,7 +13,6 @@ header {
     width: 100%;
     height: 100vh;
     position: relative;
-    background-image: url('../image/headbg.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -93,7 +92,18 @@ video {
     line-height: 100px;
     text-indent: -5px;
 }
-
+/* 메인헤더 캐러셀 */
+#carouselExampleFade {
+    width: 100%;
+    height: 92vh;
+    overflow: hidden;
+}
+.carousel-inner img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
 @media screen and (max-width: 1024px) {
     /* 보이는 나브 */
     #view_nav {

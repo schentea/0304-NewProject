@@ -32,6 +32,44 @@ document
           alert(response.message);
           document.getElementById("loginModal").style.display = "none"; // 모달창 닫기
           console.log("현재 로그인된 사용자 :", response.username);
+          document.getElementById("between").style.display = "none";
+          document.getElementById("loginButton").style.display = "none";
+          document.getElementById("openModalBtn").style.display = "none";
+          const login = document.getElementById("rogin");
+          const li = document.createElement("li");
+          const logout = document.createElement("li");
+          login.appendChild(li);
+          login.appendChild(logout);
+          li.innerText = response.username + "님 환영합니다.";
+          logout.innerText = "로그아웃";
+          logout.classList.add("logout");
+          logout.addEventListener("click", function () {
+            // 로그아웃 AJAX 요청
+            $.ajax({
+              url: "http://yj4newproject.dothome.co.kr/logout.php",
+              type: "POST",
+              dataType: "json",
+              success: function (response) {
+                if (response.success) {
+                  // 로그아웃 성공
+                  alert(response.message);
+                  // 추가적으로 필요한 로그아웃 관련 동작 수행
+                } else {
+                  // 로그아웃 실패 시의 처리
+                  alert(response.message);
+                }
+              },
+              error: function (xhr, status, error) {
+                // AJAX 요청이 실패했을 때의 처리
+                console.error("로그아웃 AJAX 요청 중 오류 발생:", error);
+              },
+            });
+            document.getElementById("between").style.display = "block";
+            document.getElementById("loginButton").style.display = "block";
+            document.getElementById("openModalBtn").style.display = "block";
+            li.style.display = "none";
+            logout.style.display = "none";
+          });
         } else {
           // 로그인 실패
           alert(response.message);
