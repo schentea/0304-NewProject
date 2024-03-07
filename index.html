@@ -1,398 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- 폰트어썸 -->
-        <script src="https://kit.fontawesome.com/247e9f18da.js" crossorigin="anonymous"></script>
-        <!-- 부트스트랩 -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-        <script src="./js/jquery-2.2.4.min.js"></script>
+  <head>
+    <!-- 폰트어썸 -->
+    <script
+      src="https://kit.fontawesome.com/247e9f18da.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- 부트스트랩 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="./js/jquery-2.2.4.min.js"></script>
 
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>동성로</title>
-        <!-- 캐러셀 -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-        <!-- 헤더 css -->
-        <link rel="stylesheet" href="./css/Header_style.css" />
-        <!-- 동성로 css -->
-        <link rel="stylesheet" href="./css/Doungsung_style.css" />
-        <!-- 맛집 css -->
-        <link rel="stylesheet" href="./css/Good_foodlist_style.css" />
-        <!-- 공연정보 css -->
-        <link rel="stylesheet" href="./css/Show_section_style.css" />
-        <!-- 유튜브 css -->
-        <link rel="stylesheet" href="./css/Youtube_style.css" />
-        <!-- 푸터 css -->
-        <link rel="stylesheet" href="./css/Footer_style.css" />
-        <!-- 회원가입 css -->
-        <link rel="stylesheet" href="./css/Sign.css" />
-        <!-- 로그인 -->
-        <link rel="stylesheet" href="./css/Login.css" />
-        <!-- 공통 속성 css -->
-        <link rel="stylesheet" href="./css/style.css" />
-        <!-- 폰트 -->
-        <link href="https://webfontworld.github.io/SCoreDream/SCoreDream.css" rel="stylesheet" />
-        <link rel="icon" href="./image/logo.svg" />
-    </head>
-    <body>
-        <!-- 헤더부분 -->
-        <header class="sections">
-            <!-- 헤더_안에있는 나브부분 -->
-            <nav id="view_nav">
-                <!-- 피시 나브 안에 왼쪽 로고 -->
-                <div id="logo">
-                    <img src="./image/logo.svg" alt="logo" />
-                </div>
-                <!-- 피시 나브 안에 중간부분 -->
-                <div>
-                    <div id="xmark"><i class="fa-solid fa-xmark"></i></div>
-                    <ul id="gnb_menu" class="gnb_menu">
-                        <li><a href="#dongsungro">소개</a></li>
-                        <li><a href="#Good_foodlist">맛집</a></li>
-                        <li><a href="#Show_section">공연</a></li>
-                        <li><a href="#youtube_section">유튜브</a></li>
-                    </ul>
-                </div>
-                <!-- 피시 나브 안에 우측 로그인부분 -->
-                <div>
-                    <ul id="rogin" class="gnb_menu">
-                        <li id="loginButton">로그인</li>
-                        <span id="between"><span>|</span></span>
-                        <li id="openModalBtn">회원가입</li>
-                    </ul>
-                </div>
-            </nav>
-            <nav id="hidden_nav">
-                <!-- 모바일 나브 안에 왼쪽 로고 -->
-                <div id="hidden_logo"><img src="./image/logo.svg" alt="logo" /></div>
-                <!-- 모바일 나브 안에 우측 토글버튼부분 -->
-                <div id="toggle">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-            </nav>
-            <!-- 헤더 안에 캐러셀부분 -->
-            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./image/dongsungro.png" class="d-block w-100" alt="..." />
-                        <div id="Header_title">
-                            <h2>문화의 중심지</h2>
-                            <h1>동성로</h1>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./image/head.png" class="d-block w-100" alt="..." />
-                        <div id="Header_title">
-                            <h2>반월당이 최고야</h2>
-                            <h1>동성로</h1>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./image/headbg.jpg" class="d-block w-100" alt="..." />
-                        <div id="Header_title">
-                            <h2>중앙로가 최고야</h2>
-                            <h1>동성로</h1>
-                        </div>
-                    </div>
-                </div>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>동성로</title>
+    <!-- 캐러셀 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- 헤더 css -->
+    <link rel="stylesheet" href="./css/Header_style.css" />
+    <!-- 동성로 css -->
+    <link rel="stylesheet" href="./css/Doungsung_style.css" />
+    <!-- 맛집 css -->
+    <link rel="stylesheet" href="./css/Good_foodlist_style.css" />
+    <!-- 공연정보 css -->
+    <link rel="stylesheet" href="./css/Show_section_style.css" />
+    <!-- 유튜브 css -->
+    <link rel="stylesheet" href="./css/Youtube_style.css" />
+    <!-- 푸터 css -->
+    <link rel="stylesheet" href="./css/Footer_style.css" />
+    <!-- 회원가입 css -->
+    <link rel="stylesheet" href="./css/Sign.css" />
+    <!-- 로그인 -->
+    <link rel="stylesheet" href="./css/Login.css" />
+    <!-- 공통 속성 css -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- 폰트 -->
+    <link
+      href="https://webfontworld.github.io/SCoreDream/SCoreDream.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./image/logo.svg" />
+  </head>
+  <body>
+    <!-- 헤더부분 -->
+    <header class="sections">
+      <!-- 헤더_안에있는 나브부분 -->
+      <nav id="view_nav">
+        <!-- 피시 나브 안에 왼쪽 로고 -->
+        <div id="logo">
+          <img src="./image/logo.svg" alt="logo" />
+        </div>
+        <!-- 피시 나브 안에 중간부분 -->
+        <div>
+          <div id="xmark"><i class="fa-solid fa-xmark"></i></div>
+          <ul id="gnb_menu" class="gnb_menu">
+            <li><a href="#dongsungro">소개</a></li>
+            <li><a href="#Good_foodlist">맛집</a></li>
+            <li><a href="#Show_section">공연</a></li>
+            <li><a href="#youtube_section">유튜브</a></li>
+          </ul>
+        </div>
+        <!-- 피시 나브 안에 우측 로그인부분 -->
+        <div>
+          <ul id="rogin" class="gnb_menu">
+            <li id="loginButton">로그인</li>
+            <span id="between"><span>|</span></span>
+            <li id="openModalBtn">회원가입</li>
+          </ul>
+        </div>
+      </nav>
+      <nav id="hidden_nav">
+        <!-- 모바일 나브 안에 왼쪽 로고 -->
+        <div id="hidden_logo"><img src="./image/logo.svg" alt="logo" /></div>
+        <!-- 모바일 나브 안에 우측 토글버튼부분 -->
+        <div id="toggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </nav>
+      <!-- 헤더 안에 캐러셀부분 -->
+      <div
+        id="carouselExampleFade"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./image/dongsungro.png" class="d-block w-100" alt="..." />
+            <div id="Header_title">
+              <h2>문화의 중심지</h2>
+              <h1>동성로</h1>
             </div>
-            <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleFade"
-                data-bs-slide="prev"
-            >
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleFade"
-                data-bs-slide="next"
-            >
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-            <!-- <video loop autoplay muted>
+          </div>
+          <div class="carousel-item">
+            <img src="./image/head.png" class="d-block w-100" alt="..." />
+            <div id="Header_title">
+              <h2>반월당이 최고야</h2>
+              <h1>동성로</h1>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./image/headbg.jpg" class="d-block w-100" alt="..." />
+            <div id="Header_title">
+              <h2>중앙로가 최고야</h2>
+              <h1>동성로</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleFade"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleFade"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      <!-- <video loop autoplay muted>
         <source src="./video/Headervideo2.mp4" type="video/mp4" />
       </video> -->
-        </header>
-        <!-- 동성로 소개부분 -->
-        <section id="dongsungro" class="sections">
-            <article>
-                <!-- 동성로 소개 타이틀 -->
-                <div>
-                    <h2>동성로 소개 제목</h2>
-                    <h3>동성로 소개 부제목</h3>
-                </div>
-                <!-- 동성로 사진 -->
-                <div id="dongsungro_img_div">
-                    <img src="./image/dongsungro.png" alt="" />
-                </div>
-                <!-- 동성로 소개 글 -->
-                <div class="dongsungroTxt">
-                    <h4>대구시민이라면 대구의 중심가를 동성로라 말한다.</h4>
-                    <p>
-                        대구의 간판이자 중심삼권으로 동성로는 젊음의 열기가 느껴진다. 서울에 명동이 있다면 대구는
-                        동성로가 있다고 얘기할 수 있는 만큼 잘 조성 되어 있는 곳이다. 공공디자인 사업으로 '테마가 있고
-                        걷고 싶은 거리' 가 생기면서 더 많은 사람들이 동성로를 찾는다.
-                    </p>
-                </div>
-                <div class="dongsungroTxt">
-                    <h4>어쩌고저쩌고</h4>
-                    <p>
-                        동성로 중심에서 볼 수 있는 특별한 공연이 있다. 대구 시내 고아장의 특성을 살린 공연으로 생동감
-                        넘치고 색다르다. 길을 걷다가 공연을 볼수 있어 즐거움은 배가 된다.
-                    </p>
-                </div>
-            </article>
-        </section>
-        <!-- 맛집 목록 -->
-        <section id="Good_foodlist" class="sections">
-            <!-- 컨테이너-->
-            <div id="container">
-                <!-- 제목 -->
-                <div id="foodTitWrap">
-                    <h3>부제목</h3>
-                    <h2>동성로 식당</h2>
-                </div>
-                <!-- 위쪽 공간 -->
-                <h4>소제목</h4>
-                <div id="up_container">
-                    <!-- 왼쪽 메세지 박스부분 -->
-                    <div class="balloon"></div>
-                    <!-- 오른쪽 캐러셀 부분 -->
-                    <div class="swiper mySwiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">Slide 1</div>
-                            <div class="swiper-slide">Slide 2</div>
-                            <div class="swiper-slide">Slide 3</div>
-                            <div class="swiper-slide">Slide 4</div>
-                            <div class="swiper-slide">Slide 5</div>
-                            <div class="swiper-slide">Slide 6</div>
-                            <div class="swiper-slide">Slide 7</div>
-                            <div class="swiper-slide">Slide 8</div>
-                            <div class="swiper-slide">Slide 9</div>
-                        </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                </div>
-                <!-- 아래쪽 공간 -->
-                <h4>소제목</h4>
-                <div id="down_container">
-                    <!-- 왼쪽 캐러셀 부분 -->
-                    <div class="swiper mySwiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">Slide 1</div>
-                            <div class="swiper-slide">Slide 2</div>
-                            <div class="swiper-slide">Slide 3</div>
-                            <div class="swiper-slide">Slide 4</div>
-                            <div class="swiper-slide">Slide 5</div>
-                            <div class="swiper-slide">Slide 6</div>
-                            <div class="swiper-slide">Slide 7</div>
-                            <div class="swiper-slide">Slide 8</div>
-                            <div class="swiper-slide">Slide 9</div>
-                        </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                    <!-- 오른쪽 메시지 박스 부분 -->
-                    <div class="balloon" id="balloon2"></div>
-                </div>
-            </div>
-        </section>
-        <!-- 공연 정보 -->
-        <section id="Show_section" class="sections">
-            <div id="Show_container">
-                <!-- Show 타이틀 -->
-                <div id="show_title_div">
-                    <h3>부제목</h3>
-                    <h2>공연 정보</h2>
-                </div>
-                <!-- 왼쪽 이미지 -->
-                <div id="main_img_div">
-                    <div id="show_left_img_div">
-                        <!-- 위 -->
-                        <div class="uip">
-                            <img src="" alt="" />
-                        </div>
-                        <!-- 아래 -->
-                        <div class="uip">
-                            <img src="" alt="" />
-                        </div>
-                    </div>
-                    <!-- 오른쪽 이미지 -->
-                    <div id="show_right_img_div">
-                        <img src="" alt="" />
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- 동성로 유튜브 -->
-        <section id="youtube_section" class="sections">
-            <div id="youtube_container">
-                <!-- 유튜브 타이틀 -->
-                <div>
-                    <h2>동성로 유튜브</h2>
-                </div>
-                <div id="Main_Grid"></div>
-            </div>
-        </section>
-        <!-- 푸터 -->
-        <footer class="sections">
-            <div id="footer_container">
-                <!-- 제일위  -->
-                <div id="footer_top">
-                    <img src="./image/logo.svg" alt="logo" />
-                    <p>개인정보 처리방침</p>
-                    <p>저작권 보호정책</p>
-                    <p>영상정보처리기기 운영관리방침</p>
-                    <p>전자우편 무단수집거부</p>
-                </div>
-                <div id="footer_mid">
-                    <p>
-                        <b>한국관광공사</b> 26464 강원특별자치도 원주시 세계로 10 한국관광공사 | TEL: 033-738-3000 |
-                        통신판매업신고 : 제 2022-강원연수-0381호
-                    </p>
-                </div>
-                <div id="footer_bottom">
-                    <p>Copuright c 한국관광공사. All rights reserved.</p>
-                </div>
-            </div>
-        </footer>
-        <!-- 모달 -->
-        <div id="myModal" class="modal">
-            <!-- 모달 내용 -->
-            <div class="modal-content">
-                <div>
-                    <span class="close">&times;</span>
-                    <p id="signTitle">회원가입</p>
-                </div>
-                <form id="signupForm" action="sign.php" method="post">
-                    <div class="signupInputs">
-                        <div style="position: relative">
-                            <input
-                                placeholder=""
-                                class="signInput"
-                                type="text"
-                                id="username"
-                                name="username"
-                                required
-                            />
-                            <label class="label-custom">아이디</label>
-                        </div>
-                        <div style="position: relative">
-                            <input
-                                placeholder=""
-                                class="signInput"
-                                type="password"
-                                id="password"
-                                name="password"
-                                required
-                            />
-                            <label class="label-custom">비밀번호</label>
-                        </div>
-                        <div style="position: relative">
-                            <input placeholder="" class="signInput" type="text" id="name" name="name" required />
-                            <label class="label-custom">이름</label>
-                        </div>
-                    </div>
-                    <button id="signSubmitBtn" type="submit">가입하기</button>
-                    <hr />
-                    <button class="naverBtn" type="button"><i class="fa-solid fa-n"></i> 네이버로 로그인</button><br />
-                    <button class="googleBtn" type="button"><i class="fa-brands fa-google"></i> 구글로 로그인</button>
-                </form>
-            </div>
+    </header>
+    <!-- 동성로 소개부분 -->
+    <section id="dongsungro" class="sections">
+      <article>
+        <!-- 동성로 소개 타이틀 -->
+        <div>
+          <h2>동성로 소개 제목</h2>
+          <h3>동성로 소개 부제목</h3>
         </div>
-        <!-- 로그인 모달창 -->
-        <div id="loginModal" class="modal2">
-            <div class="modal-content2">
-                <span class="close2">&times;</span>
-                <p id="loginTitle">로그인</p>
-                <form id="loginForm">
-                    <div class="loginInputs">
-                        <div style="position: relative">
-                            <input
-                                class="loginInput"
-                                type="text"
-                                id="username2"
-                                name="username"
-                                placeholder=""
-                                required
-                            />
-                            <label class="label-custom">아이디</label>
-                        </div>
-                        <div style="position: relative">
-                            <input
-                                class="loginInput"
-                                type="password"
-                                id="password2"
-                                name="password"
-                                placeholder=""
-                                required
-                            />
-                            <label class="label-custom">비밀번호</label>
-                        </div>
-                        <button id="loginSubmitBtn" type="submit">로그인</button>
-                    </div>
-                    <div id="loginBox">
-                        <div id="searchIDPW">
-                            <p>아이디 찾기</p>
-                            <p>|</p>
-                            <p>비밀번호 찾기</p>
-                        </div>
-                        <div id="goSign">회원 가입</div>
-                    </div>
-                    <br /><br />
-                    <button class="naverBtn" type="button"><i class="fa-solid fa-n"></i> 네이버로 로그인</button>
-                    <br />
-                    <button class="googleBtn" type="button"><i class="fa-brands fa-google"></i> 구글로 로그인</button>
-                </form>
-            </div>
+        <!-- 동성로 사진 -->
+        <div id="dongsungro_img_div">
+          <img src="./image/dongsungro.png" alt="" />
         </div>
-        <!-- 헤더 스크립트 -->
-        <script src="./js/Header_script.js"></script>
+        <!-- 동성로 소개 글 -->
+        <div class="dongsungroTxt">
+          <h4>대구시민이라면 대구의 중심가를 동성로라 말한다.</h4>
+          <p>
+            대구의 간판이자 중심삼권으로 동성로는 젊음의 열기가 느껴진다. 서울에
+            명동이 있다면 대구는 동성로가 있다고 얘기할 수 있는 만큼 잘 조성
+            되어 있는 곳이다. 공공디자인 사업으로 '테마가 있고 걷고 싶은 거리'
+            가 생기면서 더 많은 사람들이 동성로를 찾는다.
+          </p>
+        </div>
+        <div class="dongsungroTxt">
+          <h4>어쩌고저쩌고</h4>
+          <p>
+            동성로 중심에서 볼 수 있는 특별한 공연이 있다. 대구 시내 고아장의
+            특성을 살린 공연으로 생동감 넘치고 색다르다. 길을 걷다가 공연을 볼수
+            있어 즐거움은 배가 된다.
+          </p>
+        </div>
+      </article>
+    </section>
+    <!-- 맛집 목록 -->
+    <section id="Good_foodlist" class="sections">
+      <!-- 컨테이너-->
+      <div id="container">
+        <!-- 제목 -->
+        <div id="foodTitWrap">
+          <h3>부제목</h3>
+          <h2>동성로 식당</h2>
+        </div>
+        <!-- 위쪽 공간 -->
+        <h4>소제목</h4>
+        <div id="up_container">
+          <!-- 왼쪽 메세지 박스부분 -->
+          <div class="balloon"></div>
+          <!-- 오른쪽 캐러셀 부분 -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+        <!-- 아래쪽 공간 -->
+        <h4>소제목</h4>
+        <div id="down_container">
+          <!-- 왼쪽 캐러셀 부분 -->
+          <div class="swiper mySwiper">
+            <div id="leftSlide" class="swiper-wrapper"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          <!-- 오른쪽 메시지 박스 부분 -->
+          <div class="balloon" id="balloon2"></div>
+        </div>
+      </div>
+    </section>
+    <!-- 공연 정보 -->
+    <section id="Show_section" class="sections">
+      <div id="Show_container">
+        <!-- Show 타이틀 -->
+        <div id="show_title_div">
+          <h3>부제목</h3>
+          <h2>공연 정보</h2>
+        </div>
+        <!-- 왼쪽 이미지 -->
+        <div id="main_img_div">
+          <div id="show_left_img_div">
+            <!-- 위 -->
+            <div class="uip">
+              <img src="" alt="" />
+            </div>
+            <!-- 아래 -->
+            <div class="uip">
+              <img src="" alt="" />
+            </div>
+          </div>
+          <!-- 오른쪽 이미지 -->
+          <div id="show_right_img_div">
+            <img src="" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 동성로 유튜브 -->
+    <section id="youtube_section" class="sections">
+      <div id="youtube_container">
+        <!-- 유튜브 타이틀 -->
+        <div>
+          <h2>동성로 유튜브</h2>
+        </div>
+        <div id="Main_Grid"></div>
+      </div>
+    </section>
+    <!-- 푸터 -->
+    <footer class="sections">
+      <div id="footer_container">
+        <!-- 제일위  -->
+        <div id="footer_top">
+          <img src="./image/logo.svg" alt="logo" />
+          <p>개인정보 처리방침</p>
+          <p>저작권 보호정책</p>
+          <p>영상정보처리기기 운영관리방침</p>
+          <p>전자우편 무단수집거부</p>
+        </div>
+        <div id="footer_mid">
+          <p>
+            <b>한국관광공사</b> 26464 강원특별자치도 원주시 세계로 10
+            한국관광공사 | TEL: 033-738-3000 | 통신판매업신고 : 제
+            2022-강원연수-0381호
+          </p>
+        </div>
+        <div id="footer_bottom">
+          <p>Copuright c 한국관광공사. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- 모달 -->
+    <div id="myModal" class="modal">
+      <!-- 모달 내용 -->
+      <div class="modal-content">
+        <div>
+          <span class="close">&times;</span>
+          <p id="signTitle">회원가입</p>
+        </div>
+        <form id="signupForm" action="sign.php" method="post">
+          <div class="signupInputs">
+            <div style="position: relative">
+              <input
+                placeholder=""
+                class="signInput"
+                type="text"
+                id="username"
+                name="username"
+                required
+              />
+              <label class="label-custom">아이디</label>
+            </div>
+            <div style="position: relative">
+              <input
+                placeholder=""
+                class="signInput"
+                type="password"
+                id="password"
+                name="password"
+                required
+              />
+              <label class="label-custom">비밀번호</label>
+            </div>
+            <div style="position: relative">
+              <input
+                placeholder=""
+                class="signInput"
+                type="text"
+                id="name"
+                name="name"
+                required
+              />
+              <label class="label-custom">이름</label>
+            </div>
+          </div>
+          <button id="signSubmitBtn" type="submit">가입하기</button>
+          <hr />
+          <button class="naverBtn" type="button">
+            <i class="fa-solid fa-n"></i> 네이버로 로그인</button
+          ><br />
+          <button class="googleBtn" type="button">
+            <i class="fa-brands fa-google"></i> 구글로 로그인
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- 로그인 모달창 -->
+    <div id="loginModal" class="modal2">
+      <div class="modal-content2">
+        <span class="close2">&times;</span>
+        <p id="loginTitle">로그인</p>
+        <form id="loginForm">
+          <div class="loginInputs">
+            <div style="position: relative">
+              <input
+                class="loginInput"
+                type="text"
+                id="username2"
+                name="username"
+                placeholder=""
+                required
+              />
+              <label class="label-custom">아이디</label>
+            </div>
+            <div style="position: relative">
+              <input
+                class="loginInput"
+                type="password"
+                id="password2"
+                name="password"
+                placeholder=""
+                required
+              />
+              <label class="label-custom">비밀번호</label>
+            </div>
+            <button id="loginSubmitBtn" type="submit">로그인</button>
+          </div>
+          <div id="loginBox">
+            <div id="searchIDPW">
+              <p>아이디 찾기</p>
+              <p>|</p>
+              <p>비밀번호 찾기</p>
+            </div>
+            <div id="goSign">회원 가입</div>
+          </div>
+          <br /><br />
+          <button class="naverBtn" type="button">
+            <i class="fa-solid fa-n"></i> 네이버로 로그인
+          </button>
+          <br />
+          <button class="googleBtn" type="button">
+            <i class="fa-brands fa-google"></i> 구글로 로그인
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- 헤더 스크립트 -->
+    <script src="./js/Header_script.js"></script>
 
-        <!-- api -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="./js/youtube.js"></script>
-        <script src="./js/Sign.js"></script>
-        <script src="./js/Login.js"></script>
-        <script src="./js/Api.js"></script>
-        <!-- <script src="./js/wheel.js"></script> -->
-        <!-- Swiper JS -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <!-- Bootscrap -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"
-        ></script>
-        <!-- Initialize Swiper -->
-        <script>
-            var swiper = new Swiper('.mySwiper', {
-                slidesPerView: 2,
-                spaceBetween: 30,
-                loop: true,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                breakpoints: {
-                    700: {
-                        slidesPerView: 3, //브라우저가 1024보다 클 때
-                        spaceBetween: 30,
-                    },
-                },
-            });
-        </script>
-    </body>
+    <!-- api -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/youtube.js"></script>
+    <script src="./js/Sign.js"></script>
+    <script src="./js/Login.js"></script>
+    <script src="./js/Api.js"></script>
+    <!-- <script src="./js/wheel.js"></script> -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Bootscrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          700: {
+            slidesPerView: 3, //브라우저가 1024보다 클 때
+            spaceBetween: 30,
+          },
+        },
+      });
+    </script>
+  </body>
 </html>
