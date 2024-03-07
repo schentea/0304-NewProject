@@ -32,6 +32,13 @@ document
           alert(response.message);
           document.getElementById("loginModal").style.display = "none"; // 모달창 닫기
           console.log("현재 로그인된 사용자 :", response.username);
+          document.getElementById("between").style.display = "none";
+          document.getElementById("loginButton").style.display = "none";
+          document.getElementById("openModalBtn").style.display = "none";
+          const login = document.getElementById("rogin");
+          const li = document.createElement("li");
+          login.appendChild(li);
+          li.innerText = response.username + "님 환영합니다.";
         } else {
           // 로그인 실패
           alert(response.message);
