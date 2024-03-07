@@ -18,6 +18,8 @@ header nav {
   align-items: center;
   padding: 10px 30px;
   backdrop-filter: blur(3px);
+  position: relative;
+  z-index: 3;
 }
 
 #logo {
@@ -65,7 +67,13 @@ video {
   left: 0;
   z-index: -1;
 }
-
+#between {
+  width: 1px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* 숨겨진 나브안에 있는 토글메뉴 */
 #hidden_nav i {
   font-size: 30px;
