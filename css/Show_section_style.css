@@ -54,6 +54,7 @@
   position: relative;
   display: grid;
   overflow: hidden;
+  cursor: pointer;
 }
 
 #show_right_img_div {
@@ -68,6 +69,7 @@
   background-size: cover;
   background-position: 75% 50%;
   display: grid;
+  cursor: pointer;
 }
 
 .showImgName {
@@ -210,13 +212,13 @@
 }
 
 #showModalImg2 {
-  background: url("../image/show4.PNG");
+  background: url("../image/show6.PNG");
   background-size: cover;
   background-position: center;
 }
 
 #showModalImg3 {
-  background: url("../image/show4.PNG");
+  background: url("../image/show5.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -247,4 +249,13 @@
 }
 .showModalIn a {
   color: black;
+}
+
+@media screen and (min-width: 650px) {
+  .showModalImg {
+    height: 300px;
+  }
+  .showModalIn {
+    height: 700px;
+  }
 }
