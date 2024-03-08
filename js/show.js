@@ -1,3 +1,4 @@
+// 모달창
 let showModal1 = document.querySelector("#showModal1");
 let showModal2 = document.querySelector("#showModal2");
 let showModal3 = document.querySelector("#showModal3");
@@ -49,3 +50,13 @@ window.addEventListener("click", function (event) {
     showModal3.style.display = "none";
   }
 });
+
+import { eventData, performData, fetchData } from "./Api.js";
+
+fetchData()
+  .then(() => {
+    console.log(eventData, performData); // 이제 여기서 eventData와 performData를 사용할 수 있습니다
+  })
+  .catch((error) => {
+    console.error("데이터를 불러오는 데 실패했습니다", error);
+  });
