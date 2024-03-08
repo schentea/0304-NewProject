@@ -116,10 +116,12 @@ video {
     object-fit: cover;
     object-position: center;
 }
+@media screen and (max-width: 768px) {
+}
 @media screen and (max-width: 1024px) {
     /* 보이는 나브 */
     #view_nav {
-        background-color: aliceblue;
+        background-color: rgba(255, 255, 255, 0.7);
         width: 50%;
         height: 100%;
         position: fixed;
@@ -131,13 +133,14 @@ video {
         overflow-x: hidden;
         transition: right 0.9s ease;
         z-index: 10;
+        backdrop-filter: blur(10px) brightness(90%) contrast(120%);
     }
     /* X 로고 */
     #xmark {
         cursor: pointer;
         position: absolute;
-        top: 5px;
-        right: 5px;
+        top: 17px;
+        right: 30px;
         font-size: 30px;
     }
     /* 보이는 로그인 섹션 */
@@ -147,11 +150,12 @@ video {
         right: 10px;
     }
     #rogin li {
-        font-size: 20px;
+        font-size: 16px;
+        font-weight: bold;
     }
     .rogin {
         display: flex;
-        gap: 40px;
+        gap: 20px;
     }
     /* 보이는 글로벌 메뉴 */
     #gnb_menu {
