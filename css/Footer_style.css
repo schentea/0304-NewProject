@@ -5,30 +5,38 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 30px;
 }
-#footer_container {
-  width: 100%;
-  height: 100%;
-  max-width: 1300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 50px;
-  font-size: 15px;
+
+footer p {
+  margin: 0;
 }
+
+footer a {
+  color: black;
+}
+
+footer img {
+  width: 80px;
+}
+
 #footer_top {
   display: flex;
   width: 100%;
   align-items: center;
-  gap: 30px;
+  gap: 5px 30px;
   flex-wrap: wrap;
 }
-#footer_top img {
-  width: 50px;
-}
+
 #footer_mid {
   display: flex;
   width: 100%;
   align-items: center;
   gap: 30px;
+}
+
+@media screen and (max-width: 650px) {
+  footer img {
+    display: none;
+  }
 }
