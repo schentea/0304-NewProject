@@ -6,6 +6,7 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 30px;
+  padding: 0 10px;
 }
 
 footer p {
@@ -14,6 +15,10 @@ footer p {
 
 footer a {
   color: black;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 footer img {
@@ -26,6 +31,7 @@ footer img {
   align-items: center;
   gap: 5px 30px;
   flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
 #footer_mid {
@@ -38,5 +44,12 @@ footer img {
 @media screen and (max-width: 650px) {
   footer img {
     display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  footer {
+    height: auto;
+    padding: 10px;
   }
 }

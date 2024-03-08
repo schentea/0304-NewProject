@@ -9,8 +9,12 @@
 
 document.addEventListener("scroll", () => {
   const start = document.querySelector("#introH2");
-  const top = document.querySelector("#topBtn");
+  const top = document.querySelector("#topWrap");
   if (start.getBoundingClientRect().top - window.innerHeight + 50 <= 0) {
     top.classList.remove("none");
   } else top.classList.add("none");
+});
+
+document.querySelector("#topBtn2").addEventListener("click", () => {
+  window.open("https://1330chat.visitkorea.or.kr:3000/#/ttalk_main/CHAT1330_160635739001093018/_0200_0200_LUIS", "_blank", "width=500,height=700");
 });
