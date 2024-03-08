@@ -195,8 +195,12 @@
   z-index: 10;
   background: #fff;
   border-radius: 10px;
-  overflow: hidden;
+  overflow-y: auto;
   margin: 0 auto;
+}
+
+.showModalIn::-webkit-scrollbar {
+  border-radius: 10px;
 }
 
 .showModalImg {
@@ -241,14 +245,38 @@
 
 .showModalIn h4 {
   font-size: 30px;
-  margin: 15px 10px 10px;
+  margin: 20px 0 10px 20px;
 }
 .showModalIn p {
-  margin: 0 10px 5px;
+  margin: 0 20px 5px;
   font-size: 18px;
 }
+
 .showModalIn a {
   color: black;
+}
+
+.showModalList {
+  margin: 30px auto 20px;
+  padding: 0;
+  display: grid;
+  max-width: 600px;
+}
+
+.showModalList .spinner-border {
+  justify-self: center;
+}
+
+.showModalList li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.showModalList li .showDate {
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (min-width: 650px) {

@@ -55,8 +55,38 @@ import { eventData, performData, fetchData } from "./Api.js";
 
 fetchData()
   .then(() => {
-    console.log(eventData, performData); // 이제 여기서 eventData와 performData를 사용할 수 있습니다
+    let art = performData.filter((a) => /아트플러스씨어터|여우별아트홀/.test(a.place));
+    art = art
+      .map(
+        (a) => `<li>
+
+    <p class="showTit">${a.subject.split(" - ")[0]}</p>
+    <div class="showDate">
+      <p class="showStart">${a.start_date}</p>
+      ~
+      <p class="showEnd">${a.end_date}</p>
+    </div>
+  </li>`
+      )
+      .join("");
+    document.querySelector("#showModalList1").innerHTML = art;
+
+    let eve = eventData.filter((a) => a.place.includes("라이크디즈"));
+    console.log(eve);
+    eve = eve
+      .map(
+        (a) => `<li>
+          <p class="showTit">${a.subject.split("점_")[1] || a.subject}</p>
+          <div class="showDate">
+            <p class="showStart">${a.start_date.slice}</p>
+            ~
+            <p class="showEnd">${a.end_date}</p>
+          </div>
+        </li>`
+      )
+      .join("");
+    document.querySelector("#showModalList2").innerHTML = eve;
   })
   .catch((error) => {
-    console.error("데이터를 불러오는 데 실패했습니다", error);
+    console.error(error);
   });
