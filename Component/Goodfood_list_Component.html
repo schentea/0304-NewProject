@@ -16,7 +16,15 @@
         <!-- 모달 로그인  -->
         <link rel="stylesheet" href="../css/Login.css" />
         <link rel="stylesheet" href="../css/Sign.css" />
-
+        <link rel="stylesheet" type="text/css" href="YouTubePopUp.css" />
+        <script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+        <script type="text/javascript" src="YouTubePopUp.jquery.js"></script>
+        <script type="text/javascript">
+            jQuery(function () {
+                jQuery('a.bla-1').YouTubePopUp();
+                jQuery('a.bla-2').YouTubePopUp({ autoplay: 0 }); // Disable autoplay
+            });
+        </script>
         <style>
             header {
                 height: auto;
@@ -67,7 +75,17 @@
                 </div>
             </nav>
         </header>
-        <section>Good_foodlist Detail_Page</section>
+        <section>
+            <p>
+                <a class="bla-1" href="https://www.youtube.com/watch?v=3qyhgV0Zew0">This YouTube video with autoplay</a>
+            </p>
+            <p>
+                <a class="bla-2" href="https://www.youtube.com/watch?v=3qyhgV0Zew0"
+                    ><img src="thumb_video.png" />
+                    <p>without autoplay</p></a
+                >
+            </p>
+        </section>
         <footer class="sections">
             <img src="../image/logo.svg" alt="logo" />
             <!-- 제일위  -->
