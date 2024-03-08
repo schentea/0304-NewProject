@@ -69,8 +69,17 @@ $(document).ready(function () {
                     const swiperSlide = Slide.slice(0, 10);
                     const swiperSlide1 = Slide.slice(10, 18);
                     const imgArr2 = imgArr.slice(10, 18);
-                    // console.log("첫번쨰", swiperSlide);
-                    // console.log("두번쨰", imgArr2);
+                    console.log('첫번쨰', swiperSlide);
+                    console.log('두번쨰', imgArr2);
+                    const slides = document.querySelectorAll('.swiper-slide');
+                    slides.forEach((item, index) => {
+                        console.log('아템', item.innerHTML === '');
+                        if (item.innerHTML === '') {
+                            item.innerHTML = 'Loding...';
+                        } else {
+                            item.innerHTML = '';
+                        }
+                    });
 
                     sameNameItems.slice(0, 10).forEach((item, index) => {
                         const swiperText = document.createElement('p');
@@ -86,7 +95,7 @@ $(document).ready(function () {
                     });
 
                     sameNameItems.slice(11, 20).forEach((item, index) => {
-                        // console.log("안에는안되나?", imgArr);
+                        // console.log('안에는안되나?', imgArr);
                         const swiperText = document.createElement('p');
                         swiperSlide1[
                             index

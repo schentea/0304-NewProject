@@ -10,3 +10,14 @@ xmark.addEventListener('click', function () {
 });
 
 // 메인캐러셀
+
+// 로딩중
+// const slides = document.querySelectorAll('.swiper-slide');
+// slides.forEach((item, index) => {
+//     console.log('아템', item.innerHTML === '');
+//     if (item.innerHTML === '') {
+//         item.innerHTML = 'Loding...';
+//     } else {
+//         item.innerHTML = '';
+//     }
+// });

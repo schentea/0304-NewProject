@@ -7,14 +7,18 @@
 //     document.querySelector("#youtube_container #Main_Grid").innerHTML = youtube.map((tube) => `<div><iframe width="100%" height="100%" src="https://www.youtube.com/embed/${tube.id.videoId};controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`).join("");
 //   });
 
-document.addEventListener("scroll", () => {
-  const start = document.querySelector("#introH2");
-  const top = document.querySelector("#topWrap");
-  if (start.getBoundingClientRect().top - window.innerHeight + 50 <= 0) {
-    top.classList.remove("none");
-  } else top.classList.add("none");
+document.addEventListener('scroll', () => {
+    const start = document.querySelector('#introH2');
+    const top = document.querySelector('#topWrap');
+    if (start.getBoundingClientRect().top - window.innerHeight + 50 <= 0) {
+        top.classList.remove('none');
+    } else top.classList.add('none');
 });
 
-document.querySelector("#topBtn2").addEventListener("click", () => {
-  window.open("https://1330chat.visitkorea.or.kr:3000/#/ttalk_main/CHAT1330_160635739001093018/_0200_0200_LUIS", "_blank", "width=500,height=700");
+document.querySelector('#topBtn2').addEventListener('click', () => {
+    window.open(
+        'https://1330chat.visitkorea.or.kr:3000/#/ttalk_main/CHAT1330_160635739001093018/_0200_0200_LUIS',
+        '_blank',
+        'width=500,height=700'
+    );
 });
