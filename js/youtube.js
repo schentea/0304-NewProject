@@ -6,3 +6,11 @@
 //     console.log(youtube);
 //     document.querySelector("#youtube_container #Main_Grid").innerHTML = youtube.map((tube) => `<div><iframe width="100%" height="100%" src="https://www.youtube.com/embed/${tube.id.videoId};controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`).join("");
 //   });
+
+document.addEventListener("scroll", () => {
+  const start = document.querySelector("#introH2");
+  const top = document.querySelector("#topBtn");
+  if (start.getBoundingClientRect().top - window.innerHeight + 50 <= 0) {
+    top.classList.remove("none");
+  } else top.classList.add("none");
+});
