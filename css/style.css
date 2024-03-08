@@ -32,18 +32,21 @@ button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background: #fff;
-  color: var(--mainColor);
   font-weight: bold;
   font-size: 18px;
-  padding: 15px 20px;
   border-radius: 50%;
   box-shadow: 0 0 20px 0 rgb(223, 223, 223);
   z-index: 10;
   transition: all 0.4s;
+}
+
+#topBtn a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--mainColor);
+  padding: 15px 20px;
 }
 
 #topBtn.none {
