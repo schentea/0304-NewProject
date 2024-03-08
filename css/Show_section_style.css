@@ -39,10 +39,18 @@
   height: 50%;
   border-radius: 20px;
 }
+
+#show_left_img_div #show_left1 {
+  background: url("../image/show2.jpg");
+}
+
+#show_left_img_div #show_left2 {
+  background: url("../image/show3.png");
+}
+
 #show_left_img_div #show_left1,
 #show_left_img_div #show_left2 {
-  background: url("../image//show2.jpg");
-  background-size: 100%;
+  background-size: 110%;
   position: relative;
   display: grid;
   overflow: hidden;
@@ -151,4 +159,54 @@
   #main_img_div {
     width: 70%;
   }
+}
+@media screen and (min-idth: 1500px) {
+  #Show_section {
+    height: 100vh;
+  }
+}
+
+/* 모달창 옵션 */
+#showModal1 {
+  display: none;
+  position: fixed;
+  z-index: 11;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+#showModalIn1 {
+  width: 90%;
+  max-width: 750px;
+  height: 600px;
+  top: 100px;
+  z-index: 10;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10% auto;
+}
+
+#showModalImg {
+  width: 100%;
+  height: 200px;
+  background: url("../image//show4.PNG");
+  background-size: cover;
+  background-position: center;
+}
+
+#showModalIn1 h4 {
+  font-size: 30px;
+  margin: 15px 10px 10px;
+}
+#showModalIn1 p {
+  margin: 0 10px 5px;
+  font-size: 18px;
+}
+#showModalIn1 a {
+  color: black;
 }

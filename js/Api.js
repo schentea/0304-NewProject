@@ -13,9 +13,7 @@ $(document).ready(function () {
       const event2 = data.performData;
       console.log("이벤트 정보 2:", event2);
 
-      fetch(
-        "https://api.odcloud.kr/api/15097368/v1/uddi:4ef1ceb1-f791-4db8-9edf-d85845bee754?page=1&perPage=10000&serviceKey=shkyKsQQnrCcxyGdsoxzB5QFrCQTkxcVx0By2Qc7rECl%2BrYh5RMmi95PsHbN5Je8CCJdA7hJy69mnMGEFj0hvw%3D%3D"
-      )
+      fetch("https://api.odcloud.kr/api/15097368/v1/uddi:4ef1ceb1-f791-4db8-9edf-d85845bee754?page=1&perPage=10000&serviceKey=shkyKsQQnrCcxyGdsoxzB5QFrCQTkxcVx0By2Qc7rECl%2BrYh5RMmi95PsHbN5Je8CCJdA7hJy69mnMGEFj0hvw%3D%3D")
         .then((response) => {
           if (response.ok) {
             return response.json();
@@ -52,10 +50,7 @@ $(document).ready(function () {
                 // item2에서 필요한 속성이 정의되어 있는지 확인합니다.
                 if (item2 && item2.업소명) {
                   const itemT2 = item2.업소명.slice(0, 4);
-                  if (
-                    itemT1 === itemT2 &&
-                    !sameNameItems.some((item) => item.BZ_NM === item1.BZ_NM)
-                  ) {
+                  if (itemT1 === itemT2 && !sameNameItems.some((item) => item.BZ_NM === item1.BZ_NM)) {
                     imgArr.push(item2);
                     sameNameItems.push(item1);
                   }
@@ -69,15 +64,13 @@ $(document).ready(function () {
           const swiperSlide = Slide.slice(0, 10);
           const swiperSlide1 = Slide.slice(10, 18);
           const imgArr2 = imgArr.slice(10, 18);
-          console.log("첫번쨰", swiperSlide);
-          console.log("두번쨰", imgArr2);
+          console.log("첫번째", swiperSlide);
+          console.log("두번째", imgArr2);
 
           sameNameItems.slice(0, 10).forEach((item, index) => {
             const swiperText = document.createElement("p");
 
-            swiperSlide[
-              index
-            ].style.backgroundImage = `url('./${imgArr[index]["이미지 경로"]}/${imgArr[index]["파일명"]}')`;
+            swiperSlide[index].style.backgroundImage = `url('./${imgArr[index]["이미지 경로"]}/${imgArr[index]["파일명"]}')`;
             swiperSlide[index].style.backgroundPositon = "center";
             swiperSlide[index].style.backgroundSize = "cover";
             swiperSlide[index].appendChild(swiperText);
@@ -88,9 +81,7 @@ $(document).ready(function () {
           sameNameItems.slice(11, 20).forEach((item, index) => {
             console.log("안에는안되나?", imgArr);
             const swiperText = document.createElement("p");
-            swiperSlide1[
-              index
-            ].style.backgroundImage = `url('./${imgArr2[index]["이미지 경로"]}/${imgArr2[index]["파일명"]}')`;
+            swiperSlide1[index].style.backgroundImage = `url('./${imgArr2[index]["이미지 경로"]}/${imgArr2[index]["파일명"]}')`;
             swiperSlide1[index].style.backgroundPositon = "center";
             swiperSlide1[index].style.backgroundSize = "cover";
             swiperSlide1[index].appendChild(swiperText);
