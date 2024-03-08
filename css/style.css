@@ -103,7 +103,8 @@ button {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  background: #eee;
 }
 
 ::-webkit-scrollbar-thumb {
