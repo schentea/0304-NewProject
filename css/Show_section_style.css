@@ -50,7 +50,7 @@
 
 #show_left_img_div #show_left1,
 #show_left_img_div #show_left2 {
-  background-size: 110%;
+  background-size: cover;
   position: relative;
   display: grid;
   overflow: hidden;
