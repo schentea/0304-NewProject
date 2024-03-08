@@ -64,35 +64,38 @@ $(document).ready(function () {
             }
           });
           // console.log("test", imgArr[1]["이미지 경로"]);
-          const swiperWrapper = document.querySelector(".swiper-wrapper");
-          // console.log(swiperWrapper);
+
+          const Slide = Array.from(document.querySelectorAll(".swiper-slide"));
+          const swiperSlide = Slide.slice(0, 10);
+          const swiperSlide1 = Slide.slice(10, 18);
+          const imgArr2 = imgArr.slice(10, 18);
+          console.log("첫번쨰", swiperSlide);
+          console.log("두번쨰", imgArr2);
 
           sameNameItems.slice(0, 10).forEach((item, index) => {
-            const imgArr1 = imgArr.slice(0, 10);
-            const div = document.createElement("div");
-            const slideImg = document.createElement("img");
             const swiperText = document.createElement("p");
-            slideImg.src = `../${imgArr1[index]["이미지 경로"]}/${imgArr1[index]["파일명"]}`;
-            div.classList.add("swiper-slide");
-            swiperText.textContent = item.BZ_NM; // 예시로 업소명을 텍스트로 추가
 
-            swiperWrapper.appendChild(div);
-            div.appendChild(slideImg);
-            div.appendChild(swiperText);
+            swiperSlide[
+              index
+            ].style.backgroundImage = `url('./${imgArr[index]["이미지 경로"]}/${imgArr[index]["파일명"]}')`;
+            swiperSlide[index].style.backgroundPositon = "center";
+            swiperSlide[index].style.backgroundSize = "cover";
+            swiperSlide[index].appendChild(swiperText);
+
+            swiperText.textContent = item.BZ_NM; // 예시로 업소명을 텍스트로 추가
           });
-          const leftSlide = document.querySelector("#leftSlide");
-          sameNameItems.slice(11, 20).forEach((item, index) => {
-            const imgArr2 = imgArr.slice(11, 20);
-            const div = document.createElement("div");
-            const slideImg = document.createElement("img");
-            const swiperText = document.createElement("p");
-            slideImg.src = `/${imgArr2[index]["이미지 경로"]}/${imgArr2[index]["파일명"]}`;
-            div.classList.add("swiper-slide");
-            swiperText.textContent = item.BZ_NM; // 예시로 업소명을 텍스트로 추가
 
-            leftSlide.appendChild(div);
-            div.appendChild(slideImg);
-            div.appendChild(swiperText);
+          sameNameItems.slice(11, 20).forEach((item, index) => {
+            console.log("안에는안되나?", imgArr);
+            const swiperText = document.createElement("p");
+            swiperSlide1[
+              index
+            ].style.backgroundImage = `url('./${imgArr2[index]["이미지 경로"]}/${imgArr2[index]["파일명"]}')`;
+            swiperSlide1[index].style.backgroundPositon = "center";
+            swiperSlide1[index].style.backgroundSize = "cover";
+            swiperSlide1[index].appendChild(swiperText);
+
+            swiperText.textContent = item.BZ_NM; // 예시로 업소명을 텍스트로 추가
           });
 
           // console.log("이미지", imgArr);
