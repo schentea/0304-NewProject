@@ -64,6 +64,11 @@
     display: none;
 }
 @media screen and (max-width: 1024px) {
+    #youtube_section {
+        width: 100%;
+        height: auto;
+    
+    }
     #Main_Grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -76,22 +81,22 @@
 
     #Main_Grid div:nth-child(1) {
         grid-area: a;
-        height: 300px;
+        height: 600px;
     }
     #Main_Grid div:nth-child(2) {
         grid-area: b; /* 'b'에 해당하는 영역 추가 */
-        height: 200px;
+        height: 300px;
     }
     #Main_Grid div:nth-child(3) {
         grid-area: c;
-        height: 200px;
+        height: 300px;
     }
     #Main_Grid div:nth-child(4) {
         grid-area: d; /* 'd'에 해당하는 영역 추가 */
-        height: 200px;
+        height: 300px;
     }
     #Main_Grid div:nth-child(5) {
         grid-area: e;
-        height: 200px;
+        height: 300px;
     }
 }

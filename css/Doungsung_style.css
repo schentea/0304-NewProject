@@ -1,6 +1,7 @@
 /* 동성로 메인 섹션 */
 #dongsungro {
   width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   background: #fff;
