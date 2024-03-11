@@ -28,12 +28,6 @@ $(document).ready(function () {
       const food = data.restaurantData;
       console.log("맛집 정보:", food);
 
-      // const event = data.eventData;
-      // console.log("이벤트 정보:", event);
-
-      // const event2 = data.performData;
-      // console.log("이벤트 정보 2:", event2);
-
       fetch("https://api.odcloud.kr/api/15097368/v1/uddi:4ef1ceb1-f791-4db8-9edf-d85845bee754?page=1&perPage=10000&serviceKey=shkyKsQQnrCcxyGdsoxzB5QFrCQTkxcVx0By2Qc7rECl%2BrYh5RMmi95PsHbN5Je8CCJdA7hJy69mnMGEFj0hvw%3D%3D")
         .then((response) => {
           if (response.ok) {

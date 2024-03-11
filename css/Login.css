@@ -97,19 +97,18 @@
 }
 #loginBox {
   display: flex;
+  justify-content: space-between;
   width: 406px;
   font-size: 14px;
   margin-top: 5px;
 }
 #searchIDPW {
   display: flex;
-  width: 50%;
 }
 #searchIDPW p {
   margin-right: 5px;
 }
 #goSign {
-  width: 50%;
   text-align: right;
 }
 .naverBtn,
@@ -118,4 +117,33 @@
   height: 60px;
   font-size: 20px;
   border-radius: 13px;
+}
+
+@media screen and (max-width: 500px) {
+  .modal-content,
+  .modal-content2 {
+    width: 95%;
+  }
+  .modal-content .signupInputs,
+  .modal-content2 .loginInputs {
+    width: 100%;
+  }
+  .modal-content .signupInputs div,
+  .modal-content2 .loginInputs div {
+    width: 100%;
+  }
+  .modal-content input,
+  .modal-content2 input {
+    width: 100%;
+  }
+  .modal-content button,
+  .modal-content #signSubmitBtn,
+  .modal-content2 button,
+  .modal-content2 #loginSubmitBtn {
+    width: 100%;
+  }
+
+  .modal-content2 #loginBox {
+    width: 100%;
+  }
 }
