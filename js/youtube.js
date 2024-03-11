@@ -67,13 +67,13 @@ $(".video_modal_popup-closer").click(function () {
     $(".video_modal_popup").removeClass("reveal");
 });
 
-const title = document.getElementById("youtube_title");
-const grid = document.getElementById("Main_Grid");
-const section = document.getElementById("youtube_section");
+// const title = document.getElementById("youtube_title");
+// const grid = document.getElementById("Main_Grid");
+// const section = document.getElementById("youtube_section");
 
-if (grid.getElementsByTagName("a").length === 0) {
-  // title의 display 속성을 none으로 설정
-  title.style.display = "none";
-  // section의 높이를 0으로 설정
-  section.style.height = "0";
-}
+// if (grid.getElementsByTagName("a").length === 0) {
+//   // title의 display 속성을 none으로 설정
+//   title.style.display = "none";
+//   // section의 높이를 0으로 설정
+//   section.style.height = "0";
+// }
