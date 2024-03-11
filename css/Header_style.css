@@ -18,6 +18,7 @@ header nav {
   align-items: center;
   padding: 10px 30px;
   backdrop-filter: blur(3px);
+  font-weight: 500;
 }
 
 #logo {
@@ -35,7 +36,7 @@ nav #logo img {
 /* 보이는 나브안에 있는 GNB_MENU */
 .gnb_menu {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   margin: 0;
   align-items: center;
 }
@@ -132,19 +133,16 @@ video {
   border-radius: 20px;
 }
 
-@media screen and (max-width: 768px) {
-}
 @media screen and (max-width: 1024px) {
   /* 보이는 나브 */
   #view_nav {
     background-color: rgba(255, 255, 255, 0.7);
-    width: 50%;
+    width: 250px;
     height: 100%;
     position: fixed;
     right: -100%;
     top: 0;
     flex-direction: column;
-    font-size: 24px;
     font-weight: bold;
     overflow-x: hidden;
     transition: right 0.9s ease;
@@ -166,7 +164,7 @@ video {
     right: 10px;
   }
   #rogin li {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
   }
   .rogin {
@@ -181,11 +179,15 @@ video {
     right: 50px;
     text-align: end;
   }
+  .gnb_menu li {
+    font-size: 24px;
+  }
   /* 로고 */
   #logo {
     display: none;
   }
 }
+
 @media screen and (min-width: 1024px) {
   #hidden_nav {
     display: none;
