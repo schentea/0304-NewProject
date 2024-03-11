@@ -81,8 +81,7 @@ $(document).ready(function () {
           const imgArr2 = imgArr.slice(10, 18);
           console.log("두번째", imgArr2);
           const slides = document.querySelectorAll(".swiper-slide");
-          slides.forEach((item, index) => {
-            console.log("아템", item.innerHTML === "");
+          slides.forEach((item) => {
             if (item.innerHTML === "") {
               item.innerHTML = "Loding...";
             } else {
