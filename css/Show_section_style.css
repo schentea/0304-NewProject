@@ -18,13 +18,14 @@
 }
 #show_title_div h3::before {
   position: absolute;
-  inset: 24px 105px 0 auto;
+  inset: 18px 190px 0 auto;
   content: "";
   display: inline-block;
   height: 2px;
   width: 160px;
   background-color: black;
 }
+
 #main_img_div {
   width: 100%;
   height: 90%;
@@ -124,6 +125,12 @@
   margin: 30px auto;
   border-radius: 20px;
 }
+@media screen and (min-width: 600px) {
+  #show_title_div h3::before {
+    inset: 20px 220px 0 auto;
+    width: 160px;
+  }
+}
 @media screen and (min-width: 768px) {
   #main_img_div {
     display: flex;
@@ -162,7 +169,7 @@
     width: 70%;
   }
 }
-@media screen and (min-idth: 1500px) {
+@media screen and (min-width: 1500px) {
   #Show_section {
     height: 100vh;
   }

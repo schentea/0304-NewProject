@@ -54,6 +54,9 @@ article div {
     max-width: 1300px;
     margin-top: 20px;
   }
+}
+
+@media screen and (min-width: 1200px) {
   #dongsungro {
     height: 100vh;
   }
