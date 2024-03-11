@@ -97,7 +97,7 @@
 }
 #loginBox {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 406px;
   font-size: 14px;
   margin-top: 5px;
