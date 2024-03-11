@@ -8,7 +8,7 @@ document.addEventListener("scroll", () => {
   }
 
   for (let p of document.querySelectorAll(".blurImg")) {
-    if (p.getBoundingClientRect().top - window.innerHeight + 200 <= 0) {
+    if (p.getBoundingClientRect().top - window.innerHeight + 150 <= 0) {
       p.classList.remove("scroBlur");
     } else p.classList.add("scroBlur");
   }
