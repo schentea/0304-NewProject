@@ -13,9 +13,7 @@
 #Good_foodlist #foodTitWrap * {
     text-align: start;
 }
-#Good_foodlist #foodTitWrap h2 {
-    margin: 0 0 0 10px;
-}
+
 #Good_foodlist #foodTitWrap h3 {
     position: relative;
 }
