@@ -5,7 +5,7 @@ var modal = document.querySelector("#myModal");
 var btn = document.querySelector("#openModalBtn");
 
 // 모달 닫기 버튼 가져오기
-var span = document.getElementsByClassName("close")[1];
+var span = document.getElementsByClassName("close")[0];
 
 // 모달 열기 버튼을 클릭하면 모달을 보이게 함
 btn.onclick = function () {
