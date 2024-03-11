@@ -23,6 +23,7 @@
 }
 #Main_Grid a {
   cursor: pointer;
+  padding: 8px;
 }
 #Main_Grid a:nth-child(1) {
   grid-area: a;
@@ -67,7 +68,6 @@
 #Main_Grid img {
   width: 100%;
   height: 100%;
-  margin: 5px;
   object-fit: cover;
   object-position: center;
 }
@@ -104,8 +104,34 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
   z-index: 9999999;
+}
+.popupModalVideo a {
+  position: relative;
+  display: inline-block;
+  border-radius: 20px;
+}
+
+.popupModalVideo a img {
+  transition: transform 0.3s ease;
+  border-radius: 20px;
+}
+
+.popupModalVideo a:hover img {
+  transform: scale(1.03);
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.popupModalVideo a:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  transition-duration: 0.3s;
 }
 @media screen and (max-width: 1024px) {
   @media screen and (max-width: 1024px) {
