@@ -23,7 +23,7 @@
 }
 #Main_Grid a {
   cursor: pointer;
-  padding: 5px;
+  padding: 8px;
 }
 #Main_Grid a:nth-child(1) {
   grid-area: a;
@@ -118,6 +118,7 @@
 .popupModalVideo a:hover img {
   transform: scale(1.05);
   overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .popupModalVideo a:hover::before {
@@ -127,7 +128,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-
   z-index: 3;
   transition-duration: 0.3s;
 }
