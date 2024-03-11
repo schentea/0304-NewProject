@@ -22,7 +22,7 @@
   content: "";
   display: inline-block;
   height: 2px;
-  width: 160px;
+  width: 130px;
   background-color: black;
 }
 
@@ -128,7 +128,7 @@
 @media screen and (min-width: 600px) {
   #show_title_div h3::before {
     inset: 20px 220px 0 auto;
-    width: 160px;
+    width: 145px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -262,6 +262,9 @@
 
 .showModalIn a {
   color: black;
+}
+.showModalIn a:hover {
+  color: var(--mainColor);
 }
 
 .showModalList {

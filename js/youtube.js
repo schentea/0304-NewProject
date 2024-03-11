@@ -3,7 +3,6 @@ fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=
   .then((data) => {
     const words = ["위험", "동성로 말고", "25년", "또간집", "초라해진", "흉물", "클럽", "2007년", "밤거리", "망함?", "판슥", "랜덤플레이댄스", "탄핵", "쳐직", "이준석", "핫플🔥?!", "3차 먹방", "임영웅", "당일치기 코스 추천♥️"];
     const youtube = data?.items?.filter((item) => !words.some((keyword) => item.snippet.title.includes(keyword))).slice(0, 5);
-    console.log(youtube);
     document.querySelector("#youtube_container #Main_Grid").innerHTML = youtube.map((tube) => `<a data-video="${tube.id.videoId}"><img src="${tube.snippet.thumbnails.high.url}" /></a>`).join("");
 
     // 클릭 이벤트 바인딩
