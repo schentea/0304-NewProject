@@ -1,126 +1,145 @@
 :root {
-    --mainColor: #eb102c;
+  --mainColor: #eb102c;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'SCoreDream';
-    word-break: keep-all;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "SCoreDream";
+  word-break: keep-all;
+  scroll-behavior: smooth;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 h2 {
-    font-size: 40px;
+  font-size: 40px;
 }
 h3 {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .redTxt {
-    color: var(--mainColor);
+  color: var(--mainColor);
+}
+
+.scroHidden {
+  opacity: 0.2;
+  transform: translateY(30px);
+  transition: transform 0.5s;
+}
+
+.scroVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.blurImg {
+  transition: all 1s;
+}
+
+.scroBlur {
+  filter: blur(5px);
 }
 
 #topWrap {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 10;
-    transition: all 0.4s;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  transition: all 0.4s;
 }
 
 #topWrap.none {
-    right: -100px;
+  right: -100px;
 }
 
 .topBtn {
-    font-weight: bold;
-    font-size: 18px;
-    border-radius: 50%;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .topBtn a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 20px;
 }
 
 #topBtn1 {
-    background: #fff;
-    margin-bottom: 20px;
+  background: #fff;
+  margin-bottom: 20px;
 }
 
 #topBtn1 a {
-    color: var(--mainColor);
-    font-size: 20px;
+  color: var(--mainColor);
+  font-size: 20px;
 }
 #topBtn2 {
-    background: #000;
-    color: white;
-    line-height: 22px;
-    flex-direction: column;
-    cursor: pointer;
+  background: #000;
+  color: white;
+  line-height: 22px;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 #topBtn2 p {
-    font-size: 12px;
-    margin: 0;
+  font-size: 12px;
+  margin: 0;
 }
 
 @media screen and (min-width: 600px) {
-    h2 {
-        font-size: 60px;
-    }
-    h3 {
-        font-size: 35px;
-    }
+  h2 {
+    font-size: 60px;
+  }
+  h3 {
+    font-size: 35px;
+  }
 }
 
 @media screen and (max-width: 700px) {
-    #topWrap {
-        display: none;
-    }
+  #topWrap {
+    display: none;
+  }
 }
 
 .modalAni {
-    animation: modalZoom 0.3s;
+  animation: modalZoom 0.3s;
 }
 
 @keyframes modalZoom {
-    from {
-        transform: scale(1.1);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+  from {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
-    background: #eee;
+  width: 8px;
+  background: #eee;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--mainColor);
-    border-radius: 10px;
+  background: var(--mainColor);
+  border-radius: 10px;
 }

@@ -116,20 +116,20 @@
     <section id="dongsungro" class="sections">
       <article>
         <!-- 동성로 소개 타이틀 -->
-        <div>
+        <div class="scroHidden">
           <h3 style="color: #bbb; font-size: 25px"><span class="redTxt">젊음</span>과 <span class="redTxt">열정</span>의 거리</h3>
           <h2 id="introH2">동성로를 소개합니다</h2>
         </div>
         <!-- 동성로 사진 -->
         <div id="dongsungro_img_div">
-          <img src="./image/dongsungro.png" alt="" />
+          <img class="blurImg scroBlur" src="./image/dongsungro.png" alt="동성로 메인 이미지" />
         </div>
         <!-- 동성로 소개 글 -->
-        <div class="dongsungroTxt">
+        <div class="dongsungroTxt scroHidden">
           <h4>대구의 중심가</h4>
           <p>대구의 간판이자 중심삼권으로 동성로는 젊음의 열기가 느껴진다. 서울에 명동이 있다면 대구는 동성로가 있다고 얘기할 수 있는 만큼 잘 조성 되어 있는 곳이다. 공공디자인 사업으로 '테마가 있고 걷고 싶은 거리' 가 생기면서 더 많은 사람들이 동성로를 찾는다.</p>
         </div>
-        <div class="dongsungroTxt">
+        <div class="dongsungroTxt scroHidden">
           <h4>문화와 축제의 거리, 동성로</h4>
           <p>동성로에서는 매년 5월 지역 문화와 지역 산업이 함께 호흡하는 동성로 축제도 개최하고 있다. 1990년 첫 막을 올린 이 축제는 21세기에 들어서면서 대구·경북 젊음의 거리 동성로에 방문한 여러 나라 사람들에게 한국문화의 전통성과 우수성을 알리고 있다.</p>
         </div>
@@ -163,8 +163,8 @@
       <div id="container">
         <!-- 제목 -->
         <div id="foodTitWrap">
-          <h3><span class="redTxt">맛집</span> 핫플레이스</h3>
-          <h2>놓치면 안될 <span class="redTxt">식당 투어</span></h2>
+          <h3 class="scroHidden"><span class="redTxt">맛집</span> 핫플레이스</h3>
+          <h2 class="scroHidden">놓치면 안될 <span class="redTxt">식당 투어</span></h2>
         </div>
 
         <!-- 위쪽 공간 -->
@@ -290,21 +290,21 @@
       <div id="Show_container">
         <!-- Show 타이틀 -->
         <div id="show_title_div">
-          <h3><span class="redTxt">문화</span>와의 만남</h3>
-          <h2>기억에 남을 <span class="redTxt">공연·전시</span></h2>
+          <h3 class="scroHidden"><span class="redTxt">문화</span>와의 만남</h3>
+          <h2 class="scroHidden">기억에 남을 <span class="redTxt">공연·전시</span></h2>
         </div>
         <!-- 왼쪽 이미지 -->
-        <div id="main_img_div">
+        <div id="main_img_div" class="scroHidden">
           <div id="show_left_img_div">
             <!-- 위 -->
-            <div id="show_left1" class="uip">
+            <div id="show_left1" class="uip blurImg scroBlur">
               <p class="showImgName showLeName">아트플러스씨어터</p>
               <div id="showBlack">
                 <p>공연 목록 보러가기 <i class="fa-solid fa-chevron-right"></i></p>
               </div>
             </div>
             <!-- 아래 -->
-            <div id="show_left2" class="uip">
+            <div id="show_left2" class="uip blurImg scroBlur">
               <p class="showImgName showLeName">라이크디즈 위드</p>
               <div id="showBlack">
                 <p>공연 목록 보러가기 <i class="fa-solid fa-chevron-right"></i></p>
@@ -312,7 +312,7 @@
             </div>
           </div>
           <!-- 오른쪽 이미지 -->
-          <div id="show_right_img_div">
+          <div id="show_right_img_div" class="blurImg scroBlur">
             <p class="showImgName">대구 콘서트하우스</p>
             <div id="showBlack">
               <p>공연 목록 보러가기 <i class="fa-solid fa-chevron-right"></i></p>
@@ -383,8 +383,8 @@
       <div id="youtube_container">
         <!-- 유튜브 타이틀 -->
         <div id="youtube_title">
-          <h3>트렌드를 <span class="redTxt">한눈에!</span></h3>
-          <h2>
+          <h3 class="scroHidden">트렌드를 <span class="redTxt">한눈에!</span></h3>
+          <h2 class="scroHidden">
             <span class="redTxt"><i class="fa-brands fa-youtube" style="color: #eb102c"></i>유튜브</span>로 동성로 살펴보기
           </h2>
         </div>
@@ -501,6 +501,8 @@
     <script src="./js/Sign.js"></script>
     <script src="./js/Login.js"></script>
     <script src="./js/Api.js" type="module"></script>
+    <!-- 스크롤 애니메이션 -->
+    <script src="./js/wheelAni.js"></script>
     <!-- <script src="./js/wheel.js"></script> -->
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
