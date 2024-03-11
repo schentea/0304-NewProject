@@ -1,102 +1,144 @@
 #youtube_section {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    background: #eee;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 #youtube_container {
-    width: 100%;
-    height: 100%;
-    max-width: 1300px;
-    background: #eee;
-    padding: 10px;
+  width: 100%;
+  height: 100%;
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-#youtube_container div {
-    width: auto;
-    height: auto;
-}
-/* 유튜브 섹션의 타이틀 */
 #youtube_container h2 {
-    text-align: center;
-    margin: 50px;
+  text-align: center;
 }
 #Main_Grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  grid-template-areas:
+    "a a b c"
+    "a a d e";
+}
+#Main_Grid a {
+  cursor: pointer;
+}
+#Main_Grid a:nth-child(1) {
+  grid-area: a;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+}
+#Main_Grid a:nth-child(2) {
+  grid-area: b;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+}
+#Main_Grid a:nth-child(3) {
+  grid-area: c;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+}
+#Main_Grid a:nth-child(4) {
+  grid-area: d;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+}
+#Main_Grid a:nth-child(5) {
+  grid-area: e;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+}
+#Main_Grid img {
+  width: 100%;
+  height: 100%;
+  margin: 5px;
+  object-fit: cover;
+  object-position: center;
+}
+/* 유튜브 */
+.video_modal_popup.reveal {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999;
+}
 
-    grid-template-areas:
-        'a a b c'
-        'a a b c'
-        'a a d e'
-        'a a d e';
-}
-.fa-b:before {
-    font-family: Arial; /* your font family here! */
-    font-weight: bold;
-    content: 'B';
-}
-#Main_Grid div {
-    padding: 5px;
+.video_modal_popup .video-wrapper {
+  position: relative;
+  width: 80%;
+  padding-bottom: 45%;
+  z-index: 99999999;
 }
 
-#Main_Grid div:nth-child(1) {
-    grid-area: a;
-    height: 600px;
+.video_modal_popup .video-wrapper iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
-#Main_Grid div:nth-child(2) {
-    grid-area: b;
-    height: 300px;
-}
-#Main_Grid div:nth-child(3) {
-    grid-area: c;
-    height: 300px;
-}
-#Main_Grid div:nth-child(4) {
-    grid-area: d;
-    height: 300px;
-}
-#Main_Grid div:nth-child(5) {
-    grid-area: e;
-    height: 300px;
-}
-#CarouselButton {
-    display: none;
+
+.video_modal_popup.reveal .video_modal_popup-closer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999999;
 }
 @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     #youtube_section {
-        width: 100%;
-        height: auto;
-    
+      height: auto;
     }
     #Main_Grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-areas:
-            'a a a a'
-            'a a a a'
-            'b b c c'
-            'd d e e';
+      display: grid;
+      grid-template-areas:
+        "a a a a"
+        "a a a a"
+        "b b c c"
+        "d d e e";
     }
 
-    #Main_Grid div:nth-child(1) {
-        grid-area: a;
-        height: 600px;
+    #Main_Grid a:nth-child(1) {
+      grid-area: a;
     }
-    #Main_Grid div:nth-child(2) {
-        grid-area: b; /* 'b'에 해당하는 영역 추가 */
-        height: 300px;
+
+    #Main_Grid a:nth-child(2) {
+      grid-area: b;
     }
-    #Main_Grid div:nth-child(3) {
-        grid-area: c;
-        height: 300px;
+
+    #Main_Grid a:nth-child(3) {
+      grid-area: c;
     }
-    #Main_Grid div:nth-child(4) {
-        grid-area: d; /* 'd'에 해당하는 영역 추가 */
-        height: 300px;
+
+    #Main_Grid a:nth-child(4) {
+      grid-area: d;
     }
-    #Main_Grid div:nth-child(5) {
-        grid-area: e;
-        height: 300px;
+
+    #Main_Grid a:nth-child(5) {
+      grid-area: e;
     }
+  }
 }
