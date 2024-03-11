@@ -109,10 +109,12 @@
 .popupModalVideo a {
   position: relative;
   display: inline-block;
+  border-radius: 20px;
 }
 
 .popupModalVideo a img {
   transition: transform 0.3s ease;
+  border-radius: 20px;
 }
 
 .popupModalVideo a:hover img {
