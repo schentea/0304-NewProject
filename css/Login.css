@@ -104,13 +104,11 @@
 }
 #searchIDPW {
   display: flex;
-  width: 50%;
 }
 #searchIDPW p {
   margin-right: 5px;
 }
 #goSign {
-  width: 50%;
   text-align: right;
 }
 .naverBtn,
@@ -147,9 +145,5 @@
 
   .modal-content2 #loginBox {
     width: 100%;
-  }
-  .modal-content2 #loginBox #searchIDPW,
-  .modal-content2 #loginBox #goSign {
-    width: auto;
   }
 }
