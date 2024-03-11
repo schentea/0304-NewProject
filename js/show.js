@@ -62,30 +62,44 @@ fetchData()
 
     <p class="showTit">${a.subject.split(" - ")[0]}</p>
     <div class="showDate">
-      <p class="showStart">${a.start_date}</p>
+      <p class="showStart">📅 ${a.start_date.slice(2)}</p>
       ~
-      <p class="showEnd">${a.end_date}</p>
+      <p class="showEnd">${a.end_date.slice(2)}</p>
     </div>
   </li>`
       )
       .join("");
-    document.querySelector("#showModalList1").innerHTML = art;
+    document.querySelector("#showModalList3").innerHTML = art;
 
     let eve = eventData.filter((a) => a.place.includes("라이크디즈"));
-    console.log(eve);
     eve = eve
       .map(
         (a) => `<li>
           <p class="showTit">${a.subject.split("점_")[1] || a.subject}</p>
           <div class="showDate">
-            <p class="showStart">${a.start_date.slice}</p>
+            <p class="showStart">📅 ${a.start_date.slice(2)}</p>
             ~
-            <p class="showEnd">${a.end_date}</p>
+            <p class="showEnd">${a.end_date.slice(2)}</p>
           </div>
         </li>`
       )
       .join("");
     document.querySelector("#showModalList2").innerHTML = eve;
+
+    let cons = performData.filter((a) => a.place.includes("콘서트하우스"));
+    cons = cons
+      .map(
+        (a) => `<li>
+    <p class="showTit">${a.subject}</p>
+    <div class="showDate">
+      <p class="showStart">📅 ${a.start_date.slice(2)}</p>
+      ~
+      <p class="showEnd">${a.end_date.slice(2)}</p>
+    </div>
+  </li>`
+      )
+      .join("");
+    document.querySelector("#showModalList1").innerHTML = cons;
   })
   .catch((error) => {
     console.error(error);
