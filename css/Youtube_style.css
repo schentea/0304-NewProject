@@ -3,6 +3,7 @@
   height: 100vh;
   display: flex;
   justify-content: center;
+  background: #eee;
 }
 #youtube_container {
   width: 100%;
@@ -11,7 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0 0;
+  padding: 80px 0 0;
 }
 #youtube_container h2 {
   text-align: center;
