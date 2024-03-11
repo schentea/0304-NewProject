@@ -164,6 +164,7 @@
     position: absolute;
     top: 100px;
     right: 0;
+    width: 350px;
   }
   #main_img_div {
     width: 70%;
