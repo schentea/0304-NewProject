@@ -87,7 +87,6 @@ fetchData()
     document.querySelector("#showModalList2").innerHTML = eve;
     let today = new Date().toISOString().split("T")[0];
     let cons = performData.filter((a) => a.place.includes("콘서트하우스") && a.end_date >= today);
-    console.log(cons);
     cons = cons
       .map(
         (a) => `<li>
