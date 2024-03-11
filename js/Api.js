@@ -79,8 +79,7 @@ $(document).ready(function () {
           const swiperSlide = Slide.slice(0, 10);
           const swiperSlide1 = Slide.slice(10, 18);
           const imgArr2 = imgArr.slice(10, 18);
-          console.log("첫번쨰", swiperSlide);
-          console.log("두번쨰", imgArr2);
+          console.log("두번째", imgArr2);
           const slides = document.querySelectorAll(".swiper-slide");
           slides.forEach((item, index) => {
             console.log("아템", item.innerHTML === "");
