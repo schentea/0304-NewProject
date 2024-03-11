@@ -1,298 +1,301 @@
 #Show_section {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    background: #fff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: #fff;
 }
 #Show_container {
-    width: 100%;
-    max-width: 1300px;
-    height: 100%;
-    padding: 10px;
+  width: 100%;
+  max-width: 1300px;
+  height: 100%;
+  padding: 10px;
 }
 /* Show 타이틀 */
 #show_title_div h3 {
-    text-align: end;
-    position: relative;
+  text-align: end;
+  position: relative;
 }
 #show_title_div h3::before {
-    position: absolute;
-    inset: 13px 130px 0 auto;
-    content: '';
-    display: inline-block;
-    height: 2px;
-    width: 100px;
-    background-color: black;
+  position: absolute;
+  inset: 13px 130px 0 auto;
+  content: "";
+  display: inline-block;
+  height: 2px;
+  width: 100px;
+  background-color: black;
 }
 
 #main_img_div {
-    width: 100%;
-    height: 90%;
+  width: 100%;
+  height: 90%;
 }
 #show_title_div h2 {
-    text-align: end;
+  text-align: end;
 }
 
 /* 이미지  */
 #show_left_img_div {
-    width: 100%;
-    height: 50%;
-    border-radius: 20px;
+  width: 100%;
+  height: 50%;
+  border-radius: 20px;
 }
 
 #show_left_img_div #show_left1 {
-    background: url('../image/show2.jpg');
+  background: url("../image/show2.jpg");
 }
 
 #show_left_img_div #show_left2 {
-    background: url('../image/show3.png');
+  background: url("../image/show3.png");
 }
 
 #show_left_img_div #show_left1,
 #show_left_img_div #show_left2 {
-    background-size: cover;
-    position: relative;
-    display: grid;
-    overflow: hidden;
-    cursor: pointer;
+  background-size: cover;
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 #show_right_img_div {
-    position: relative;
-    width: 90%;
-    max-width: 600px;
-    height: 28%;
-    border-radius: 20px;
-    margin: 60px auto;
-    overflow: hidden;
-    background: url('../image/show1.jpg');
-    background-size: cover;
-    background-position: 75% 50%;
-    display: grid;
-    cursor: pointer;
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  height: 28%;
+  border-radius: 20px;
+  margin: 60px auto;
+  overflow: hidden;
+  background: url("../image/show1.jpg");
+  background-size: cover;
+  background-position: 75% 50%;
+  display: grid;
+  cursor: pointer;
 }
 
 .showImgName {
-    color: white;
-    font-weight: bold;
-    font-size: 35px;
-    text-shadow: 2px 2px 10px gray;
-    margin: 20px 0 0 25px;
-    z-index: 5;
+  color: white;
+  font-weight: bold;
+  font-size: 35px;
+  text-shadow: 2px 2px 10px gray;
+  margin: 20px 0 0 25px;
+  z-index: 5;
 }
 
 .showLeName {
-    font-size: 30px;
-    padding: 10px 0 0 0;
+  font-size: 30px;
+  padding: 10px 0 0 0;
 }
 
 #showBlack {
-    display: grid;
+  display: grid;
 }
 #showBlack p {
-    justify-self: end;
-    align-self: flex-end;
-    color: white;
-    font-weight: 500;
-    margin: 0 40px 20px;
-    font-size: 22px;
-    transform: translateY(50px);
-    transition: transform 0.3s;
-    position: relative;
+  justify-self: end;
+  align-self: flex-end;
+  color: white;
+  font-weight: 500;
+  margin: 0 40px 20px;
+  font-size: 22px;
+  transform: translateY(50px);
+  transition: transform 0.3s;
+  position: relative;
 }
 
 #show_left1:hover #showBlack,
 #show_left2:hover #showBlack,
 #show_right_img_div:hover #showBlack {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(2px);
-    transition: all 0.2s;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  transition: all 0.2s;
 }
 #show_left1:hover #showBlack p,
 #show_left2:hover #showBlack p,
 #show_right_img_div:hover #showBlack p {
-    transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 .uip {
-    max-width: 600px;
-    width: 90%;
-    height: 50%;
-    background: red;
-    margin: 30px auto;
-    border-radius: 20px;
+  max-width: 600px;
+  width: 90%;
+  height: 50%;
+  background: red;
+  margin: 30px auto;
+  border-radius: 20px;
 }
 @media screen and (min-width: 600px) {
-    #show_title_div h3::before {
-        inset: 20px 220px 0 auto;
-        width: 145px;
-    }
+  #show_title_div h3::before {
+    inset: 20px 220px 0 auto;
+    width: 145px;
+  }
 }
 @media screen and (min-width: 768px) {
-    #main_img_div {
-        display: flex;
-    }
-    #show_left_img_div {
-        width: 100%;
-        height: 70%;
-        margin: 10px;
-    }
-    #show_right_img_div {
-        width: 100%;
-        height: 70%;
-        margin: 60px 10px 10px;
-    }
-    #show_title_div h2 {
-        margin-right: 10px;
-    }
-    #show_left_img_div {
-        margin-top: 100px;
-    }
+  #main_img_div {
+    display: flex;
+  }
+  #show_left_img_div {
+    width: 100%;
+    height: 70%;
+    margin: 10px;
+  }
+  #show_right_img_div {
+    width: 100%;
+    height: 70%;
+    margin: 60px 10px 10px;
+  }
+  #show_title_div h2 {
+    margin-right: 10px;
+  }
+  #show_left_img_div {
+    margin-top: 100px;
+  }
 }
 @media screen and (min-width: 1024px) {
-    #Show_container {
-        position: relative;
-        display: flex;
-    }
-    #main_img_div {
-        margin-top: 5%;
-    }
-    #show_title_div {
-        position: absolute;
-        top: 100px;
-        right: 0;
-        width: 350px;
-    }
-    #main_img_div {
-        width: 70%;
-    }
+  #Show_container {
+    position: relative;
+    display: flex;
+  }
+  #main_img_div {
+    margin-top: 5%;
+  }
+  #show_title_div {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 350px;
+  }
+  #main_img_div {
+    width: 70%;
+  }
 }
 @media screen and (min-width: 1500px) {
-    #Show_section {
-        height: 100vh;
-    }
+  #Show_section {
+    height: 100vh;
+  }
 }
 
 /* 모달창 옵션 */
 .showModal {
-    position: fixed;
-    z-index: 11;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
-    align-items: center;
+  position: fixed;
+  z-index: 11;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  align-items: center;
 }
 
 #showModal1,
 #showModal2,
 #showModal3 {
-    display: none;
+  display: none;
 }
 
 .showModalIn {
-    width: 90%;
-    max-width: 750px;
-    height: 600px;
-    top: 100px;
-    z-index: 10;
-    background: #fff;
-    border-radius: 10px;
-    overflow-y: auto;
-    margin: 0 auto;
+  width: 90%;
+  max-width: 750px;
+  height: 600px;
+  top: 100px;
+  z-index: 10;
+  background: #fff;
+  border-radius: 10px;
+  overflow-y: auto;
+  margin: 0 auto;
 }
 
 .showModalIn::-webkit-scrollbar {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .showModalImg {
-    width: 100%;
-    height: 200px;
-    display: grid;
+  width: 100%;
+  height: 200px;
+  display: grid;
 }
 
 #showModalImg1 {
-    background: url('../image/show4.PNG');
-    background-size: cover;
-    background-position: center;
+  background: url("../image/show4.PNG");
+  background-size: cover;
+  background-position: center;
 }
 
 #showModalImg2 {
-    background: url('../image/show6.PNG');
-    background-size: cover;
-    background-position: center;
+  background: url("../image/show6.PNG");
+  background-size: cover;
+  background-position: center;
 }
 
 #showModalImg3 {
-    background: url('../image/show5.jpg');
-    background-size: cover;
-    background-position: center;
+  background: url("../image/show5.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .showModalImg > div {
-    justify-self: end;
-    padding: 10px;
-    cursor: pointer;
+  justify-self: end;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .showModalImg i {
-    background: #fff;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .showModalIn h4 {
-    font-size: 30px;
-    margin: 20px 0 10px 20px;
+  font-size: 30px;
+  margin: 20px 0 10px 20px;
 }
 .showModalIn p {
-    margin: 0 20px 5px;
-    font-size: 18px;
+  margin: 0 20px 5px;
+  font-size: 18px;
 }
 
 .showModalIn a {
-    color: black;
+  color: black;
 }
 .showModalIn a:hover {
-    color: var(--mainColor);
+  color: var(--mainColor);
 }
 
 .showModalList {
-    margin: 30px auto 20px;
-    padding: 0;
-    display: grid;
-    max-width: 600px;
+  margin: 30px auto 20px;
+  padding: 0;
+  display: grid;
+  max-width: 600px;
 }
 
 .showModalList .spinner-border {
-    justify-self: center;
+  justify-self: center;
 }
 
 .showModalList li {
-    text-align: left;
-    margin: 0 10px 40px;
-    border-left: 2px solid var(--mainColor);
+  text-align: left;
+  margin: 0 10px 40px;
+  border-left: 3px solid var(--mainColor);
 }
 
 .showModalList li .showDate {
-    display: flex;
+  display: flex;
+}
+.showModalList li > p {
+  font-weight: 500;
 }
 
 @media screen and (min-width: 650px) {
-    .showModalImg {
-        height: 300px;
-    }
-    .showModalIn {
-        height: 700px;
-    }
+  .showModalImg {
+    height: 300px;
+  }
+  .showModalIn {
+    height: 700px;
+  }
 }

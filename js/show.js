@@ -90,7 +90,7 @@ fetchData()
     cons = cons
       .map(
         (a) => `<li>
-    <p class="showTit">${a.subject}</p>
+    <p class="showTit">${a.subject.replace(/ \- 대구|\(대구\)|－대구/g, "")}</p>
     <div class="showDate">
       <p class="showStart">📅 ${a.start_date.slice(2)}</p>
       ~
