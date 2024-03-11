@@ -116,7 +116,7 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 #foodModal {
-  display: block;
+  display: none;
   position: fixed;
   z-index: 11;
   left: 0;
