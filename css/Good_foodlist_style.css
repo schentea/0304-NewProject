@@ -24,7 +24,7 @@
   display: inline-block;
   height: 2px;
   width: 100px;
-  background-color: black;
+  background-color: var(--mainBlack);
 }
 
 #Good_foodlist h4 {
