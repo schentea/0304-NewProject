@@ -13,6 +13,9 @@
     word-break: keep-all;
     scroll-behavior: smooth;
 }
+#gnb_menu {
+    padding-left: 0;
+}
 
 a {
     text-decoration: none;
