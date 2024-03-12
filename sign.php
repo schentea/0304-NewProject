@@ -22,7 +22,7 @@ if ($conn->connect_error) {
 }
 
 // 매개변수화된 SQL 쿼리 생성
-$sql = "INSERT INTO users (username, password, name) VALUES (?, ?, ?)";
+$sql = "INSERT INTO userInfo (uid, pw, name) VALUES (?, ?, ?)";
 
 // SQL 쿼리를 준비합니다.
 $stmt = $conn->prepare($sql);

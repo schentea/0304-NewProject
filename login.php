@@ -23,7 +23,7 @@ if ($conn->connect_error) {
 }
 
 // 매개변수화된 SQL 쿼리 생성
-$sql = "SELECT * FROM users WHERE username = ?";
+$sql = "SELECT * FROM userInfo WHERE uid = ?";
 
 // SQL 쿼리를 준비합니다.
 $stmt = $conn->prepare($sql);
@@ -41,7 +41,7 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     // 사용자가 존재하는 경우, 비밀번호를 확인합니다.
     $row = $result->fetch_assoc();
-    if ($password2 == $row['password']) {
+    if ($password2 == $row['pw']) {
         // 세션에 사용자명 저장
         $_SESSION['username'] = $username2;
         // JSON 응답으로 반환
