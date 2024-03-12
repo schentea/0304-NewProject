@@ -41,7 +41,10 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     // 사용자가 존재하는 경우, 비밀번호를 확인합니다.
     $row = $result->fetch_assoc();
-    if ($password2 == $row['pw']) {
+    // 데이터베이스에 저장된 해시된 비밀번호를 가져옵니다.
+    $stored_hashed_password = $row['pw'];
+    // 사용자가 제출한 비밀번호와 데이터베이스에 저장된 해시된 비밀번호를 비교합니다.
+    if (password_verify($password2, $stored_hashed_password)) {
         // 세션에 사용자명 저장
         $_SESSION['username'] = $username2;
         // JSON 응답으로 반환
