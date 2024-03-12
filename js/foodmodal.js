@@ -9,7 +9,7 @@ let div = document.querySelectorAll(".swiper-slide");
 // 버튼을 클릭하면 모달 열기
 div.forEach(function (item) {
   item.onclick = function () {
-    foodmodal.style.display = "block";
+    foodmodal.style.display = "flex";
   };
 });
 

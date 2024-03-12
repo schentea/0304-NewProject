@@ -57,9 +57,9 @@
         <!-- 피시 나브 안에 우측 로그인부분 -->
         <div>
           <ul id="rogin" class="gnb_menu">
-            <li id="loginButton">로그인</li>
+            <li id="loginButton"><a href="login.html" target="_blank">로그인</a></li>
             <span id="between"><span>|</span></span>
-            <li id="openModalBtn">회원가입</li>
+            <li id="openModalBtn"><a href="sign.html" target="_blank">회원가입</a></li>
           </ul>
         </div>
       </nav>
@@ -137,24 +137,25 @@
     </section>
     <!-- 맛집 목록 -->
     <section id="Good_foodlist" class="sections">
+      <!-- 맛집 모달 -->
       <div id="foodModal" class="foodmodal">
         <div class="foodmodal-content">
           <span class="foodclose"><i class="fa-regular fa-circle-xmark"></i></span>
             <div class="imgbox"></div>
             <div class="textbox">
-                <h1 id="foodname"></h2>
+                <h5 id="foodname"></h2>
                 <p id="foodname2"></p>
             </div>
             <div class="textbox2">
-                <h1>주소</h1>
+                <h5><i class="fa-solid fa-location-crosshairs"></i></h1>
                 <p id="foodadr"></p>
             </div>
             <div class="textbox2">
-                <h1>연락처</h1>
+                <h5><i class="fa-solid fa-phone"></i></h1>
                 <p id="foodnum"></p>
             </div>
             <div class="textbox2">
-                <h1>영업시간</h1>
+                <h5><i class="fa-regular fa-clock"></i></h1>
                 <p id="foodtime"></p>
             </div>
         </div>
@@ -419,36 +420,6 @@
         </div>
       </div>
     </footer>
-    <!-- 회원가입 모달 -->
-    <div id="myModal" class="modal">
-      <!-- 모달 내용 -->
-      <div class="modal-content">
-        <div>
-          <span class="close"><i class="fa-solid fa-x"></i></span>
-          <p id="signTitle">회원가입</p>
-        </div>
-        <form id="signupForm" action="sign.php" method="post">
-          <div class="signupInputs">
-            <div style="position: relative">
-              <input placeholder="" class="signInput" type="text" id="username" name="username" required />
-              <label class="label-custom">아이디</label>
-            </div>
-            <div style="position: relative">
-              <input placeholder="" class="signInput" type="password" id="password" name="password" required />
-              <label class="label-custom">비밀번호</label>
-            </div>
-            <div style="position: relative">
-              <input placeholder="" class="signInput" type="text" id="name" name="name" required />
-              <label class="label-custom">이름</label>
-            </div>
-          </div>
-          <button id="signSubmitBtn" type="submit">가입하기</button>
-          <hr />
-          <button class="naverBtn" type="button"><i class="fa-solid fa-n"></i> 네이버로 로그인</button><br />
-          <button class="googleBtn" type="button"><i class="fa-brands fa-kickstarter"></i> 카카오로 로그인</button>
-        </form>
-      </div>
-    </div>
     <div id="topWrap" class="none">
       <div id="topBtn1" class="topBtn">
         <a href="#"><i class="fa-solid fa-chevron-up"></i>TOP</a>
@@ -456,38 +427,6 @@
       <div id="topBtn2" class="topBtn">
         <p>1330</p>
         여행<br />상담
-      </div>
-    </div>
-    <!-- 로그인 모달창 -->
-    <div id="loginModal" class="modal2">
-      <div class="modal-content2">
-        <span class="close2"><i class="fa-solid fa-x"></i></span>
-        <p id="loginTitle">로그인</p>
-        <form id="loginForm">
-          <div class="loginInputs">
-            <div style="position: relative">
-              <input class="loginInput" type="text" id="username2" name="username" placeholder="" required />
-              <label class="label-custom">아이디</label>
-            </div>
-            <div style="position: relative">
-              <input class="loginInput" type="password" id="password2" name="password" placeholder="" required />
-              <label class="label-custom">비밀번호</label>
-            </div>
-            <button id="loginSubmitBtn" type="submit">로그인</button>
-          </div>
-          <div id="loginBox">
-            <!-- <div id="searchIDPW">
-              <p>아이디 찾기</p>
-              <p>|</p>
-              <p>비밀번호 찾기</p>
-            </div> -->
-            <div id="goSign">아직 아이디가 없다면? 가입하기</div>
-          </div>
-          <br /><br />
-          <button class="naverBtn" type="button"><i class="fa-solid fa-n"></i> 네이버로 로그인</button>
-          <br />
-          <button class="googleBtn" type="button"><i class="fa-brands fa-kickstarter"></i> 카카오로 로그인</button>
-        </form>
       </div>
     </div>
     <!-- 헤더 스크립트 -->
