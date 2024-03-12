@@ -22,7 +22,7 @@
     grid-template-areas:
         'a a b c'
         'a a d e';
-    padding: 50px 0;
+    padding: 100px 0;
 }
 #Main_Grid a {
     cursor: pointer;
