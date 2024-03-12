@@ -205,10 +205,10 @@ video {
     display: none;
   }
 
-  .gnb_menu li a {
+  #gnb_menu li a {
     position: relative;
   }
-  .gnb_menu li a::after {
+  #gnb_menu li a::after {
     position: absolute;
     display: block;
     content: "";
@@ -218,7 +218,7 @@ video {
     background: var(--mainColor);
     transition: all 0.2s;
   }
-  .gnb_menu li:hover a::after {
+  #gnb_menu li:hover a::after {
     width: 100%;
   }
 }
