@@ -75,3 +75,4 @@ $('.video_modal_popup-closer').click(function () {
 //     // section의 높이를 0으로 설정
 //     section.style.height = '0';
 // }
+// 주석
