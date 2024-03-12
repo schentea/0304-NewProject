@@ -141,10 +141,10 @@ $(document).ready(function () {
           console.log("같은 업체명", sameNameItems);
         })
 
-        .catch((error) => console.error(error));
+        .catch((error) => console.log(error));
     },
     error: function (xhr, status, error) {
-      console.error("Error fetching data:", error);
+      console.log("Error fetching data:", error);
     },
   });
 });

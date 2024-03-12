@@ -55,7 +55,9 @@ import { eventData, performData, fetchData } from "./Api.js";
 
 fetchData()
   .then(() => {
-    let art = performData.filter((a) => /아트플러스씨어터|여우별아트홀/.test(a.place));
+    let art = performData.filter((a) =>
+      /아트플러스씨어터|여우별아트홀/.test(a.place)
+    );
     art = art
       .map(
         (a) => `<li>
@@ -86,7 +88,9 @@ fetchData()
       .join("");
     document.querySelector("#showModalList2").innerHTML = eve;
     let today = new Date().toISOString().split("T")[0];
-    let cons = performData.filter((a) => a.place.includes("콘서트하우스") && a.end_date >= today);
+    let cons = performData.filter(
+      (a) => a.place.includes("콘서트하우스") && a.end_date >= today
+    );
     cons = cons
       .map(
         (a) => `<li>
@@ -102,5 +106,5 @@ fetchData()
     document.querySelector("#showModalList1").innerHTML = cons;
   })
   .catch((error) => {
-    console.error(error);
+    console.log(error);
   });

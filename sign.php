@@ -12,6 +12,8 @@ $dbname = "yj4newproject"; // 사용할 데이터베이스 이름
 $username2 = $_POST['username'];
 $password2 = $_POST['password'];
 $name = $_POST['name'];
+$email = $_POST['email'];
+$tel = $_POST['tel'];
 
 $hashed_pw = password_hash($password2, PASSWORD_DEFAULT);
 
@@ -24,13 +26,13 @@ if ($conn->connect_error) {
 }
 
 // 매개변수화된 SQL 쿼리 생성
-$sql = "INSERT INTO userInfo (uid, pw, name) VALUES (?, ?, ?)";
+$sql = "INSERT INTO userInfo (uid, pw, name, email, tel) VALUES (?, ?, ?, ?, ?)";
 
 // SQL 쿼리를 준비합니다.
 $stmt = $conn->prepare($sql);
 
 // 매개변수에 사용자 입력값을 바인딩합니다.
-$stmt->bind_param("sss", $username2, $hashed_pw, $name);
+$stmt->bind_param("sssss", $username2, $hashed_pw, $name, $email, $tel);
 
 // SQL 쿼리를 실행합니다.
 if ($stmt->execute()) {
