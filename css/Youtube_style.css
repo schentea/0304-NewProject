@@ -77,7 +77,9 @@
     object-position: center;
 }
 /* 유튜브 호버 효과 */
-#Main_Grid a .bg_logo {
+
+#Main_Grid a::before {
+    content: ''; /* 가상 요소에 내용을 추가합니다 */
     transform: translate(-50%, -50%);
     background-size: cover;
     width: 80px;
@@ -87,26 +89,15 @@
     position: absolute;
     opacity: 0;
     transition: opacity 0.5s; /* 트랜지션 속성을 여기에 추가합니다 */
-    z-index: 3;
-}
-#Main_Grid a::before {
-    content: ''; /* 가상 요소에 내용을 추가합니다 */
-    position: absolute; /* 가상 요소를 위치 지정합니다 */
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background-color: rgba(0, 0, 0, 0); /* 어두운 배경색을 초기화합니다 */
-    transition: background-color 0.3s ease; /* 배경색에 트랜지션을 추가합니다 */
-    z-index: 2; /* 가상 요소를 링크 아래로 위치시킵니다 */
-    border-radius: 20px;
+    z-index: 20;
+    background-image: url(../image/Youtube.png);
   
 }
 
-#Main_Grid a:hover::before {
-    background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경색을 추가합니다 */
+#Main_Grid a:hover {
+    filter: brightness(90%);
 }
-#Main_Grid a:hover .bg_logo {
+#Main_Grid a:hover::before {
     opacity: 1;
 }
 @keyframes opacity {

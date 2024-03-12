@@ -29,10 +29,7 @@ fetch(
             .slice(0, 5);
         console.log(youtube);
         document.querySelector('#youtube_container #Main_Grid').innerHTML = youtube
-            .map(
-                (tube) =>
-                    `<a data-video="${tube.id.videoId}"><img src="${tube.snippet.thumbnails.high.url}" /><div class="bg_logo" style="background-image: url('./image/Youtube.png');"></div></a>`
-            )
+            .map((tube) => `<a data-video="${tube.id.videoId}"><img src="${tube.snippet.thumbnails.high.url}" /></a>`)
             .join('');
         // 클릭 이벤트 바인딩
         $('.popupModalVideo a').click(function () {
