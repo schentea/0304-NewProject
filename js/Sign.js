@@ -1,30 +1,3 @@
-// 모달 요소 가져오기
-var modal = document.querySelector("#myModal");
-
-// 모달 열기 버튼 가져오기
-var btn = document.querySelector("#openModalBtn");
-
-// 모달 닫기 버튼 가져오기
-var span = document.getElementsByClassName("close")[0];
-
-// 모달 열기 버튼을 클릭하면 모달을 보이게 함
-btn.onclick = function () {
-  modal.style.display = "block";
-  document.querySelector(".modal-content").classList.add("modalAni");
-};
-
-// 모달 닫기 버튼을 클릭하면 모달을 숨김
-span.onclick = function () {
-  modal.style.display = "none";
-};
-
-// 모달 외부를 클릭하면 모달을 숨김
-window.addEventListener("click", function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-});
-
 // 회원가입 폼 제출 시 동작
 document.getElementById("signupForm").addEventListener("submit", function (event) {
   event.preventDefault(); // 폼 제출 기본 동작 막기 (페이지 새로고침)

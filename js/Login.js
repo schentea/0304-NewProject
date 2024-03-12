@@ -1,30 +1,3 @@
-let loginModal = document.querySelector("#loginModal");
-
-// 로그인 모달 열기
-document.getElementById("loginButton").addEventListener("click", function () {
-  loginModal.style.display = "block";
-  document.querySelector(".modal-content2").classList.add("modalAni");
-});
-
-// 로그인 모달 닫기
-document.getElementsByClassName("close2")[0].addEventListener("click", function () {
-  loginModal.style.display = "none";
-});
-
-// 회원가입창으로 가기
-document.querySelector("#goSign").addEventListener("click", function () {
-  loginModal.style.display = "none";
-  document.querySelector("#myModal").style.display = "block";
-  document.querySelector(".modal-content").classList.add("modalAni");
-});
-
-// 모달 영역 바깥 클릭 시 모달 닫기 기능
-window.addEventListener("click", function (event) {
-  if (event.target == loginModal) {
-    loginModal.style.display = "none";
-  }
-});
-
 // 로그인 폼 제출
 document.getElementById("loginForm").addEventListener("submit", function (event) {
   event.preventDefault(); // 기본 동작 방지
