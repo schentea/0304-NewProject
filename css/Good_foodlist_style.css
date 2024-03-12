@@ -132,13 +132,14 @@
 .foodmodal-content {
   width: 90%;
   max-width: 750px;
-  height: 750px;
+  height: 600px;
   z-index: 10;
   background: #fff;
   border-radius: 10px;
   overflow-y: auto;
   margin: 0 auto;
   position: relative;
+  overflow-y: auto;
 }
 .imgbox {
   width: 100%;
@@ -163,6 +164,19 @@
   margin: 0 0 5px;
 }
 
+.foodmodal-content .foodIcons {
+  display: flex;
+  gap: 30px;
+  text-align: center;
+  margin: 20px 35px 10px;
+}
+.foodmodal-content .foodIcons i {
+  font-size: 33px;
+}
+.foodmodal-content .foodIcons p {
+  margin: 0;
+}
+
 .foodmodal-content .textbox2 h5 {
   margin: 0;
 }
@@ -176,6 +190,21 @@
 }
 
 .foodmodal-content .textbox2 p {
+  margin: 0;
+}
+.foodmodal-content .foodMenusWrap {
+  margin: 40px 35px;
+}
+.foodmodal-content .foodMenusWrap .foodMenu {
+  position: relative;
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 1px solid gray;
+  padding: 5px 0;
+}
+.foodmodal-content .foodMenusWrap .foodMenu p {
   margin: 0;
 }
 
@@ -214,5 +243,9 @@
 
   #Good_foodlist h4 {
     display: none;
+  }
+
+  .foodmodal-content {
+    height: 750px;
   }
 }

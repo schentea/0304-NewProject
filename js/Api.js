@@ -41,7 +41,6 @@ $(document).ready(function () {
           }
 
           const dataSlice = data.data.slice(9260, 10000);
-          console.log("test2", dataSlice);
 
           let dataArr = [];
           for (let Key in food) {
@@ -49,8 +48,7 @@ $(document).ready(function () {
               dataArr.push(food[Key]);
             }
           }
-          // console.log("184", typeof dataArr);
-          // console.log("1000", typeof dataSlice);
+
           // 업소명이 같은 데이터 찾기
           const sameNameItems = [];
           const imgArr = [];
@@ -60,9 +58,6 @@ $(document).ready(function () {
             if (item1 && item1.BZ_NM) {
               const itemT1 = item1.BZ_NM.slice(0, 4);
               dataSlice.forEach((item2) => {
-                // console.log("g", item1);
-                // console.log("g2", item2);
-                // item2에서 필요한 속성이 정의되어 있는지 확인합니다.
                 if (item2 && item2.업소명) {
                   const itemT2 = item2.업소명.slice(0, 4);
                   if (itemT1 === itemT2 && !sameNameItems.some((item) => item.BZ_NM === item1.BZ_NM)) {
@@ -73,14 +68,12 @@ $(document).ready(function () {
               });
             }
           });
-          // console.log("test", imgArr[1]["이미지 경로"]);
 
           const Slide = Array.from(document.querySelectorAll(".swiper-slide"));
           const swiperSlide = Slide.slice(0, 10);
           const swiperSlide1 = Slide.slice(10, 18);
           const imgArr2 = imgArr.slice(10, 18);
-          // console.log("첫번쨰", swiperSlide);
-          // console.log("두번쨰", imgArr2);
+
           const slides = document.querySelectorAll(".swiper-slide");
           slides.forEach((item, index) => {
             if (item.innerHTML === "") {
@@ -108,15 +101,39 @@ $(document).ready(function () {
               // 클릭한 슬라이드의 이미지를 imgbox에 할당
               imgbox.src = `./${imgArr[index]["이미지 경로"]}/${imgArr[index]["파일명"]}`;
               foodname.textContent = item.BZ_NM;
-              foodname2.textContent = item.SMPL_DESC;
+              foodname2.textContent = item.SMPL_DESC.replace(/<br \/>/g, "\n");
               foodadr.textContent = item.GNG_CS;
               foodnum.textContent = item.TLNO;
               foodtime.textContent = item.MBZ_HR;
+              if (/^(|.*없음.*|.*불가.*)$/.test(item.PKPL)) {
+                document.querySelector(".foodIcons .foodCarIcon p").textContent = "주차 불가";
+              } else document.querySelector(".foodIcons .foodCarIcon p").textContent = "주차 가능";
+              if (/^(|.*없음.*|.*불가.*)$/.test(item.BKN_YN)) {
+                document.querySelector(".foodIcons .foodBookIcon p").textContent = "예약 불가";
+              } else document.querySelector(".foodIcons .foodBookIcon p").textContent = "예약 가능";
+              if (/^(|.*없음.*|.*불가.*)$/.test(item.INFN_FCL)) {
+                document.querySelector(".foodIcons .foodToyIcon p").textContent = "놀이시설 없음";
+              } else document.querySelector(".foodIcons .foodToyIcon p").textContent = "놀이시설 있음";
+              let menusHTML = document.querySelector(".foodMenusWrap");
+              item.MNU.split("<br />")
+                .map((item) => item.trim())
+                .filter((item) => item)
+                .forEach((menuItem) => {
+                  const [menuName, menuPrice] = menuItem.split(/ (?=\d)/, 2);
+                  menusHTML.innerHTML += `
+                <div class="foodMenu">
+                    <p>${menuName}</p>
+                    <p>${menuPrice}</p>
+                  </div>
+                `;
+                });
+              menusHTML.innerHTML += "</div>";
             });
           });
           const fooddiv2 = document.querySelector(".imgbox");
           const foodname = document.querySelector("#foodname");
           const foodname2 = document.querySelector("#foodname2");
+
           const imgbox2 = document.createElement("img");
           fooddiv2.appendChild(imgbox2);
           sameNameItems.slice(11, 20).forEach((item, index) => {
@@ -131,14 +148,21 @@ $(document).ready(function () {
               // 클릭한 슬라이드의 이미지를 imgbox에 할당
               imgbox.src = `./${imgArr2[index]["이미지 경로"]}/${imgArr2[index]["파일명"]}`;
               foodname.textContent = item.BZ_NM;
-              foodname2.textContent = item.SMPL_DESC;
+              foodname2.textContent = item.SMPL_DESC.replace(/<br \/>/g, "\n");
               foodadr.textContent = item.GNG_CS;
               foodnum.textContent = item.TLNO;
               foodtime.textContent = item.MBZ_HR;
+              if (/^(|.*없음.*|.*불가.*)$/.test(item.PKPL)) {
+                document.querySelector(".foodIcons .foodCarIcon p").textContent = "주차 불가";
+              } else document.querySelector(".foodIcons .foodCarIcon p").textContent = "주차 가능";
+              if (/^(|.*없음.*|.*불가.*)$/.test(item.BKN_YN)) {
+                document.querySelector(".foodIcons .foodBookIcon p").textContent = "예약 불가";
+              } else document.querySelector(".foodIcons .foodBookIcon p").textContent = "예약 가능";
+              if (/^(|.*없음.*|.*불가.*)$/.test(item.INFN_FCL)) {
+                document.querySelector(".foodIcons .foodToyIcon p").textContent = "놀이시설 없음";
+              } else document.querySelector(".foodIcons .foodToyIcon p").textContent = "놀이시설 있음";
             });
           });
-
-          console.log("같은 업체명", sameNameItems);
         })
 
         .catch((error) => console.log(error));
