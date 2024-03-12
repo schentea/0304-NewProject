@@ -130,21 +130,20 @@
 .foodmodal-content {
   width: 90%;
   max-width: 750px;
-  height: 700px;
+  height: 750px;
   top: 100px;
   z-index: 10;
   background: #fff;
   border-radius: 10px;
   overflow-y: auto;
 
-  margin: 5% auto;
+  margin: 0 auto;
   position: relative;
 }
 .imgbox {
   width: 90%;
   height: 300px;
   margin: 0 auto;
-  background-color: aqua;
   margin-top: 37.5px;
   overflow: hidden;
 }
@@ -164,16 +163,21 @@
 
 .foodmodal-content .textbox2 {
   display: flex;
+  align-items: center;
+
   margin-left: 37.5px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .foodmodal-content .textbox2 h1 {
-  font-size: 35px;
+  font-size: 24px;
+  width: 30%;
+  margin-top: 10px;
 }
 
 .foodmodal-content .textbox2 p {
-  margin-left: 50px;
+  font-size: 24px;
+  margin-top: 10px;
 }
 .foodmodal-content .close {
   margin-right: 8px;
