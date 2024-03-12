@@ -117,8 +117,8 @@
       <article>
         <!-- 동성로 소개 타이틀 -->
         <div class="scroHidden">
-          <h3 style="color: #bbb"><span class="redTxt">젊음</span>과 <span class="redTxt">열정</span>의 거리</h3>
-          <h2 id="introH2">동성로를 소개합니다</h2>
+          <h3 style="color: #bbb" id="introH3"><span class="redTxt">젊음</span>과 <span class="redTxt">열정</span>의 거리</h3>
+          <h2 class="bckTxt">동성로를 소개합니다</h2>
         </div>
         <!-- 동성로 사진 -->
         <div id="dongsungro_img_div">
@@ -163,8 +163,8 @@
       <div id="container">
         <!-- 제목 -->
         <div id="foodTitWrap">
-          <h3 class="scroHidden"><span class="redTxt">맛집</span> 핫플레이스</h3>
-          <h2 class="scroHidden">놓치면 안될 <span class="redTxt">식당 투어</span></h2>
+          <h3 class="scroHidden"><span class="redTxt">맛집</span> <span class="bckTxt">핫플레이스</span></h3>
+          <h2 class="scroHidden"><span class="bckTxt">놓치면 안될</span> <span class="redTxt">식당 투어</span></h2>
         </div>
 
         <!-- 위쪽 공간 -->
@@ -449,15 +449,15 @@
         </form>
       </div>
     </div>
-    <!-- <div id="topWrap" class="none">
-            <div id="topBtn1" class="topBtn">
-                <a href="#"><i class="fa-solid fa-chevron-up"></i>TOP</a>
-            </div>
-            <div id="topBtn2" class="topBtn">
-                <p>1330</p>
-                여행<br />상담
-            </div>
-        </div> -->
+    <div id="topWrap" class="none">
+      <div id="topBtn1" class="topBtn">
+        <a href="#"><i class="fa-solid fa-chevron-up"></i>TOP</a>
+      </div>
+      <div id="topBtn2" class="topBtn">
+        <p>1330</p>
+        여행<br />상담
+      </div>
+    </div>
     <!-- 로그인 모달창 -->
     <div id="loginModal" class="modal2">
       <div class="modal-content2">
@@ -520,9 +520,10 @@
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+        speed:1000,
         breakpoints: {
           700: {
-            slidesPerView: 3, //브라우저가 1024보다 클 때
+            slidesPerView: 3,
             spaceBetween: 30,
           },
         },

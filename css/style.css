@@ -1,5 +1,6 @@
 :root {
   --mainColor: #eb102c;
+  --mainBlack: #362f2f;
 }
 
 * {
@@ -30,6 +31,10 @@ h3 {
 
 .redTxt {
   color: var(--mainColor);
+}
+
+.bckTxt {
+  color: var(--mainBlack);
 }
 
 .scroHidden {
@@ -92,7 +97,7 @@ h3 {
   font-size: 20px;
 }
 #topBtn2 {
-  background: #000;
+  background: #222;
   color: white;
   line-height: 22px;
   flex-direction: column;
