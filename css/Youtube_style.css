@@ -1,240 +1,240 @@
 #youtube_section {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  background: #eee;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: #eee;
 }
 #youtube_container {
-  width: 100%;
-  height: 100%;
-  max-width: 1300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 0 0;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0 0;
 }
 #youtube_container h2 {
-  text-align: center;
+    text-align: center;
 }
 #Main_Grid {
-  display: grid;
-  grid-template-areas:
-    "a a b c"
-    "a a d e";
-  padding: 100px 0;
-  gap: 10px;
+    display: grid;
+    grid-template-areas:
+        'a a b c'
+        'a a d e';
+    padding: 100px 10px;
+    gap: 10px;
 }
 
 #Main_Grid .tubeImgWrap {
-  width: 100%;
-  height: 70%;
-  overflow: hidden;
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
 }
 
 #Main_Grid a {
-  cursor: pointer;
-  position: relative;
-  transition: opacity 0.3s ease;
-  box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: opacity 0.3s ease;
+    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 #Main_Grid a:nth-child(1) {
-  grid-area: a;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  overflow: hidden;
-  font-size: 20px;
+    grid-area: a;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    font-size: 20px;
 }
 #Main_Grid a:nth-child(1) .tubeImgWrap {
-  height: 80%;
+    height: 80%;
 }
 #Main_Grid a:nth-child(1) .tubeTit {
-  height: 75px;
+    height: 75px;
 }
 #Main_Grid a:nth-child(2) {
-  grid-area: b;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  overflow: hidden;
+    grid-area: b;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
 }
 #Main_Grid a:nth-child(3) {
-  grid-area: c;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  overflow: hidden;
+    grid-area: c;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
 }
 #Main_Grid a:nth-child(4) {
-  grid-area: d;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  overflow: hidden;
+    grid-area: d;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
 }
 #Main_Grid a:nth-child(5) {
-  grid-area: e;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  overflow: hidden;
+    grid-area: e;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
 }
 /* 유튜브 제목 */
 #Main_Grid a .tubeTit {
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-  height: 60px;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  padding: 10px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    height: 60px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    padding: 10px;
 }
 
 /* 유튜브 이미지  */
 #Main_Grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 /* 유튜브 호버 효과 */
 
 #Main_Grid a::before {
-  content: ""; /* 가상 요소에 내용을 추가합니다 */
-  transform: translate(-50%, -50%);
-  background-size: cover;
-  width: 80px;
-  height: 80px;
-  left: 50%;
-  top: 50%;
-  position: absolute;
-  opacity: 0;
-  transition: opacity 0.5s; /* 트랜지션 속성을 여기에 추가합니다 */
-  z-index: 20;
-  background-image: url(../image/Youtube3.png);
+    content: ''; /* 가상 요소에 내용을 추가합니다 */
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    top: 40%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s; /* 트랜지션 속성을 여기에 추가합니다 */
+    z-index: 20;
+    background-image: url(../image/Youtube3.png);
 }
 
 #Main_Grid a:hover {
-  filter: brightness(90%);
+    filter: brightness(90%);
 }
 #Main_Grid a:hover::before {
-  opacity: 1;
+    opacity: 1;
 }
 @keyframes opacity {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* 유튜브 */
 .video_modal_popup.reveal {
-  display: flex;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999999;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999999;
 }
 
 .video_modal_popup .video-wrapper {
-  position: relative;
-  width: 80%;
-  padding-bottom: 45%;
-  z-index: 99999999;
+    position: relative;
+    width: 80%;
+    padding-bottom: 45%;
+    z-index: 99999999;
 }
 
 .video_modal_popup .video-wrapper iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .video_modal_popup.reveal .video_modal_popup-closer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999999;
 }
 .popupModalVideo a {
-  position: relative;
-  display: inline-block;
-  border-radius: 20px;
-  overflow: hidden;
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .popupModalVideo a img {
-  transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .popupModalVideo a:hover img {
-  transform: scale(1.03);
-  overflow: hidden;
+    transform: scale(1.03);
+    overflow: hidden;
 }
 
 .popupModalVideo a:hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  transition-duration: 0.3s;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    transition-duration: 0.3s;
 }
 @media screen and (max-width: 1024px) {
-  #youtube_section {
-    height: auto;
-  }
-  #Main_Grid {
-    display: grid;
-    grid-template-areas:
-      "a a a a"
-      "a a a a"
-      "b b c c"
-      "d d e e";
-    padding: 50px 0;
-  }
+    #youtube_section {
+        height: auto;
+    }
+    #Main_Grid {
+        display: grid;
+        grid-template-areas:
+            'a a a a'
+            'a a a a'
+            'b b c c'
+            'd d e e';
+        padding: 50px 15px;
+    }
 
-  #Main_Grid a:nth-child(1) .tubeTit {
-    height: 60px;
-  }
+    #Main_Grid a:nth-child(1) .tubeTit {
+        height: 60px;
+    }
 
-  #Main_Grid a:nth-child(1) {
-    grid-area: a;
-    font-size: 16px;
-  }
+    #Main_Grid a:nth-child(1) {
+        grid-area: a;
+        font-size: 16px;
+    }
 
-  #Main_Grid a:nth-child(2) {
-    grid-area: b;
-  }
+    #Main_Grid a:nth-child(2) {
+        grid-area: b;
+    }
 
-  #Main_Grid a:nth-child(3) {
-    grid-area: c;
-  }
+    #Main_Grid a:nth-child(3) {
+        grid-area: c;
+    }
 
-  #Main_Grid a:nth-child(4) {
-    grid-area: d;
-  }
+    #Main_Grid a:nth-child(4) {
+        grid-area: d;
+    }
 
-  #Main_Grid a:nth-child(5) {
-    grid-area: e;
-  }
+    #Main_Grid a:nth-child(5) {
+        grid-area: e;
+    }
 }
