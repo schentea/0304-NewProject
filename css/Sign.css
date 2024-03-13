@@ -21,7 +21,6 @@ button {
 .loginWrap {
   margin: 40px auto;
   width: 550px;
-  height: 700px;
 }
 #usernameError,
 #passwordError,
