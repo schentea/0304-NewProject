@@ -1,6 +1,6 @@
 :root {
   --mainColor: #eb102c;
-  --mainBlack: #362f2f;
+  --mainGray: #9ca3af;
 }
 
 * {
@@ -54,7 +54,7 @@ button {
   height: 55px;
   border: none;
   outline: none;
-  box-shadow: 0 0 0 2px rgb(156, 163, 175);
+  box-shadow: 0 0 0 2px var(--mainGray);
   border-radius: 10px;
   padding: 0 5px;
   background: transparent;
@@ -98,6 +98,17 @@ button {
   z-index: 1;
 }
 
+.signupInputs i,
+.loginInputs i {
+  position: absolute;
+  font-size: 25px;
+  top: 27%;
+  right: 5px;
+  background: white;
+  padding: 0 15px;
+  color: var(--mainGray);
+}
+
 #loginSubmitBtn,
 #signSubmitBtn {
   width: 445px;
@@ -111,6 +122,24 @@ button {
   font-weight: bold;
 }
 
+.naverBtn,
+.googleBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 13px;
+  width: 445px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.naverBtn img,
+.googleBtn img {
+  width: 30px;
+}
+
 .naverBtn {
   background: #03c75a;
   color: white;
@@ -119,16 +148,6 @@ button {
 .googleBtn {
   background: #fae100;
   color: #3a1c1e;
-}
-
-.naverBtn,
-.googleBtn {
-  border: none;
-  border-radius: 13px;
-  width: 445px;
-  height: 60px;
-  font-size: 20px;
-  font-weight: bold;
 }
 
 #goSign a:hover {
