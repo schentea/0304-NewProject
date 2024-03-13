@@ -3,7 +3,7 @@ KEY1 = 'AIzaSyCQQflyO0tAoDpSR2wnLzHKGKoDgZSopRU';
 KEY2 = 'AIzaSyB_cf29bvli99gbgzRsQBP8RC-OpSpMqGI';
 
 fetch(
-    `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=%EB%8C%80%EA%B5%AC%20%EB%8F%99%EC%84%B1%EB%A1%9C&type=video&videoDefinition=high&videoEmbeddable=true&videoSyndicated=true&key=${KEY2}`
+    `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=%EB%8C%80%EA%B5%AC%20%EB%8F%99%EC%84%B1%EB%A1%9C&type=video&videoDefinition=high&videoEmbeddable=true&videoSyndicated=true&key=${KEY}`
 )
     .then((res) => res.json())
     .then((data) => {
