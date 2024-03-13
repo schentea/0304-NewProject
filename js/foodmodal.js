@@ -10,6 +10,7 @@ let div = document.querySelectorAll(".swiper-slide");
 div.forEach(function (item) {
   item.onclick = function () {
     foodmodal.style.display = "flex";
+    document.querySelector(".foodmodal-content").classList.add("modalAni");
   };
 });
 
