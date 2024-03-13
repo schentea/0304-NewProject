@@ -253,11 +253,16 @@
 
 .showModalIn h4 {
   font-size: 30px;
-  margin: 20px 0 10px 20px;
+  margin: 20px 0 10px 35px;
 }
+
 .showModalIn p {
   margin: 0 20px 5px;
   font-size: 18px;
+}
+
+.showModalIn > p {
+  margin: 0 35px 5px;
 }
 
 .showModalIn a {

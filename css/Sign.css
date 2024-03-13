@@ -1,16 +1,26 @@
-a {
-  text-decoration: none;
-  color: black;
-}
 :root {
   --mainColor: #eb102c;
   --mainBlack: #362f2f;
 }
+
+* {
+  font-family: "SCoreDream";
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  cursor: pointer;
+}
+
 /* 모달 내부 스타일 */
 .SignWrap,
 .loginWrap {
-  margin: 50px auto;
-  width: 500px; /* 모달의 너비 */
+  margin: 40px auto;
+  width: 550px;
   height: 700px;
 }
 
@@ -19,6 +29,7 @@ a {
   font-size: 35px;
   text-align: center;
   margin: 0 0 40px;
+  font-weight: 500;
 }
 
 #loginForm,
@@ -34,12 +45,12 @@ a {
 #signupForm .signupInputs {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 25px;
 }
 
 .signInput,
 .loginInput {
-  width: 406px;
+  width: 430px;
   height: 55px;
   border: none;
   outline: none;
@@ -88,11 +99,11 @@ a {
 
 #loginSubmitBtn,
 #signSubmitBtn {
-  width: 406px;
+  width: 445px;
   height: 60px;
   font-size: 20px;
   border-radius: 13px;
-  margin-top: 60px;
+  margin: 50px 0 8px;
   background: none;
   border: 2px solid var(--mainColor);
   color: var(--mainColor);
@@ -113,14 +124,16 @@ a {
 .googleBtn {
   border: none;
   border-radius: 13px;
-  width: 406px;
+  width: 445px;
   height: 60px;
   font-size: 20px;
   font-weight: bold;
 }
 
-#goSign {
-  cursor: pointer;
+#goSign a:hover {
+  color: var(--mainColor);
+  text-decoration: underline;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 500px) {
