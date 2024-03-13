@@ -71,6 +71,7 @@ button {
   color: #6b7280;
   top: 13px;
   font-size: 20px;
+  z-index: -1;
 }
 
 .label-custom {
@@ -133,6 +134,7 @@ button {
 #goSign a:hover {
   color: var(--mainColor);
   text-decoration: underline;
+  text-underline-offset: 2px;
   font-weight: 500;
 }
 
