@@ -28,9 +28,7 @@ $(document).ready(function () {
       const food = data.restaurantData;
       console.log("맛집 정보:", food);
 
-      fetch(
-        "https://api.odcloud.kr/api/15097368/v1/uddi:4ef1ceb1-f791-4db8-9edf-d85845bee754?page=1&perPage=10000&serviceKey=shkyKsQQnrCcxyGdsoxzB5QFrCQTkxcVx0By2Qc7rECl%2BrYh5RMmi95PsHbN5Je8CCJdA7hJy69mnMGEFj0hvw%3D%3D"
-      )
+      fetch("https://api.odcloud.kr/api/15097368/v1/uddi:4ef1ceb1-f791-4db8-9edf-d85845bee754?page=1&perPage=10000&serviceKey=shkyKsQQnrCcxyGdsoxzB5QFrCQTkxcVx0By2Qc7rECl%2BrYh5RMmi95PsHbN5Je8CCJdA7hJy69mnMGEFj0hvw%3D%3D")
         .then((response) => {
           if (response.ok) {
             return response.json();
@@ -62,10 +60,7 @@ $(document).ready(function () {
               dataSlice.forEach((item2) => {
                 if (item2 && item2.업소명) {
                   const itemT2 = item2.업소명.slice(0, 4);
-                  if (
-                    itemT1 === itemT2 &&
-                    !sameNameItems.some((item) => item.BZ_NM === item1.BZ_NM)
-                  ) {
+                  if (itemT1 === itemT2 && !sameNameItems.some((item) => item.BZ_NM === item1.BZ_NM)) {
                     imgArr.push(item2);
                     sameNameItems.push(item1);
                   }
@@ -97,9 +92,7 @@ $(document).ready(function () {
           sameNameItems.slice(0, 10).forEach((item, index) => {
             const swiperText = document.createElement("p");
 
-            swiperSlide[
-              index
-            ].style.backgroundImage = `url('./${imgArr[index]["이미지 경로"]}/${imgArr[index]["파일명"]}')`;
+            swiperSlide[index].style.backgroundImage = `url('./${imgArr[index]["이미지 경로"]}/${imgArr[index]["파일명"]}')`;
             swiperSlide[index].style.backgroundPositon = "center";
             swiperSlide[index].style.backgroundSize = "cover";
             swiperSlide[index].appendChild(swiperText);
@@ -113,43 +106,30 @@ $(document).ready(function () {
               foodnum.textContent = item.TLNO;
               foodtime.textContent = item.MBZ_HR;
               if (/^(|.*없음.*|.*불가.*)$/.test(item.PKPL)) {
-                document.querySelector(
-                  ".foodIcons .foodCarIcon p"
-                ).textContent = "주차 불가";
-              } else
-                document.querySelector(
-                  ".foodIcons .foodCarIcon p"
-                ).textContent = "주차 가능";
+                document.querySelector(".foodIcons .foodCarIcon p").textContent = "주차 불가";
+              } else document.querySelector(".foodIcons .foodCarIcon p").textContent = "주차 가능";
               if (/^(|.*없음.*|.*불가.*)$/.test(item.BKN_YN)) {
-                document.querySelector(
-                  ".foodIcons .foodBookIcon p"
-                ).textContent = "예약 불가";
-              } else
-                document.querySelector(
-                  ".foodIcons .foodBookIcon p"
-                ).textContent = "예약 가능";
+                document.querySelector(".foodIcons .foodBookIcon p").textContent = "예약 불가";
+              } else document.querySelector(".foodIcons .foodBookIcon p").textContent = "예약 가능";
               if (/^(|.*없음.*|.*불가.*)$/.test(item.INFN_FCL)) {
-                document.querySelector(
-                  ".foodIcons .foodToyIcon p"
-                ).textContent = "놀이시설 없음";
-              } else
-                document.querySelector(
-                  ".foodIcons .foodToyIcon p"
-                ).textContent = "놀이시설 있음";
+                document.querySelector(".foodIcons .foodToyIcon p").textContent = "놀이시설 없음";
+              } else document.querySelector(".foodIcons .foodToyIcon p").textContent = "놀이시설 있음";
               let menusHTML = document.querySelector(".foodMenusWrap");
+              menusHTML.innerHTML = "";
               item.MNU.split("<br />")
                 .map((item) => item.trim())
                 .filter((item) => item)
                 .forEach((menuItem) => {
-                  const [menuName, menuPrice] = menuItem.split(/ (?=\d)/, 2);
-                  menusHTML.innerHTML += `
-                <div class="foodMenu">
-                    <p>${menuName}</p>
-                    <p>${menuPrice}</p>
-                  </div>
-                `;
+                  let match = menuItem.match(/(.+) (\d+,\d+)원/);
+                  if (match) {
+                    menusHTML.innerHTML += `
+                      <div class="foodMenu">
+                        <p>${match[1]}</p>
+                        <p>${match[2]}원</p>
+                      </div>
+                    `;
+                  }
                 });
-              menusHTML.innerHTML += "</div>";
             });
           });
           const fooddiv2 = document.querySelector(".imgbox");
@@ -160,9 +140,7 @@ $(document).ready(function () {
           fooddiv2.appendChild(imgbox2);
           sameNameItems.slice(11, 20).forEach((item, index) => {
             const swiperText = document.createElement("p");
-            swiperSlide1[
-              index
-            ].style.backgroundImage = `url('./${imgArr2[index]["이미지 경로"]}/${imgArr2[index]["파일명"]}')`;
+            swiperSlide1[index].style.backgroundImage = `url('./${imgArr2[index]["이미지 경로"]}/${imgArr2[index]["파일명"]}')`;
             swiperSlide1[index].style.backgroundPositon = "center";
             swiperSlide1[index].style.backgroundSize = "cover";
             swiperSlide1[index].appendChild(swiperText);
@@ -177,29 +155,14 @@ $(document).ready(function () {
               foodnum.textContent = item.TLNO;
               foodtime.textContent = item.MBZ_HR;
               if (/^(|.*없음.*|.*불가.*)$/.test(item.PKPL)) {
-                document.querySelector(
-                  ".foodIcons .foodCarIcon p"
-                ).textContent = "주차 불가";
-              } else
-                document.querySelector(
-                  ".foodIcons .foodCarIcon p"
-                ).textContent = "주차 가능";
+                document.querySelector(".foodIcons .foodCarIcon p").textContent = "주차 불가";
+              } else document.querySelector(".foodIcons .foodCarIcon p").textContent = "주차 가능";
               if (/^(|.*없음.*|.*불가.*)$/.test(item.BKN_YN)) {
-                document.querySelector(
-                  ".foodIcons .foodBookIcon p"
-                ).textContent = "예약 불가";
-              } else
-                document.querySelector(
-                  ".foodIcons .foodBookIcon p"
-                ).textContent = "예약 가능";
+                document.querySelector(".foodIcons .foodBookIcon p").textContent = "예약 불가";
+              } else document.querySelector(".foodIcons .foodBookIcon p").textContent = "예약 가능";
               if (/^(|.*없음.*|.*불가.*)$/.test(item.INFN_FCL)) {
-                document.querySelector(
-                  ".foodIcons .foodToyIcon p"
-                ).textContent = "놀이시설 없음";
-              } else
-                document.querySelector(
-                  ".foodIcons .foodToyIcon p"
-                ).textContent = "놀이시설 있음";
+                document.querySelector(".foodIcons .foodToyIcon p").textContent = "놀이시설 없음";
+              } else document.querySelector(".foodIcons .foodToyIcon p").textContent = "놀이시설 있음";
             });
           });
         })
