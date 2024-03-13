@@ -6,9 +6,9 @@ session_start();
 
 // 데이터베이스 연결 정보
 $servername = "localhost";
-$username = "yj4newproject";
+$username = "dongseong";
 $password = "ghflqud1220!";
-$dbname = "yj4newproject";
+$dbname = "dongseong";
 
 // POST로부터 받은 사용자 입력값
 $username2 = $_POST['username'];

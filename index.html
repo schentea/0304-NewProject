@@ -33,6 +33,59 @@
     <link rel="icon" href="./image/logo.svg" />
   </head>
   <body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let username = sessionStorage.getItem("username");
+
+        if (username) {
+          console.log(username);
+          const login = document.getElementById("loginButton");
+          const sign = document.getElementById("openModalBtn");
+          const between = document.getElementById("between");
+          login.style.display = "none";
+          sign.style.display = "none";
+          between.style.display = "none";
+          const ul = document.getElementById("rogin");
+          const user = document.createElement("li");
+          const logout = document.createElement("li");
+          user.innerHTML = `${username}님 환영합니다`;
+          logout.innerHTML = "로그아웃";
+          logout.addEventListener("click", function () {
+            $.ajax({
+              url: "http://dongseong.dothome.co.kr/logout.php",
+              type: "POST", // POST 방식으로 데이터 전송
+              dataType: "json", // 서버에서 받을 데이터 형식을 JSON으로 설정
+              success: function (response) {
+                // 서버로부터의 응답을 받았을 때 실행되는 함수
+                if (response.success) {
+                  // 로그아웃 성공
+                  alert(response.message);
+                  // 세션 삭제
+                  sessionStorage.removeItem("username");
+                  // 로그인 및 회원가입 버튼 다시 보이도록 설정
+                  login.style.display = "block";
+                  sign.style.display = "block";
+                  between.style.display = "block";
+                  // 현재 페이지 리로드
+                  window.location.reload();
+                } else {
+                  // 로그아웃 실패
+                  alert(response.message);
+                }
+              },
+              error: function (xhr, status, error) {
+                // AJAX 요청이 실패했을 때 실행되는 함수
+                console.error("AJAX 요청 중 오류 발생:", error);
+              },
+            });
+          });
+          ul.appendChild(user);
+          ul.appendChild(logout);
+        } else {
+          console.log("사용자가 존재하지 않습니다");
+        }
+      });
+    </script>
     <!-- 헤더부분 -->
     <header class="sections">
       <!-- 헤더_안에있는 나브부분 -->
@@ -54,9 +107,13 @@
         <!-- 피시 나브 안에 우측 로그인부분 -->
         <div>
           <ul id="rogin" class="gnb_menu">
-            <li id="loginButton"><a href="login.html" target="_blank">로그인</a></li>
+            <li id="loginButton">
+              <a href="login.html" target="_self">로그인</a>
+            </li>
             <span id="between"><span>|</span></span>
-            <li id="openModalBtn"><a href="sign.html" target="_blank">회원가입</a></li>
+            <li id="openModalBtn">
+              <a href="sign.html" target="_self">회원가입</a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -80,7 +137,7 @@
             <div class="progressBar"></div>
           </div>
           <div class="carousel-item">
-            <img src="./image/head100.png" class="d-block w-100" alt="..." />
+            <img src="./image/head/donsungro2.jpg" class="d-block w-100" alt="..." />
             <div id="Header_title">
               <h2>젊은 기운이 살아 숨쉬는 도심의 가로광장</h2>
               <h1>대구 동성로</h1>
@@ -88,12 +145,12 @@
             <div class="progressBar"></div>
           </div>
           <div class="carousel-item">
-            <img src="./image/head101.png" class="d-block w-100" alt="..." />
+            <img src="./image/head/donsungro_bg5.jpg" class="d-block w-100" alt="..." />
             <div id="Header_title">
               <h2>대구의 대표 중심번화가</h2>
               <h1>동성로</h1>
             </div>
-            <div class="progressBar" ></div>
+            <div class="progressBar"></div>
           </div>
         </div>
       </div>
@@ -119,7 +176,7 @@
         </div>
         <!-- 동성로 사진 -->
         <div id="dongsungro_img_div">
-          <img id="dongsungro_img" class="scroHidden blurImg scroBlur " src="./image/head/donsungro1.jpg" alt="동성로 메인 이미지" />
+          <img id="dongsungro_img" class="scroHidden blurImg scroBlur" src="./image/head/donsungro1.jpg" alt="동성로 메인 이미지" />
         </div>
         <!-- 동성로 소개 글 -->
         <div class="dongsungroTxt scroHidden">
@@ -138,38 +195,52 @@
       <div id="foodModal" class="foodmodal">
         <div class="foodmodal-content">
           <div class="foodclose"><i class="fa-solid fa-xmark"></i></div>
-            <div class="imgbox"></div>
-            <div class="textbox">
-                <h5 id="foodname"></h2>
-                <p id="foodname2"></p>
+          <div class="imgbox"></div>
+          <div class="textbox">
+            <h5 id="foodname"></h5>
+            <p id="foodname2"></p>
+          </div>
+          <div class="foodIcons">
+            <div class="foodCarIcon">
+              <i class="fa-solid fa-car"></i>
+              <p></p>
             </div>
-            <div class="foodIcons">
-              <div class="foodCarIcon"><i class="fa-solid fa-car"></i><p></p></div>
-              <div class="foodBookIcon"><i class="fa-solid fa-book-open"></i><p></p></div>
-              <div class="foodToyIcon"><i class="fa-solid fa-shapes"></i><p></p></div>
+            <div class="foodBookIcon">
+              <i class="fa-solid fa-book-open"></i>
+              <p></p>
             </div>
-            <div class="textbox2">
-                <h5><i class="fa-solid fa-location-crosshairs"></i></h5>
-                <p id="foodadr"></p>
+            <div class="foodToyIcon">
+              <i class="fa-solid fa-shapes"></i>
+              <p></p>
             </div>
-            <div class="textbox2">
-                <h5><i class="fa-solid fa-phone"></i></h5>
-                <p id="foodnum"></p>
-            </div>
-            <div class="textbox2">
-                <h5><i class="fa-regular fa-clock"></i></h5>
-                <p id="foodtime"></p>
-            </div>
-            <div class="foodMenusWrap">
-            </div>
+          </div>
+          <div class="textbox2">
+            <h5><i class="fa-solid fa-location-crosshairs"></i></h5>
+            <p id="foodadr"></p>
+          </div>
+          <div class="textbox2">
+            <h5><i class="fa-solid fa-phone"></i></h5>
+            <p id="foodnum"></p>
+          </div>
+          <div class="textbox2">
+            <h5><i class="fa-regular fa-clock"></i></h5>
+            <p id="foodtime"></p>
+          </div>
+          <div class="foodMenusWrap"></div>
         </div>
-    </div>
+      </div>
       <!-- 컨테이너-->
       <div id="container">
         <!-- 제목 -->
         <div id="foodTitWrap">
-          <h3 class="scroHidden"><span class="redTxt">맛집</span> <span class="bckTxt">핫플레이스</span></h3>
-          <h2 class="scroHidden"><span class="bckTxt">놓치면 안될</span> <span class="redTxt">식당 투어</span></h2>
+          <h3 class="scroHidden">
+            <span class="redTxt">맛집</span>
+            <span class="bckTxt">핫플레이스</span>
+          </h3>
+          <h2 class="scroHidden">
+            <span class="bckTxt">놓치면 안될</span>
+            <span class="redTxt">식당 투어</span>
+          </h2>
         </div>
 
         <!-- 위쪽 공간 -->
@@ -388,7 +459,10 @@
       <div id="youtube_container">
         <!-- 유튜브 타이틀 -->
         <div id="youtube_title">
-          <h3 class="scroHidden"><span class="bckTxt">트렌드를</span> <span class="redTxt">한눈에!</span></h3>
+          <h3 class="scroHidden">
+            <span class="bckTxt">트렌드를</span>
+            <span class="redTxt">한눈에!</span>
+          </h3>
           <h2 class="scroHidden">
             <span class="redTxt"><i class="fa-brands fa-youtube" style="color: #eb102c"></i>유튜브</span><span class="bckTxt">로 동성로 살펴보기</span>
           </h2>
@@ -440,8 +514,8 @@
     <!-- api -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./js/youtube.js"></script>
-    <script src="./js/Sign.js"></script>
-    <script src="./js/Login.js"></script>
+    <!-- <script src="./js/Sign.js"></script>
+    <script src="./js/Login.js"></script> -->
     <script src="./js/Api.js" type="module"></script>
     <!-- 스크롤 애니메이션 -->
     <script src="./js/wheelAni.js"></script>
@@ -462,7 +536,7 @@
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
-        speed:1000,
+        speed: 1000,
         breakpoints: {
           700: {
             slidesPerView: 3,
@@ -471,7 +545,7 @@
         },
         autoplay: {
           delay: 3000,
-        }
+        },
       });
     </script>
   </body>
