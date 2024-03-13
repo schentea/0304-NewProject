@@ -15,6 +15,21 @@ a {
 button {
   cursor: pointer;
 }
+.backHomeA {
+  position: absolute;
+  display: inline-block;
+  width: 75px;
+  top: 5px;
+}
+.backHome {
+  font-size: 18px;
+  text-align: center;
+
+  margin: 10px 0 0;
+}
+.backHome p {
+  margin: 5px 0 0;
+}
 
 /* 모달 내부 스타일 */
 .SignWrap,
@@ -101,17 +116,6 @@ button {
   top: -13px;
   font-size: 16px;
   z-index: 1;
-}
-
-.signupInputs i,
-.loginInputs i {
-  position: absolute;
-  font-size: 25px;
-  top: 27%;
-  right: 5px;
-  background: white;
-  padding: 0 15px;
-  color: var(--mainGray);
 }
 
 #loginSubmitBtn,
