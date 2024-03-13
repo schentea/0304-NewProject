@@ -13,6 +13,12 @@ a {
   width: 500px; /* 모달의 너비 */
   height: 700px;
 }
+#usernameError,
+#passwordError,
+#telError,
+#emailError {
+  font-size: 12px;
+}
 
 #signTitle,
 #loginTitle {

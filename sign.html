@@ -30,7 +30,8 @@
               name="username"
               required
             />
-            <label class="label-custom">아이디</label>
+            <label class="label-custom">아이디</label><br />
+            <label id="usernameError" style="color: red"></label>
           </div>
           <div style="position: relative">
             <input
@@ -41,7 +42,8 @@
               name="email"
               required
             />
-            <label class="label-custom">이메일</label>
+            <label class="label-custom">이메일</label><br />
+            <label id="emailError" style="color: red"></label>
           </div>
           <div style="position: relative">
             <input
@@ -53,6 +55,8 @@
               required
             />
             <label class="label-custom">비밀번호</label>
+            <br />
+            <label id="passwordError" style="color: red"></label>
           </div>
           <div style="position: relative">
             <input
@@ -74,7 +78,8 @@
               name="tel"
               required
             />
-            <label class="label-custom">핸드폰 번호</label>
+            <label class="label-custom">핸드폰 번호</label><br />
+            <label id="telError" style="color: red"></label>
           </div>
         </div>
         <button id="signSubmitBtn" type="submit">가입하기</button>
