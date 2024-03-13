@@ -1,95 +1,107 @@
-// 회원가입 폼 제출 시 동작
+function isValidUsername(username) {
+  if (username.length < 4 || username.length > 10) {
+    return false;
+  }
+  return /^[a-zA-Z0-9]+$/.test(username);
+}
+
+function isValidPassword(password) {
+  if (password.length < 8) {
+    return false;
+  }
+  return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/.test(
+    password
+  );
+}
+
+function isValidEmail(email) {
+  return /\S+@\S+\.\S+/.test(email);
+}
+
+function isValidPhoneNumber(tel) {
+  return /^010\d{8}$/.test(tel);
+}
+function checkValidity() {
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
+  let email = document.getElementById("email").value;
+  let tel = document.getElementById("tel").value;
+
+  let isUsernameValid = isValidUsername(username);
+  let isPasswordValid = isValidPassword(password);
+  let isEmailValid = isValidEmail(email);
+  let isTelValid = isValidPhoneNumber(tel);
+
+  document.getElementById("usernameError").textContent = isUsernameValid
+    ? ""
+    : "아이디는 4자 이상 10자 이하의 알파벳과 숫자만 가능합니다.";
+  document.getElementById("passwordError").textContent = isPasswordValid
+    ? ""
+    : "비밀번호는 최소 8자 이상의 대소문자, 숫자, 특수문자를 포함해야 합니다.";
+  document.getElementById("emailError").textContent = isEmailValid
+    ? ""
+    : "올바른 이메일 주소를 입력해주세요.";
+  document.getElementById("telError").textContent = isTelValid
+    ? ""
+    : "올바른 전화번호 형식을 입력해주세요. (예시: 01012345678)";
+
+  let submitButton = document.getElementById("submitButton");
+  submitButton.disabled = !(
+    isUsernameValid &&
+    isPasswordValid &&
+    isEmailValid &&
+    isTelValid
+  );
+}
+
 document
   .getElementById("signupForm")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // 폼 제출 기본 동작 막기 (페이지 새로고침)
+    event.preventDefault();
 
-    // 사용자 입력값 가져오기
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var tel = document.getElementById("tel").value;
+    let username = document.getElementById("username").value;
 
-    // 사용자 입력값 유효성 검사 함수들
-    function isValidUsername(username) {
-      // 길이 검사 (예시: 4자 이상 10자 이하)
-      if (username.length < 4 || username.length > 10) {
-        return false;
-      }
-      // 특수문자 및 공백 검사
-      return /^[a-zA-Z0-9]+$/.test(username);
-    }
-
-    function isValidPassword(password) {
-      // 길이 검사 (예시: 8자 이상)
-      if (password.length < 8) {
-        return false;
-      }
-      // 대소문자, 숫자, 특수문자 혼합 검사
-      return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/.test(
-        password
-      );
-    }
-
-    function isValidEmail(email) {
-      return /\S+@\S+\.\S+/.test(email);
-    }
-
-    function isValidPhoneNumber(tel) {
-      // 정규식 패턴에 따라 변경 가능
-      return /^\d{3}\d{3,4}\d{4}$/.test(tel);
-    }
-
-    // 사용자 입력값 유효성 검사
-    if (!isValidUsername(username)) {
-      console.error(
-        "사용자 이름은 4자 이상 10자 이하의 알파벳과 숫자만 가능합니다."
-      );
-      // 사용자에게 알리는 코드 추가
-      return;
-    }
-
-    if (!isValidPassword(password)) {
-      console.error(
-        "비밀번호는 최소 8자 이상의 대소문자, 숫자, 특수문자를 포함해야 합니다."
-      );
-      // 사용자에게 알리는 코드 추가
-      return;
-    }
-
-    if (!isValidEmail(email)) {
-      console.error("올바른 이메일 주소를 입력해주세요.");
-      // 사용자에게 알리는 코드 추가
-      return;
-    }
-
-    if (!isValidPhoneNumber(tel)) {
-      console.error(
-        "올바른 전화번호 형식을 입력해주세요. (예시: 010-1234-5678)"
-      );
-      // 사용자에게 알리는 코드 추가
-      return;
-    }
-
-    // 회원가입 데이터를 서버로 보내는 등의 작업 수행
-    var formData = new FormData(this);
-    fetch("http://dongseong.dothome.co.kr/sign.php", {
+    // 중복 아이디 확인을 위해 서버에 요청
+    fetch("http://dongseong.dothome.co.kr/check_username.php", {
       method: "POST",
-      body: formData,
+      body: JSON.stringify({ username: username }), // 사용자 이름을 서버에 전달
+      headers: {
+        "Content-Type": "application/json",
+      },
     })
-      .then((response) => {
-        if (response.ok) {
-          console.log("회원가입이 완료되었습니다.");
-          alert("회원가입이 완료되었습니다.");
-          window.location.href = "http://dongseong.dothome.co.kr/";
+      .then((response) => response.text())
+      .then((data) => {
+        if (data === "이미 사용 중인 아이디입니다.") {
+          document.getElementById("usernameError").textContent = data;
         } else {
-          console.error("회원가입에 실패했습니다.");
-          // 실패 시 사용자에게 알리는 코드 추가
+          // 중복 아이디가 아니면 회원가입 요청 보내기
+          let formData = new FormData(this);
+          fetch("http://dongseong.dothome.co.kr/sign.php", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => {
+              if (response.ok) {
+                console.log("회원가입이 완료되었습니다.");
+                alert("회원가입이 완료되었습니다.");
+                window.location.href = "http://dongseong.dothome.co.kr/";
+              } else {
+                console.error("회원가입에 실패했습니다.");
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
         }
       })
       .catch((error) => {
         console.error("Error:", error);
-        // 오류 시 사용자에게 알리는 코드 추가
       });
   });
+
+document.getElementById("username").addEventListener("input", checkValidity);
+document.getElementById("password").addEventListener("input", checkValidity);
+document.getElementById("email").addEventListener("input", checkValidity);
+document.getElementById("tel").addEventListener("input", checkValidity);
+
+checkValidity();

@@ -23,6 +23,12 @@ button {
   width: 550px;
   height: 700px;
 }
+#usernameError,
+#passwordError,
+#telError,
+#emailError {
+  font-size: 12px;
+}
 
 #signTitle,
 #loginTitle {

@@ -17,17 +17,19 @@
         <div class="signupInputs">
           <div style="position: relative">
             <input placeholder="" class="signInput" type="text" id="username" name="username" required />
-            <label class="label-custom">아이디</label>
-            <i class="fa-solid fa-user"></i>
+            <label class="label-custom">아이디</label><br />
+            <label id="usernameError" style="color: red"></label>
           </div>
           <div style="position: relative">
             <input placeholder="" class="signInput" type="email" id="email" name="email" required />
-            <label class="label-custom">이메일</label>
-            <i class="fa-solid fa-envelope"></i>
+            <label class="label-custom">이메일</label><br />
+            <label id="emailError" style="color: red"></label>
           </div>
           <div style="position: relative">
             <input placeholder="" class="signInput" type="password" id="password" name="password" required />
             <label class="label-custom">비밀번호</label>
+            <br />
+            <label id="passwordError" style="color: red"></label>
             <i class="fa-solid fa-unlock"></i>
           </div>
           <div style="position: relative">
@@ -37,7 +39,8 @@
           </div>
           <div style="position: relative">
             <input placeholder="" class="signInput" type="number" id="tel" name="tel" required />
-            <label class="label-custom">핸드폰 번호</label>
+            <label class="label-custom">핸드폰 번호</label><br />
+            <label id="telError" style="color: red"></label>
             <i class="fa-solid fa-phone"></i>
           </div>
         </div>
