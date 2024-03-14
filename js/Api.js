@@ -163,6 +163,22 @@ $(document).ready(function () {
               if (/^(|.*없음.*|.*불가.*)$/.test(item.INFN_FCL)) {
                 document.querySelector(".foodIcons .foodToyIcon p").textContent = "놀이시설 없음";
               } else document.querySelector(".foodIcons .foodToyIcon p").textContent = "놀이시설 있음";
+              let menusHTML = document.querySelector(".foodMenusWrap");
+              menusHTML.innerHTML = "";
+              item.MNU.split("<br />")
+                .map((item) => item.trim())
+                .filter((item) => item)
+                .forEach((menuItem) => {
+                  let match = menuItem.match(/(.+) (\d+,\d+)원/);
+                  if (match) {
+                    menusHTML.innerHTML += `
+                      <div class="foodMenu">
+                        <p>${match[1]}</p>
+                        <p>${match[2]}원</p>
+                      </div>
+                    `;
+                  }
+                });
             });
           });
         })
