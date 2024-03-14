@@ -94,6 +94,7 @@
   height: 50px;
   background: #444;
   transform: rotate(-45deg);
+  border-radius: 5px;
 }
 
 #Good_foodlist #balloon2 {
