@@ -131,6 +131,12 @@ button {
   font-weight: bold;
 }
 
+#signSubmitBtn:disabled {
+  cursor: default;
+  border: 2px solid var(--mainGray);
+  color: var(--mainGray);
+}
+
 .naverBtn,
 .googleBtn {
   display: flex;
@@ -167,10 +173,6 @@ button {
 }
 
 @media screen and (max-width: 500px) {
-  .loginWrap,
-  .loginWrap2 {
-    width: 95%;
-  }
   .loginWrap .signupInputs,
   .loginWrap2 .loginInputs {
     width: 100%;
