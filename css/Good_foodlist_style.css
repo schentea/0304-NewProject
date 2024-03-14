@@ -70,10 +70,41 @@
   background: #333333;
   border-radius: 10px;
   display: none;
+  color: white;
+  font-size: 35px;
+  padding: 50px 15px;
+}
+
+.balloon div {
+  display: flex;
+  font-size: 30px;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+#balloon1::after {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 50px;
+  background: #333;
+  right: -10px;
+  transform: rotate(-45deg);
 }
 
 #Good_foodlist #balloon2 {
   margin: 0 0 0 30px;
+}
+
+#balloon2::before {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 50px;
+  background: #333;
+  left: -10px;
+  bottom: 60px;
+  transform: rotate(-45deg);
 }
 
 /* 캐러셀 */
