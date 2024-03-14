@@ -60,14 +60,14 @@ fetchData()
     art = art
       .map(
         (a) => `<li>
-
-    <p class="showTit">${a.subject.split(" - ")[0]}</p>
-    <div class="showDate">
-      <p class="showStart">📅 ${a.start_date.slice(2)}</p>
-      ~
-      <p class="showEnd">${a.end_date.slice(2)}</p>
-    </div>
-  </li>`
+          <p class="showTit">${a.subject.split(" - ")[0]}</p>
+          <div class="showDate">
+            <p class="showStart">📅 ${a.start_date.slice(2)}</p>
+            ~
+            <p class="showEnd">${a.end_date.slice(2)}</p>
+          </div>
+          <div class="heartBtn"></div>
+        </li>`
       )
       .join("");
     document.querySelector("#showModalList3").innerHTML = art;
@@ -82,6 +82,7 @@ fetchData()
             ~
             <p class="showEnd">${a.end_date.slice(2)}</p>
           </div>
+          <div class="heartBtn"></div>
         </li>`
       )
       .join("");
@@ -97,9 +98,23 @@ fetchData()
       ~
       <p class="showEnd">${a.end_date.slice(2)}</p>
     </div>
+    <div class="heartBtn"></div>
   </li>`
       )
       .join("");
     document.querySelector("#showModalList1").innerHTML = cons;
+
+    // 하트 버튼 애니메이션
+    for (let h of document.querySelectorAll(".heartBtn")) {
+      h.addEventListener("click", () => {
+        h.classList.add("active");
+      });
+    }
   })
   .catch((error) => {});
+
+for (let h of document.querySelectorAll(".active")) {
+  h.addEventListener("click", () => {
+    h.classList.remove("active");
+  });
+}

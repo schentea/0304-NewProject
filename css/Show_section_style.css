@@ -287,13 +287,34 @@
   text-align: left;
   margin: 0 10px 40px;
   border-left: 3px solid var(--mainColor);
+  position: relative;
+}
+
+.showModalList li .heartBtn {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  top: -20px;
+  right: -10px;
+  width: 100px;
+  height: 100px;
+  background: url("../image/heart.png") no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  transition: background-position 1s steps(28);
+  transition-duration: 0s;
+}
+.showModalList li .heartBtn.active {
+  transition-duration: 1s;
+  background-position: -2800px 0;
+}
+
+.showModalList li .showTit {
+  font-weight: 500;
 }
 
 .showModalList li .showDate {
   display: flex;
-}
-.showModalList li > p {
-  font-weight: 500;
 }
 
 @media screen and (min-width: 650px) {
