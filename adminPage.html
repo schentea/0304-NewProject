@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>관리자 페이지</title>
+    <link rel="stylesheet" href="./css/adminPage.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="adminPage">
+      <div id="adminInfo">asd</div>
+      <div id="userInfo">
+        <div id="userInfoBig">
+          <div class="userInfoBox"></div>
+          <div class="userInfoBox"></div>
+          <div class="userInfoBox"></div>
+          <div class="userInfoBox"></div>
+          <div class="userInfoBox"></div>
+          <div class="userInfoBox"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function getUsernameFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get("username");
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        const username = getUsernameFromURL();
+        getUserInfo(username);
+      });
+      function getUserInfo(username) {
+        $.ajax({
+          url:
+            "http://dongseong.dothome.co.kr/mypage.php?username=" +
+            encodeURIComponent(username),
+          type: "GET",
+          dataType: "json",
+          success: function (response) {
+            if (response.success) {
+              console.log(response.userInfo); // 사용자 정보를 받아옴
+            } else {
+              alert(response.message);
+            }
+          },
+          error: function (xhr, status, error) {
+            console.error("AJAX 요청 중 오류 발생:", error);
+          },
+        });
+      }
+    </script>
+  </body>
+</html>

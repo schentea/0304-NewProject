@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "SCoreDream";
+  word-break: keep-all;
+  scroll-behavior: smooth;
+}
+#adminPage {
+  width: 100%;
+  height: 100vh;
+  color: black;
+  display: flex;
+}
+#adminInfo {
+  width: 30%;
+  height: 100%;
+  background-color: gray;
+}
+#userInfo {
+  width: 70%;
+  height: 100%;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#userInfoBig {
+  width: 80%;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.userInfoBox {
+  width: 258px;
+  height: 321px;
+  background-color: black;
+  margin: 10px;
+}
