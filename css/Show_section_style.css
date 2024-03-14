@@ -290,23 +290,6 @@
   position: relative;
 }
 
-.showModalList li .heartBtn {
-  position: absolute;
-  content: "";
-  display: inline-block;
-  top: -20px;
-  right: -10px;
-  width: 100px;
-  height: 100px;
-  background: url("../image/heart.png") no-repeat;
-  background-position: 0 0;
-  cursor: pointer;
-}
-.showModalList li .heartBtn.active {
-  background-position: -2800px 0;
-  transition: background-position 1s steps(28);
-}
-
 .showModalList li .showTit {
   font-weight: 500;
 }

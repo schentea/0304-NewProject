@@ -104,7 +104,6 @@ fetchData()
       .join("");
     document.querySelector("#showModalList1").innerHTML = cons;
 
-    // 하트 버튼 애니메이션
     for (let h of document.querySelectorAll(".heartBtn")) {
       h.addEventListener("click", () => {
         h.classList.toggle("active");
@@ -112,3 +111,22 @@ fetchData()
     }
   })
   .catch((error) => {});
+
+// MutationObserver 생성
+const observer = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    // 추가된 요소가 있는지 확인
+    if (mutation.type === "childList") {
+      mutation.addedNodes.forEach((node) => {
+        // 추가된 요소가 .heartBtn인지 확인
+        if (node.nodeType === 1 && node.classList.contains("heartBtn")) {
+          node.addEventListener("click", () => {
+            node.classList.toggle("active");
+          });
+        }
+      });
+    }
+  });
+});
+
+observer.observe(document.body, { childList: true, subtree: true });

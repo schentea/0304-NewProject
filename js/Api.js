@@ -99,7 +99,8 @@ $(document).ready(function () {
             swiperSlide[index].addEventListener("click", () => {
               // 클릭한 슬라이드의 이미지를 imgbox에 할당
               imgbox.src = `./${imgArr[index]["이미지 경로"]}/${imgArr[index]["파일명"]}`;
-              foodname.textContent = item.BZ_NM;
+              // foodname.textContent = item.BZ_NM;
+              foodname.innerHTML = `<h5>${item.BZ_NM}</h5> <div class="heartBtn"></div>`;
               foodname2.textContent = item.SMPL_DESC.replace(/<br \/>/g, "\n");
               foodadr.textContent = item.GNG_CS;
               foodnum.textContent = item.TLNO;
@@ -148,7 +149,7 @@ $(document).ready(function () {
             swiperSlide1[index].addEventListener("click", () => {
               // 클릭한 슬라이드의 이미지를 imgbox에 할당
               imgbox.src = `./${imgArr2[index]["이미지 경로"]}/${imgArr2[index]["파일명"]}`;
-              foodname.textContent = item.BZ_NM;
+              foodname.innerHTML = `<h5>${item.BZ_NM}</h5> <div class="heartBtn"></div>`;
               foodname2.textContent = item.SMPL_DESC.replace(/<br \/>/g, "\n");
               foodadr.textContent = item.GNG_CS;
               foodnum.textContent = item.TLNO;

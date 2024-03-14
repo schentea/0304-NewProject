@@ -160,6 +160,12 @@
 .foodmodal-content .textbox h5 {
   font-size: 40px;
 }
+.foodmodal-content .textbox #foodname {
+  position: relative;
+}
+.foodmodal-content .textbox #foodname .heartBtn {
+  top: -25px;
+}
 .foodmodal-content .textbox p {
   font-size: 18px;
   margin: 0 0 5px;
