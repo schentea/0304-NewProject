@@ -150,7 +150,7 @@ video {
     width: 260px;
     height: 100%;
     position: fixed;
-    right: 0%;
+    right: -100%;
     top: 0;
     flex-direction: column;
     font-weight: 500;
