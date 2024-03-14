@@ -19,25 +19,23 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// 사용자 이름을 받아옴
-$username2 = isset($_GET['username']) ? $_GET['username'] : null;
-
 // 사용자 정보를 가져오는 SQL 쿼리 작성
-if ($username2) {
-    $sql = "SELECT * FROM userInfo WHERE uid = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param('s', $username2);
-} else {
-    die("사용자 이름이 없습니다.");
-}
-
+$exclude_username = 'schentea';
+$sql = "SELECT * FROM userInfo WHERE uid != ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param('s', $exclude_username);
 $stmt->execute();
 
 // 결과 가져오기
 $result = $stmt->get_result();
-$userInfo = $result->fetch_assoc();
+$userInfoArray = array();
+
+// 모든 사용자 정보를 배열에 추가
+while ($row = $result->fetch_assoc()) {
+    $userInfoArray[] = $row;
+}
 
 // 사용자 정보 출력
 header('Content-Type: application/json'); // JSON 응답임을 명시
-echo json_encode(array("success" => true, "userInfo" => $userInfo));
+echo json_encode(array("success" => true, "userList" => $userInfoArray));
 ?>
