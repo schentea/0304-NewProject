@@ -107,14 +107,8 @@ fetchData()
     // 하트 버튼 애니메이션
     for (let h of document.querySelectorAll(".heartBtn")) {
       h.addEventListener("click", () => {
-        h.classList.add("active");
+        h.classList.toggle("active");
       });
     }
   })
   .catch((error) => {});
-
-for (let h of document.querySelectorAll(".active")) {
-  h.addEventListener("click", () => {
-    h.classList.remove("active");
-  });
-}
