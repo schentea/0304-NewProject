@@ -1,229 +1,229 @@
 /* 헤더 */
 
 header {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 /* 나브 */
 header nav {
-    position: absolute;
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
-    font-weight: 500;
-    color: white;
-    top: 0;
-    right: 0;
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  font-weight: 500;
+  color: white;
+  top: 0;
+  right: 0;
 }
 #Header_title h2 {
-    font-size: 45px;
+  font-size: 45px;
 }
 #logo {
-    width: 120px;
+  width: 120px;
 }
 /* 보이는 나브안에 있는 로고 */
 nav #logo img {
-    width: 60%;
-    height: auto;
+  width: 60%;
+  height: auto;
 }
 /* 숨겨진 나브안에 있는 로고 */
 #hidden_logo {
-    width: 70px;
+  width: 70px;
 }
 /* 보이는 나브안에 있는 GNB_MENU */
 .gnb_menu {
-    display: flex;
-    gap: 20px;
-    margin: 0;
-    align-items: center;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  align-items: center;
 }
 #gnb_menu {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 .gnb_menu li {
-    font-size: 20px;
-    cursor: pointer;
-    padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px 15px;
 }
 .gnb_menu a {
-    color: white;
-    padding: 0 5px;
+  color: white;
+  padding: 0 5px;
 }
 .gnb_menu span {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 #between {
-    width: 1px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 1px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /* 숨겨진 나브안에 있는 토글메뉴 */
 #hidden_nav i {
-    font-size: 30px;
-    cursor: pointer;
+  font-size: 30px;
+  cursor: pointer;
 }
 /* 헤더 타이틀 */
 #Header_title {
-    position: absolute;
-    top: 30%;
-    left: 10vw;
-    color: white;
-    font-size: 50px;
+  position: absolute;
+  top: 30%;
+  left: 10vw;
+  color: white;
+  font-size: 50px;
 }
 
 #Header_title * {
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
 }
 
 #Header_title h1 {
-    font-size: 90px;
-    text-indent: -5px;
+  font-size: 90px;
+  text-indent: -5px;
 }
 /* 메인헤더 캐러셀 */
 #carouselExampleFade {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    z-index: -2;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -2;
 }
 .carousel-control-prev {
-    z-index: 0;
-    height: 500px;
-    top: 20%;
+  z-index: 0;
+  height: 500px;
+  top: 20%;
 }
 .carousel-control-next {
-    z-index: 0;
-    height: 500px;
-    top: 20%;
+  z-index: 0;
+  height: 500px;
+  top: 20%;
 }
 .carousel-inner img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    object-position: center;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
 }
 .carousel-inner {
-    position: relative;
+  position: relative;
 }
 
 .progressBar {
-    width: 100%;
-    max-width: 80vw;
-    height: 10px;
-    background-color: white;
-    position: absolute;
-    left: 10%;
-    bottom: 30%;
-    transition: width 0.1s linear;
-    border-radius: 20px;
+  width: 100%;
+  max-width: 80vw;
+  height: 10px;
+  background-color: white;
+  position: absolute;
+  left: 10%;
+  bottom: 30%;
+  transition: width 0.1s linear;
+  border-radius: 20px;
 }
 
 @media screen and (max-width: 1024px) {
-    #Header_title h1 {
-        font-size: 70px;
-    }
-    #Header_title h2 {
-        font-size: 25px;
-    }
-    /* 보이는 나브 */
-    #view_nav {
-        width: 250px;
-        height: 100%;
-        position: fixed;
-        right: 0%;
-        top: 0;
-        flex-direction: column;
-        font-weight: 500;
-        overflow-x: hidden;
-        /* transition: right 0.9s ease-out; */
-        z-index: 10;
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(10px) brightness(90%) contrast(120%);
-    }
-    /* X 로고 */
-    #xmark {
-        cursor: pointer;
-        position: absolute;
-        top: 17px;
-        right: 30px;
-        font-size: 30px;
-    }
-    /* 보이는 로그인 섹션 */
-    #rogin {
-        position: absolute;
-        top: 10%;
-        right: 10px;
-    }
-    #rogin li {
-        font-size: 18px;
-        font-weight: 500;
-    }
-    .rogin {
-        display: flex;
-        gap: 20px;
-    }
-    /* 보이는 글로벌 메뉴 */
-    #gnb_menu {
-        flex-direction: column;
-        position: absolute;
-        top: 25%;
-        right: 50px;
-        text-align: end;
-    }
-    .gnb_menu li {
-        font-size: 24px;
-    }
-    /* 로고 */
-    #logo {
-        display: none;
-    }
+  #Header_title h1 {
+    font-size: 70px;
+  }
+  #Header_title h2 {
+    font-size: 25px;
+  }
+  /* 보이는 나브 */
+  #view_nav {
+    width: 260px;
+    height: 100%;
+    position: fixed;
+    right: 0%;
+    top: 0;
+    flex-direction: column;
+    font-weight: 500;
+    overflow-x: hidden;
+    /* transition: right 0.9s ease-out; */
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px) brightness(90%) contrast(120%);
+  }
+  /* X 로고 */
+  #xmark {
+    cursor: pointer;
+    position: absolute;
+    top: 17px;
+    right: 30px;
+    font-size: 30px;
+  }
+  /* 보이는 로그인 섹션 */
+  #rogin {
+    position: absolute;
+    top: 10%;
+    right: 10px;
+  }
+  #rogin li {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .rogin {
+    display: flex;
+    gap: 20px;
+  }
+  /* 보이는 글로벌 메뉴 */
+  #gnb_menu {
+    flex-direction: column;
+    position: absolute;
+    top: 25%;
+    right: 50px;
+    text-align: end;
+  }
+  .gnb_menu li {
+    font-size: 24px;
+  }
+  /* 로고 */
+  #logo {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    #view_nav {
-        right: 0% !important;
-    }
-    #hidden_nav {
-        display: none;
-    }
-    #xmark {
-        display: none;
-    }
+  #view_nav {
+    right: 0% !important;
+  }
+  #hidden_nav {
+    display: none;
+  }
+  #xmark {
+    display: none;
+  }
 
-    #gnb_menu li a {
-        position: relative;
-    }
-    #gnb_menu li a::after {
-        position: absolute;
-        display: block;
-        content: '';
-        width: 0;
-        top: 49px;
-        height: 5px;
-        background: var(--mainColor);
-        transition: all 0.2s;
-    }
-    #gnb_menu li:hover a::after {
-        width: 100%;
-    }
+  #gnb_menu li a {
+    position: relative;
+  }
+  #gnb_menu li a::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 0;
+    top: 49px;
+    height: 5px;
+    background: var(--mainColor);
+    transition: all 0.2s;
+  }
+  #gnb_menu li:hover a::after {
+    width: 100%;
+  }
 }
