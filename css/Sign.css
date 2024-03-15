@@ -86,6 +86,17 @@ button {
   font-size: 20px;
 }
 
+.signInput ~ i.fa-regular {
+  position: absolute;
+  cursor: pointer;
+  font-size: 26px;
+  top: 10px;
+  right: 5px;
+  color: var(--mainGray);
+  background: #fff;
+  padding: 5px 7px;
+}
+
 .loginInput:placeholder-shown + .label-custom,
 .signInput:placeholder-shown + .label-custom {
   color: #6b7280;

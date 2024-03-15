@@ -1,221 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- 폰트어썸 -->
-        <script src="https://kit.fontawesome.com/247e9f18da.js" crossorigin="anonymous"></script>
-        <!-- 스와이퍼 -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-        <!-- Link Swiper's CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-        <title>Document</title>
-    </head>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-decoration: none;
-            list-style: none;
-        }
-        #container {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        #left_div {
-            width: 30%;
-            height: 100%;
-            background: gray;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            flex-direction: column;
-        }
-        #right_div {
-            width: 70%;
-            height: 100%;
-            background: green;
-            display: flex;
-            justify-content: center;
-        }
-        .fa-solid {
-            font-size: 40px;
-        }
-        #content div {
-            margin: 20px;
-        }
-        body {
-            position: relative;
-            height: 100%;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 폰트어썸 -->
+    <script src="https://kit.fontawesome.com/247e9f18da.js" crossorigin="anonymous"></script>
+    <!-- 스와이퍼 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="icon" href="./image/logo.svg" />
+    <link href="https://webfontworld.github.io/SCoreDream/SCoreDream.css" rel="stylesheet" />
+    <title>개인 페이지</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      list-style: none;
+      font-family: "SCoreDream";
+    }
 
-        body {
-            background: #eee;
-            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            color: #000;
-            margin: 0;
-            padding: 0;
-        }
+    #container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #left_div {
+      width: 30%;
+      height: 100%;
+      background: lightgray;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+    }
+    #right_div {
+      width: 70%;
+      display: flex;
+      justify-content: center;
+    }
+    #right_div h1 {
+      font-size: 35px;
+    }
+    #right_div > div {
+      height: 100%;
+      width: 80%;
+    }
+    #content div {
+      margin: 20px;
+    }
+    #content h1 {
+      font-size: 32px;
+    }
+    #content h3 {
+      font-size: 20px;
+    }
+    #content #passRewrite {
+      font-size: 16px;
+    }
 
-        .swiper {
-            width: 100%;
-            height: 80%;
-        }
+    body {
+      position: relative;
+      height: 100%;
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
 
-        .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            background: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    .swiper {
+      width: 100%;
+      height: 200px;
+      margin: 30px 0 40px;
+    }
 
-        .swiper-slide img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        span {
-            margin-left: 10%;
-        }
-        #show_title_div {
-            padding: 18px;
-        }
-        #show_title_div p {
-            display: flex;
-            align-items: center;
-        }
-        #show_title_div div {
-            width: 80%;
-            margin-top: 30px;
-        }
-        #show_title_div p::before {
-            content: '';
-            display: inline-block;
-            width: 7px;
-            height: 15px;
-            background-color: #888;
-            margin-right: 5px;
-            margin-top: 5px;
-        }
-        @media screen and (max-width: 768px) {
-            #container {
-                flex-direction: column;
-            }
-            #left_div {
-                width: 100%;
-                height: 50%;
-            }
-            #right_div {
-                width: 100%;
-                height: 100%;
-            }
-            #container {
-                height: 170vh;
-            }
-            #content {
-                margin-top: 100px;
-            }
-            #god {
-                position: absolute;
-                top: 20px;
-                right: 10px;
-            }
-        }
-    </style>
-    <body>
-        <div id="container">
-            <!-- 왼쪽 목록 -->
-            <div id="left_div">
-                <div style="position: absolute; top: 10px; left: 10px"><i class="fa-solid fa-house"></i></div>
-                <div></div>
-                <!-- 각종 컨텐츠들 -->
-                <div id="content" style="text-align: center; margin-bottom: 150px">
-                    <!-- 동그란 원 -->
-                    <div style="width: 200px; height: 200px; border-radius: 50%; background: white"></div>
-                    <!-- 이름 -->
-                    <div><h1>이름</h1></div>
-                    <!-- 이메일 -->
-                    <div><h3>이메일@이메일.com</h3></div>
-                    <!-- 비밀번호 수정 -->
-                    <div>
-                        <p>비밀번호 수정 <i class="fa-solid fa-pen" style="font-size: 20px"></i></p>
-                    </div>
-                </div>
-                <div id="god"><i class="fa-solid fa-right-from-bracket" style="font-size: 20px"></i> 로그아웃</div>
-            </div>
-            <!-- 오른쪽 목록 -->
-            <div id="right_div">
-                <div style="height: 100%; width: 80%">
-                    <!-- 식당찜목록 타이틀 -->
-                    <div style="height: 30%">
-                        <div style="width: 100%; height: 10%; margin-bottom: 3%; margin-left: 0%; margin-top: 15%">
-                            <h1>식당 찜목록</h1>
-                        </div>
-                        <!-- 캐러셀 -->
-                        <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">Slide 1</div>
-                                <div class="swiper-slide">Slide 2</div>
-                                <div class="swiper-slide">Slide 3</div>
-                                <div class="swiper-slide">Slide 4</div>
-                                <div class="swiper-slide">Slide 5</div>
-                                <div class="swiper-slide">Slide 6</div>
-                                <div class="swiper-slide">Slide 7</div>
-                                <div class="swiper-slide">Slide 8</div>
-                                <div class="swiper-slide">Slide 9</div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
-                    <!-- 공연 찜목록 -->
-                    <h1 style="margin-top: 5%">공연 찜목록</h1>
-                    <div id="show_title_div">
-                        <div>
-                            <h2>대구콘서트하우스</h2>
-                            <p>공연제목LOREM IPSUM<span>2024-00-00~2024-00-00</span></p>
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-                            <p>공연제목LOREM IPSUM <span>2024-00-00~2024-00-00</span></p>
-                        </div>
-                        <!-- 아트플러스씨어터 -->
-                        <div>
-                            <h2>아트플러스씨어터</h2>
-                            <p style="text-align: center; color: #888">즐겨찾기한 항목이 없습니다.</p>
-                        </div>
-                        <!-- 라이크디즈위드 -->
-                        <div>
-                            <h2>라이크디즈위드</h2>
-                            <p>공연제목LOREM IPSUM <span>2024-00-00~2024-00-00</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* span {
+      margin-left: 10%;
+    } */
+    #show_title_div {
+      padding: 0 0 0 18px;
+    }
+    #show_title_div h2 {
+      font-size: 23px;
+      margin: 0 0 15px;
+    }
+    #show_title_div p {
+      display: flex;
+      align-items: center;
+      font-size: 19px;
+      flex-wrap: wrap;
+      gap: 5px 30px;
+      border-left: 5px solid gray;
+      padding: 0 8px;
+      margin: 0 0 10px 10px;
+    }
+    #show_title_div div {
+      margin-top: 30px;
+    }
+    #show_title_div .showTit {
+      font-weight: 500;
+    }
+
+    @media screen and (max-width: 1080px) {
+      #right_div > div {
+        width: 90%;
+      }
+    }
+    @media screen and (max-width: 870px) {
+      #container {
+        flex-direction: column;
+      }
+      #left_div {
+        width: 100%;
+        height: 50%;
+      }
+      #right_div {
+        width: 100%;
+        height: 100%;
+      }
+      #container {
+        height: 170vh;
+      }
+      #content {
+        margin-top: 100px;
+      }
+      #god {
+        position: absolute;
+        top: 20px;
+        right: 10px;
+      }
+      #right_div #foodWrap {
+        margin: 50px 0 70px 0;
+      }
+    }
+  </style>
+  <body>
+    <div id="container">
+      <!-- 왼쪽 목록 -->
+      <div id="left_div">
+        <a href="index.html" style="color: black">
+          <div style="position: absolute; top: 10px; left: 10px; text-align: center">
+            <i class="fa-solid fa-house" style="font-size: 30px"></i>
+            <p>홈페이지</p>
+          </div>
+        </a>
+        <div></div>
+        <!-- 각종 컨텐츠들 -->
+        <div id="content" style="text-align: center; margin-bottom: 150px">
+          <!-- 동그란 원 -->
+          <div style="width: 200px; height: 200px; border-radius: 50%; background: white"></div>
+          <!-- 이름 -->
+          <div><h1>이름</h1></div>
+          <!-- 이메일 -->
+          <div><h3>이메일@이메일.com</h3></div>
+          <!-- 비밀번호 수정 -->
+          <div id="passRewrite">
+            <p>비밀번호 수정 <i class="fa-solid fa-pen" style="font-size: 16px"></i></p>
+          </div>
         </div>
+        <div id="god"><i class="fa-solid fa-right-from-bracket" style="font-size: 16px"></i> 로그아웃</div>
+      </div>
+      <!-- 오른쪽 목록 -->
+      <div id="right_div">
+        <div>
+          <!-- 식당찜목록 타이틀 -->
+          <div id="foodWrap">
+            <div style="width: 100%; height: 10%">
+              <h1>식당 찜목록</h1>
+            </div>
+            <!-- 캐러셀 -->
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <!-- 공연 찜목록 -->
+          <h1 style="margin-top: 5%">공연 찜목록</h1>
+          <div id="show_title_div">
+            <div>
+              <h2>대구콘서트하우스</h2>
+              <p><span class="showTit">공연제목LOREM IPSUM</span><span>📅 2024-00-00 ~ 2024-00-00</span></p>
 
-        <!-- 스와이퍼 js -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script>
-            var swiper = new Swiper('.mySwiper', {
-                slidesPerView: '2',
-                spaceBetween: 30,
-                freeMode: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                breakpoints: {
-                    768: {
-                        slidesPerView: 3,
-                    },
-                },
-            });
-        </script>
-    </body>
+              <p><span class="showTit">공연제목LOREM IPSUM</span> <span>📅 2024-00-00 ~ 2024-00-00</span></p>
+            </div>
+            <!-- 아트플러스씨어터 -->
+            <div>
+              <h2>아트플러스씨어터</h2>
+              <p style="text-align: center; color: #888">즐겨찾기한 항목이 없습니다.</p>
+            </div>
+            <!-- 라이크디즈위드 -->
+            <div>
+              <h2>라이크디즈위드</h2>
+              <p><span class="showTit">공연제목LOREM IPSUM</span> <span>📅 2024-00-00 ~ 2024-00-00</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 스와이퍼 js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        slidesPerView: "2",
+        spaceBetween: 30,
+        freeMode: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+      });
+    </script>
+  </body>
 </html>

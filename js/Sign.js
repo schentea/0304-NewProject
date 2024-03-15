@@ -9,9 +9,7 @@ function isValidPassword(password) {
   if (password.length < 8) {
     return false;
   }
-  return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/.test(
-    password
-  );
+  return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/.test(password);
 }
 
 function isValidEmail(email) {
@@ -33,26 +31,13 @@ function checkValidity() {
   let isEmailValid = isValidEmail(email);
   let isTelValid = isValidPhoneNumber(tel);
 
-  document.getElementById("usernameError").textContent = isUsernameValid
-    ? ""
-    : "아이디는 4자 이상 10자 이하의 알파벳과 숫자만 가능합니다.";
-  document.getElementById("passwordError").textContent = isPasswordValid
-    ? ""
-    : "비밀번호는 최소 8자 이상의 대소문자, 숫자, 특수문자를 포함해야 합니다.";
-  document.getElementById("emailError").textContent = isEmailValid
-    ? ""
-    : "올바른 이메일 주소를 입력해주세요.";
-  document.getElementById("telError").textContent = isTelValid
-    ? ""
-    : "올바른 전화번호 형식을 입력해주세요. (예시: 01012345678)";
+  document.getElementById("usernameError").textContent = isUsernameValid ? "" : "아이디는 4자 이상 10자 이하의 알파벳과 숫자만 가능합니다.";
+  document.getElementById("passwordError").textContent = isPasswordValid ? "" : "비밀번호는 최소 8자 이상의 대소문자, 숫자, 특수문자를 포함해야 합니다.";
+  document.getElementById("emailError").textContent = isEmailValid ? "" : "올바른 이메일 주소를 입력해주세요.";
+  document.getElementById("telError").textContent = isTelValid ? "" : "올바른 전화번호 형식을 입력해주세요. (예시: 01012345678)";
 
   let submitButton = document.getElementById("signSubmitBtn");
-  submitButton.disabled = !(
-    isUsernameValid &&
-    isPasswordValid &&
-    isEmailValid &&
-    isTelValid
-  );
+  submitButton.disabled = !(isUsernameValid && isPasswordValid && isEmailValid && isTelValid);
 }
 
 function signup() {
@@ -97,17 +82,15 @@ function signup() {
     });
 }
 
-document
-  .getElementById("signupForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    checkValidity();
-    // 클라이언트 측에서 유효성 검사를 통과한 경우에만 회원가입 요청을 보냄
-    let submitButton = document.getElementById("signSubmitBtn");
-    if (!submitButton.disabled) {
-      signup();
-    }
-  });
+document.getElementById("signupForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+  checkValidity();
+  // 클라이언트 측에서 유효성 검사를 통과한 경우에만 회원가입 요청을 보냄
+  let submitButton = document.getElementById("signSubmitBtn");
+  if (!submitButton.disabled) {
+    signup();
+  }
+});
 
 document.getElementById("username").addEventListener("input", checkValidity);
 document.getElementById("password").addEventListener("input", checkValidity);
@@ -115,3 +98,12 @@ document.getElementById("email").addEventListener("input", checkValidity);
 document.getElementById("tel").addEventListener("input", checkValidity);
 
 checkValidity();
+
+document.querySelector(".fa-regular").addEventListener("click", function () {
+  let input = document.querySelector("#password");
+  if (input.type === "text") {
+    input.type = "password";
+  } else input.type = "text";
+  this.classList.toggle("fa-eye");
+  this.classList.toggle("fa-eye-slash");
+});

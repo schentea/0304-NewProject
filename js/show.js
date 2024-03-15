@@ -112,7 +112,6 @@ fetchData()
   })
   .catch((error) => {});
 
-// MutationObserver 생성
 const observer = new MutationObserver((mutations) => {
   mutations.forEach((mutation) => {
     // 추가된 요소가 있는지 확인
