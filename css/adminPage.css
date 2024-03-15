@@ -8,28 +8,14 @@
   word-break: keep-all;
   scroll-behavior: smooth;
 }
-#adminPage {
-  width: 100%;
-  height: 100vh;
-  color: black;
-  display: flex;
+
+a {
+  color: #222;
 }
-#adminInfo {
-  width: 30%;
-  height: 100%;
-  background-color: gray;
-}
-#userInfo {
-  width: 70%;
-  height: 100%;
-  background-color: #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
+/* 관리자 페이지 속성 */
 #userInfoBig {
   width: 80%;
-  height: 700px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -37,6 +23,170 @@
 .userInfoBox {
   width: 258px;
   height: 321px;
-  background-color: black;
+  border: 2px solid gray;
+  border-radius: 10px;
   margin: 10px;
+}
+
+/* 공통+개인 페이지 속성 */
+#homeBtn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+#homeBtn i {
+  font-size: 30px;
+}
+
+#container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#left_div {
+  width: 30%;
+  max-width: 450px;
+  height: 100%;
+  background: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+#right_div {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 30px 30%;
+}
+#right_div h1 {
+  font-size: 35px;
+}
+#right_div > div {
+  width: 80%;
+}
+#right_div .noHeartTxt {
+  text-align: center;
+  color: #888;
+}
+#content {
+  text-align: center;
+  margin-bottom: 150px;
+}
+#content div {
+  margin: 20px;
+}
+#content h1 {
+  font-size: 32px;
+}
+#content h3 {
+  font-size: 20px;
+}
+#content #passRewrite {
+  font-size: 16px;
+}
+
+body {
+  position: relative;
+  height: 100%;
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 200px;
+  margin: 30px 0 40px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* span {
+  margin-left: 10%;
+} */
+#show_title_div {
+  padding: 0 0 0 18px;
+}
+#show_title_div h2 {
+  font-size: 23px;
+  margin: 0 0 15px;
+}
+#show_title_div p {
+  display: flex;
+  align-items: center;
+  font-size: 19px;
+  flex-wrap: wrap;
+  gap: 5px 30px;
+  border-left: 5px solid gray;
+  padding: 0 8px;
+  margin: 0 0 10px 10px;
+}
+#show_title_div div {
+  margin-top: 30px;
+}
+#show_title_div .showTit {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1080px) {
+  #right_div > div {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 870px) {
+  #container {
+    display: block;
+    height: 170vh;
+  }
+  #left_div {
+    width: 100%;
+    max-width: none;
+    height: 35%;
+    position: static;
+  }
+
+  #content {
+    margin: 0;
+  }
+  #god {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+  }
+  #right_div {
+    margin: 0;
+    width: 100%;
+  }
+  #right_div #foodWrap {
+    margin: 50px 0 70px 0;
+  }
+}
+@media screen and (min-width: 1500px) {
+  #right_div {
+    margin-left: 20%;
+  }
 }
