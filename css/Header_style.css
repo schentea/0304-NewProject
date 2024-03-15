@@ -133,7 +133,7 @@ video {
   background-color: white;
   position: absolute;
   left: 10%;
-  bottom: 30%;
+  bottom: 20%;
   transition: width 0.1s linear;
   border-radius: 20px;
 }
