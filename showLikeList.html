@@ -31,6 +31,7 @@
     }
     #left_div {
       width: 30%;
+      max-width: 450px;
       height: 100%;
       background: lightgray;
       display: flex;
@@ -141,12 +142,13 @@
       }
       #left_div {
         width: 100%;
+        max-width: none;
         height: 35%;
         position: static;
       }
 
       #content {
-        margin: 100px 0;
+        margin: 0;
       }
       #god {
         position: absolute;
@@ -161,6 +163,11 @@
         margin: 50px 0 70px 0;
       }
     }
+    @media screen and (min-width: 1500px) {
+      #right_div {
+        margin-left: 20%;
+      }
+    }
   </style>
   <body>
     <div id="container">
@@ -172,7 +179,6 @@
             <p>홈페이지</p>
           </div>
         </a>
-        <div></div>
         <!-- 각종 컨텐츠들 -->
         <div id="content">
           <!-- 동그란 원 -->

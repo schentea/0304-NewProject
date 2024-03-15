@@ -218,7 +218,7 @@ video {
     display: block;
     content: "";
     width: 0;
-    top: 49px;
+    top: 35px;
     height: 5px;
     background: var(--mainColor);
     transition: all 0.2s;
