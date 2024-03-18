@@ -53,14 +53,16 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const username = sessionStorage.getItem("username");
+        const usernameWithoutDomain = username.replace(/@.*/, '');
+        console.log(usernameWithoutDomain)
         const loginButton = document.getElementById("loginButton");
         const openModalBtn = document.getElementById("openModalBtn");
         const between = document.getElementById("between");
         const ul = document.getElementById("rogin");
         
-        if (username) {
-          if (username === "schentea") {
-            const user = createListItem("userinfo", `${username}님`);
+        if (usernameWithoutDomain) {
+          if (usernameWithoutDomain === "schentea") {
+            const user = createListItem("userinfo", `${usernameWithoutDomain}님`);
             const between2 = createListItem("between2", "|");
             const logout = createListItem("logout", "로그아웃");
 
@@ -68,16 +70,16 @@
               logoutUser();
             });
             user.addEventListener("click", function () {
-              openAdminPage(username);
+              openAdminPage(usernameWithoutDomain);
             });
             hideElements([loginButton, openModalBtn, between]);
             appendElements(ul, [user, between2, logout]);
           } else {
-            const user = createListItem("userinfo", `${username}님`);
+            const user = createListItem("userinfo", `${usernameWithoutDomain}님`);
             const between2 = createListItem("between2", "|");
             const logout = createListItem("logout", "로그아웃");
             user.addEventListener("click", function () {
-              openMyPage(username);
+              openMyPage(usernameWithoutDomain);
             });
             logout.addEventListener("click", function () {
               logoutUser();
