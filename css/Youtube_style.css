@@ -199,7 +199,7 @@
     z-index: 3;
     transition-duration: 0.3s;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1120px) {
     #youtube_section {
         height: auto;
     }
