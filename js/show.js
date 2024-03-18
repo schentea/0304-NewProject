@@ -56,7 +56,9 @@ import { eventData, performData, fetchData } from "./Api.js";
 
 fetchData()
   .then(() => {
-    let art = performData.filter((a) => /아트플러스씨어터|여우별아트홀/.test(a.place));
+    let art = performData.filter((a) =>
+      /아트플러스씨어터|여우별아트홀/.test(a.place)
+    );
     art = art
       .map(
         (a) => `<li>
@@ -88,7 +90,9 @@ fetchData()
       .join("");
     document.querySelector("#showModalList2").innerHTML = eve;
     let today = new Date().toISOString().split("T")[0];
-    let cons = performData.filter((a) => a.place.includes("콘서트하우스") && a.end_date >= today);
+    let cons = performData.filter(
+      (a) => a.place.includes("콘서트하우스") && a.end_date >= today
+    );
     cons = cons
       .map(
         (a) => `<li>
@@ -103,10 +107,14 @@ fetchData()
       )
       .join("");
     document.querySelector("#showModalList1").innerHTML = cons;
-
+    const username = sessionStorage.getItem("username");
     for (let h of document.querySelectorAll(".heartBtn")) {
       h.addEventListener("click", () => {
-        h.classList.toggle("active");
+        if (username) {
+          h.classList.toggle("active");
+        } else {
+          alert("로그인 후 이용해주세요.");
+        }
       });
     }
   })
