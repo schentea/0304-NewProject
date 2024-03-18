@@ -53,6 +53,11 @@ nav #logo img {
   cursor: pointer;
   padding: 10px 15px;
 }
+.gnb_menu li.userinfo {
+  background: lightcoral;
+  border-radius: 50%;
+  border: 3px solid white;
+}
 .gnb_menu a {
   color: white;
   padding: 0 5px;
@@ -192,6 +197,9 @@ video {
   }
   .gnb_menu li {
     font-size: 24px;
+  }
+  .gnb_menu li.userinfo {
+    margin: 0 80px;
   }
   /* 로고 */
   #logo {
