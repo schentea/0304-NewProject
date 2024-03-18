@@ -92,6 +92,18 @@ a {
 #god i {
   margin-right: 8px;
 }
+
+.profImg {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profImg img {
+  width: 100%;
+}
+
 #right_div {
   width: 70%;
   display: flex;
