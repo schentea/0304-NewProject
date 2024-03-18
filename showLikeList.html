@@ -1,166 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- 폰트어썸 -->
-    <script
-      src="https://kit.fontawesome.com/247e9f18da.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- 스와이퍼 -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
-    />
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="./css/adminPage.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <link rel="icon" href="./image/logo.svg" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- 폰트어썸 -->
+        <script src="https://kit.fontawesome.com/247e9f18da.js" crossorigin="anonymous"></script>
+        <!-- 스와이퍼 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet" href="./css/adminPage.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="icon" href="./image/logo.svg" />
 
-    <link
-      href="https://webfontworld.github.io/SCoreDream/SCoreDream.css"
-      rel="stylesheet"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>개인 페이지</title>
-  </head>
-  <body>
-    <div id="container">
-      <!-- 왼쪽 목록 -->
-      <div id="left_div">
-        <a href="index.php">
-          <div id="homeBtn">
-            <i class="fa-solid fa-house"></i>
-            <p>홈페이지</p>
-          </div>
-        </a>
-        <!-- 각종 컨텐츠들 -->
-        <div id="content">
-          <!-- 동그란 원 -->
-          <div class="profImg">
-            <img src="./image/userImg.png" alt="프로필 사진" />
-          </div>
-          <!-- 이름 -->
-          <div><h1>이름</h1></div>
-          <!-- 이메일 -->
-          <div><h3>이메일@이메일.com</h3></div>
-          <!-- 비밀번호 수정 -->
-          <div id="passRewrite">
-            <a href="passwordEdit.html" target="_self">
-              <p>
-                비밀번호 수정
-                <i class="fa-solid fa-pen" style="font-size: 16px"></i>
-              </p>
-            </a>
-          </div>
+        <link href="https://webfontworld.github.io/SCoreDream/SCoreDream.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>개인 페이지</title>
+    </head>
+    <body>
+        <div id="container">
+            <!-- 왼쪽 목록 -->
+            <div id="left_div">
+                <a href="index.php">
+                    <div id="homeBtn">
+                        <i class="fa-solid fa-house"></i>
+                        <p>홈페이지</p>
+                    </div>
+                </a>
+                <!-- 각종 컨텐츠들 -->
+                <div id="content">
+                    <!-- 동그란 원 -->
+                    <div class="profImg">
+                        <img src="./image/userImg.png" alt="프로필 사진" />
+                    </div>
+                    <!-- 이름 -->
+                    <div><h1 id="name1"></h1></div>
+                    <!-- 이메일 -->
+                    <div><h3 id="email1"></h3></div>
+                    <!-- 비밀번호 수정 -->
+                    <div id="passRewrite">
+                        <a href="passwordEdit.html" target="_self">
+                            <p id="p1">
+                                비밀번호 수정
+                                <i class="fa-solid fa-pen" style="font-size: 16px"></i>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div id="god" style="cursor: pointer"><i class="fa-solid fa-arrow-right-from-bracket"></i>로그아웃</div>
+            </div>
+            <!-- 오른쪽 목록 -->
+            <div id="right_div">
+                <div>
+                    <!-- 식당찜목록 타이틀 -->
+                    <div id="foodWrap">
+                        <h1>식당 찜목록</h1>
+                        <!-- 캐러셀 -->
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">Slide 1</div>
+                                <div class="swiper-slide">Slide 2</div>
+                                <div class="swiper-slide">Slide 3</div>
+                                <div class="swiper-slide">Slide 4</div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <!-- 공연 찜목록 -->
+                    <h1 style="margin-top: 7%">공연 찜목록</h1>
+                    <div id="show_title_div">
+                        <div>
+                            <h2>대구콘서트하우스</h2>
+                            <p>
+                                <button class="delBtn">
+                                    <i class="fa-solid fa-xmark fa-xl"></i></button
+                                ><span class="showTit">공연제목LOREM IPSUMasdfasdfasdf</span
+                                ><span>📅 2024-00-00 ~ 2024-00-00</span>
+                            </p>
+                            <p>
+                                <button class="delBtn">
+                                    <i class="fa-solid fa-xmark fa-xl"></i></button
+                                ><span class="showTit">공연제목LOREM IPSUMasdf</span
+                                ><span>📅 2024-00-00 ~ 2024-00-00</span>
+                            </p>
+                        </div>
+                        <!-- 아트플러스씨어터 -->
+                        <div>
+                            <h2>아트플러스씨어터</h2>
+                            <p class="noHeartTxt">즐겨찾기한 항목이 없습니다.</p>
+                        </div>
+                        <!-- 라이크디즈위드 -->
+                        <div>
+                            <h2>라이크디즈위드</h2>
+                            <p>
+                                <button class="delBtn">
+                                    <i class="fa-solid fa-xmark fa-xl"></i></button
+                                ><span class="showTit">공연제목LOREM IPSUM</span>
+                                <span>📅 2024-00-00 ~ 2024-00-00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="god">
-          <i class="fa-solid fa-arrow-right-from-bracket"></i>로그아웃
-        </div>
-      </div>
-      <!-- 오른쪽 목록 -->
-      <div id="right_div">
-        <div>
-          <!-- 식당찜목록 타이틀 -->
-          <div id="foodWrap">
-            <h1>식당 찜목록</h1>
-            <!-- 캐러셀 -->
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 4</div>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-          <!-- 공연 찜목록 -->
-          <h1 style="margin-top: 7%">공연 찜목록</h1>
-          <div id="show_title_div">
-            <div>
-              <h2>대구콘서트하우스</h2>
-              <p>
-                <button class="delBtn">
-                  <i class="fa-solid fa-xmark fa-xl"></i></button
-                ><span class="showTit">공연제목LOREM IPSUMasdfasdfasdf</span
-                ><span>📅 2024-00-00 ~ 2024-00-00</span>
-              </p>
-              <p>
-                <button class="delBtn">
-                  <i class="fa-solid fa-xmark fa-xl"></i></button
-                ><span class="showTit">공연제목LOREM IPSUMasdf</span
-                ><span>📅 2024-00-00 ~ 2024-00-00</span>
-              </p>
-            </div>
-            <!-- 아트플러스씨어터 -->
-            <div>
-              <h2>아트플러스씨어터</h2>
-              <p class="noHeartTxt">즐겨찾기한 항목이 없습니다.</p>
-            </div>
-            <!-- 라이크디즈위드 -->
-            <div>
-              <h2>라이크디즈위드</h2>
-              <p>
-                <button class="delBtn">
-                  <i class="fa-solid fa-xmark fa-xl"></i></button
-                ><span class="showTit">공연제목LOREM IPSUM</span>
-                <span>📅 2024-00-00 ~ 2024-00-00</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- 스와이퍼 js -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        loop: true,
-        slidesPerView: "2",
-        spaceBetween: 30,
-        freeMode: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        breakpoints: {
-          1400: {
-            slidesPerView: 3,
-          },
-        },
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const username = sessionStorage.getItem("username");
-        getUserInfo(username);
-      });
-      function getUserInfo(username) {
-        $.ajax({
-          url:
-            "http://dongseong.dothome.co.kr/mypage.php?username=" +
-            encodeURIComponent(username),
-          type: "GET",
-          dataType: "json",
-          success: function (response) {
-            if (response.success) {
-              console.log(response.userInfo); // 사용자 정보를 받아옴
-              // getUserList 호출
-              getUserList();
-            } else {
-              alert(response.message);
+        <!-- 스와이퍼 js -->
+        <script></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script>
+            var swiper = new Swiper('.mySwiper', {
+                loop: true,
+                slidesPerView: '2',
+                spaceBetween: 30,
+                freeMode: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    1400: {
+                        slidesPerView: 3,
+                    },
+                },
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const username = sessionStorage.getItem('username');
+                getUserInfo(username);
+            });
+            function getUserInfo(username) {
+                $.ajax({
+                    url: 'http://dongseong.dothome.co.kr/mypage.php?username=' + encodeURIComponent(username),
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.success) {
+                            console.log('이건', response.userInfo); // 사용자 정보를 받아옴
+                            document.getElementById('name1').innerText = response.userInfo.name;
+                            document.getElementById('email1').innerText = response.userInfo.email;
+                            if (!/010/.test(response.userInfo.tel)) {
+                                // '010'이 포함되어 있지 않은 경우
+                                // 여기에 처리할 내용을 작성하세요.
+                                document.getElementById('p1').style.display = 'none';
+                            } else {
+                                document.getElementById('p1').style.display = 'block';
+                            }
+
+                            // getUserList 호출
+                            getUserList();
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('AJAX 요청 중 오류 발생:', error);
+                    },
+                });
             }
-          },
-          error: function (xhr, status, error) {
-            console.error("AJAX 요청 중 오류 발생:", error);
-          },
-        });
-      }
-    </script>
-  </body>
+
+            document.getElementById('god').addEventListener('click', function () {
+                $.ajax({
+                    url: 'http://dongseong.dothome.co.kr/logout.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.success) {
+                            alert(response.message);
+                            sessionStorage.removeItem('username');
+                            window.location.href = 'index.php';
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('AJAX 요청 중 오류 발생:', error);
+                    },
+                });
+            });
+        </script>
+    </body>
 </html>
