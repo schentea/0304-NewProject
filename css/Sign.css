@@ -96,6 +96,10 @@ button {
   padding: 5px 7px;
 }
 
+.signInput ~ i.fa-eye {
+  right: 7px;
+}
+
 .loginInput:placeholder-shown + .label-custom,
 .signInput:placeholder-shown + .label-custom {
   color: #6b7280;
