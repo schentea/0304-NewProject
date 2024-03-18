@@ -54,7 +54,6 @@
       document.addEventListener("DOMContentLoaded", function () {
         const username = sessionStorage.getItem("username");
         const usernameWithoutDomain = username.replace(/@.*/, '');
-        console.log(usernameWithoutDomain)
         const loginButton = document.getElementById("loginButton");
         const openModalBtn = document.getElementById("openModalBtn");
         const between = document.getElementById("between");
@@ -63,30 +62,27 @@
         if (usernameWithoutDomain) {
           if (usernameWithoutDomain === "schentea") {
             const user = createListItem("userinfo", `${usernameWithoutDomain}님`);
-            const between2 = createListItem("between2", "|");
-            const logout = createListItem("logout", "로그아웃");
-
-            logout.addEventListener("click", function () {
-              logoutUser();
-            });
+            // const logout = createListItem("logout", "로그아웃");
+            // logout.addEventListener("click", function () {
+            //   logoutUser();
+            // });
             user.addEventListener("click", function () {
               openAdminPage(usernameWithoutDomain);
             });
             hideElements([loginButton, openModalBtn, between]);
-            appendElements(ul, [user, between2, logout]);
+            appendElements(ul, [user]);
           } else {
-            const user = createListItem("userinfo", `${usernameWithoutDomain}님`);
-            const between2 = createListItem("between2", "|");
-            const logout = createListItem("logout", "로그아웃");
+            const user = createListItem("userinfo", `${usernameWithoutDomain.slice(0,2)}`);
+            // const logout = createListItem("logout", "로그아웃");
+            // logout.addEventListener("click", function () {
+            //   logoutUser();
+            // });
             user.addEventListener("click", function () {
               openMyPage(usernameWithoutDomain);
             });
-            logout.addEventListener("click", function () {
-              logoutUser();
-            });
-
+            
             hideElements([loginButton, openModalBtn, between]);
-            appendElements(ul, [user, between2, logout]);
+            appendElements(ul, [user]);
           }
         } else {
           console.log("사용자가 존재하지 않습니다");
