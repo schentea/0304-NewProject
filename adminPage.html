@@ -79,15 +79,15 @@
     <script>
       function deleteUser(userId) {
         $.ajax({
-          url: "http://dongseong.dothome.co.kr/deleteUser.php", // 회원 삭제를 처리하는 서버 측 스크립트의 경로
-          type: "POST", // 삭제 요청은 POST 메소드를 사용
-          data: { userId: userId }, // 삭제할 회원의 식별자를 서버로 전달
+          url: "http://dongseong.dothome.co.kr/deleteUser.php",
+          type: "POST",
+          data: { userId: userId }, // userId를 데이터로 전달
           dataType: "json",
           success: function (response) {
             if (response.success) {
-              // 성공적으로 삭제되었을 때 클라이언트 화면에서도 해당 회원 정보를 삭제하도록 처리할 수 있음
-              // 이 부분은 해당 사용자의 HTML 요소를 찾아서 삭제하거나, 화면 갱신을 수행하는 등의 작업을 수행
               alert("회원 정보가 성공적으로 삭제되었습니다.");
+              // 성공적으로 삭제되었을 때 사용자 목록을 갱신하도록 호출
+              getUserList();
             } else {
               alert("회원 정보 삭제 실패: " + response.message);
             }
@@ -97,6 +97,7 @@
           },
         });
       }
+
       function getUserList() {
         $.ajax({
           url: "http://dongseong.dothome.co.kr/userInfo.php",
@@ -104,10 +105,11 @@
           dataType: "json",
           success: function (response) {
             if (response.success) {
+              // 성공적으로 사용자 정보를 받아온 경우 사용자 목록을 갱신
               const userList = response.userList;
+              // 기존의 사용자 목록을 지우고 새로운 목록을 추가
               const userInfoBig = document.getElementById("userInfoBig");
-
-              // 사용자 목록을 순회하며 각 사용자 정보를 표시
+              userInfoBig.innerHTML = ""; // 이전 목록 초기화
               userList.forEach(function (user) {
                 const userInfoBox = document.createElement("div");
                 userInfoBox.classList.add("userInfoBox");
@@ -115,7 +117,7 @@
                 const delBtn = document.createElement("button");
                 delBtn.classList.add("delBtn", "delBtnAdmin");
                 delBtn.addEventListener("click", function () {
-                  deleteUser(userId);
+                  deleteUser(user.id); // 사용자 id를 전달하여 삭제 함수 호출
                 });
                 delBtn.innerHTML = '<i class="fa-solid fa-xmark fa-2xl"></i>';
                 userInfoBox.appendChild(delBtn);

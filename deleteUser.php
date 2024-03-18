@@ -16,9 +16,9 @@ if ($conn->connect_error) {
 }
 
 $query = "DELETE FROM userInfo WHERE id = ?";
-if ($stmt = $mysqli->prepare($query)) {
+if ($stmt = $conn->prepare($query)) {
     // 바인딩
-    $stmt->bind_param("s", $userId);
+    $stmt->bind_param("i", $userId); // "i"는 integer 타입을 의미합니다.
     // 실행
     if ($stmt->execute()) {
         // 성공적으로 삭제됨을 응답으로 반환
@@ -39,5 +39,5 @@ if ($stmt = $mysqli->prepare($query)) {
 }
 
 // 연결 종료
-$mysqli->close();
+$conn->close();
 ?>
