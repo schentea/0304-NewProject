@@ -9,7 +9,7 @@ document
 
     // AJAX 요청
     $.ajax({
-      url: "http://dongseong.dothome.co.kr/login.php",
+      url: "http://dongseong.dothome.co.kr/Login.php",
       type: "POST", // POST 방식으로 데이터 전송
       data: formData, // 직렬화된 폼 데이터를 전송
       dataType: "json", // 서버에서 받을 데이터 형식을 JSON으로 설정
@@ -19,7 +19,7 @@ document
           // 로그인 성공
           alert(response.message);
           sessionStorage.setItem("username", response.username);
-          window.location.href = "./index.html";
+          window.location.href = "./index.php";
         } else {
           // 로그인 실패
           alert(response.message);

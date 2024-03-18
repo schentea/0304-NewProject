@@ -57,7 +57,7 @@
         const openModalBtn = document.getElementById("openModalBtn");
         const between = document.getElementById("between");
         const ul = document.getElementById("rogin");
-
+        
         if (username) {
           if (username === "schentea") {
             const user = createListItem("userinfo", `${username}님`);
@@ -110,14 +110,10 @@
         });
       }
       function openMyPage(username) {
-        window.location.href = `http://dongseong.dothome.co.kr/showLikeList.html?username=${encodeURIComponent(
-          username
-        )}`;
+        window.location.href = `http://dongseong.dothome.co.kr/showLikeList.html`;
       }
       function openAdminPage(username) {
-        window.location.href = `http://dongseong.dothome.co.kr/adminPage.html?username=${encodeURIComponent(
-          username
-        )}`;
+        window.location.href = `http://dongseong.dothome.co.kr/adminPage.html`;
       }
       function logoutUser() {
         $.ajax({
@@ -161,7 +157,7 @@
         <div>
           <ul id="rogin" class="gnb_menu">
             <li id="loginButton">
-              <a href="login.html" target="_self">로그인</a>
+              <a href="login_form.php" target="_self">로그인</a>
             </li>
             <span id="between"><span>|</span></span>
             <li id="openModalBtn">

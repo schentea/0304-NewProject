@@ -1,3 +1,6 @@
+<?php 
+include "const.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,7 +14,7 @@
     <script src="https://kit.fontawesome.com/247e9f18da.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <a class="backHomeA" href="index.html">
+    <a class="backHomeA" href="index.php">
       <div class="backHome">
         <i class="fa-solid fa-house fa-xl"></i>
         <p>홈페이지</p>
@@ -33,9 +36,9 @@
         </div>
         <div id="goSign">아직 아이디가 없다면? <a href="sign.html" target="_self">가입하기</a></div>
         <br /><br />
-        <button class="naverBtn" type="button"><img src="./image/naverIcon.png" alt="네이버 아이콘" /> 네이버로 로그인</button>
+        <button class="naverBtn" type="button"><img src="./image/naverIcon.png" alt="네이버 아이콘" /><a href=<?php echo SocialLogin::socialLoginUrl("naver") ?>> 네이버로 로그인</a></button>
         <br />
-        <button class="googleBtn" type="button"><img src="./image/kakaoIcon.png" alt="카카오 아이콘" /> 카카오로 로그인</button>
+        <button class="googleBtn" type="button"><img src="./image/kakaoIcon.png" alt="카카오 아이콘" /> <a href=<?php echo SocialLogin::socialLoginUrl("kakao") ?>>카카오로 로그인</a></button>
       </form>
     </div>
     <script src="./js/Login.js"></script>
