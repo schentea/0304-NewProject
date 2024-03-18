@@ -626,6 +626,9 @@
             <p>컨벤션뷰로</p>
           </a>
         </div>
+        <a href="https://github.com/schentea/0304-NewProject">
+          깃허브
+        </a>
         <div id="footer_mid">
           <p>
             <b>대구광역시 시청</b>&nbsp;&nbsp; 대구광역시 중구 공평로 88(동인동
