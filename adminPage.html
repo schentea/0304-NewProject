@@ -95,10 +95,11 @@
                                 userName.classList.add('userName');
                                 userName.textContent = user.name;
                                 userInfoBox.appendChild(userName);
+                                const userEmail = user.email.split('@')[0];
 
                                 const userId = document.createElement('div');
                                 userId.classList.add('userId');
-                                userId.textContent = user.uid;
+                                userId.textContent = userEmail;
                                 userInfoBox.appendChild(userId);
 
                                 const userMail = document.createElement('div');
