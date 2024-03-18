@@ -161,7 +161,7 @@
             </li>
             <span id="between"><span>|</span></span>
             <li id="openModalBtn">
-              <a href="sign.html" target="_self">회원가입</a>
+              <a href="sign_form.php" target="_self">회원가입</a>
             </li>
           </ul>
         </div>

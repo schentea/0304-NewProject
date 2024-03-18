@@ -34,7 +34,7 @@ include "const.php"
           </div>
           <button id="loginSubmitBtn" type="submit">로그인</button>
         </div>
-        <div id="goSign">아직 아이디가 없다면? <a href="sign.html" target="_self">가입하기</a></div>
+        <div id="goSign">아직 아이디가 없다면? <a href="sign_form.php" target="_self">가입하기</a></div>
         <br /><br />
         <button class="naverBtn" type="button"><img src="./image/naverIcon.png" alt="네이버 아이콘" /><a href=<?php echo SocialLogin::socialLoginUrl("naver") ?>> 네이버로 로그인</a></button>
         <br />

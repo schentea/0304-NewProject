@@ -1,3 +1,6 @@
+<?php
+include "const.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,7 +19,7 @@
     ></script>
   </head>
   <body>
-    <a class="backHomeA" href="index.html">
+    <a class="backHomeA" href="index.php">
       <div class="backHome">
         <i class="fa-solid fa-house fa-xl"></i>
         <p>홈페이지</p>
@@ -94,10 +97,10 @@
           <a href="login.php" target="_self">로그인하기</a>
         </div>
         <button class="naverBtn" type="button" style="margin-top: 50px">
-          <img src="./image/naverIcon.png" alt="네이버 아이콘" /> 네이버로 가입</button
+          <img src="./image/naverIcon.png" alt="네이버 아이콘" /><a href=<?php echo SocialLogin::socialLoginUrl("naver") ?>> 네이버로 회원가입</a></button
         ><br />
         <button class="googleBtn" type="button">
-          <img src="./image/kakaoIcon.png" alt="카카오 아이콘" /> 카카오로 가입
+          <img src="./image/kakaoIcon.png" alt="카카오 아이콘" /><a href=<?php echo SocialLogin::socialLoginUrl("kakao") ?>> 카카오로 회원가입</a>
         </button>
       </form>
     </div>
