@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>관리자 페이지</title>
     <!-- 폰트어썸 -->
-    <script src="https://kit.fontawesome.com/247e9f18da.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/247e9f18da.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="icon" href="./image/logo.svg" />
     <link rel="stylesheet" href="./css/adminPage.css" />
-    <link href="https://webfontworld.github.io/SCoreDream/SCoreDream.css" rel="stylesheet" />
+    <link
+      href="https://webfontworld.github.io/SCoreDream/SCoreDream.css"
+      rel="stylesheet"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
     <div id="container">
       <!-- 왼쪽 목록 -->
       <div id="left_div" class="admin_left_div">
-        <a href="index.html">
+        <a href="index.php">
           <div id="homeBtn">
             <i class="fa-solid fa-house"></i>
             <p>홈페이지</p>
@@ -30,13 +36,17 @@
           <!-- 이름 -->
           <h1>관리자</h1>
         </div>
-        <div id="god"><i class="fa-solid fa-arrow-right-from-bracket"></i>로그아웃</div>
+        <div id="god">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>로그아웃
+        </div>
       </div>
       <!-- 오른쪽 목록 -->
       <div id="right_div" class="admin_right_div">
         <div id="userInfoBig">
           <div class="userInfoBox">
-            <button class="delBtn delBtnAdmin"><i class="fa-solid fa-xmark fa-2xl"></i></button>
+            <button class="delBtn delBtnAdmin">
+              <i class="fa-solid fa-xmark fa-2xl"></i>
+            </button>
             <div class="userImg">
               <img src="" alt="" />
             </div>
@@ -46,7 +56,9 @@
             <div class="usedPhone">000-0000-0000</div>
           </div>
           <div class="userInfoBox">
-            <button class="delBtn delBtnAdmin"><i class="fa-solid fa-xmark fa-2xl"></i></button>
+            <button class="delBtn delBtnAdmin">
+              <i class="fa-solid fa-xmark fa-2xl"></i>
+            </button>
             <div class="userImg">
               <img src="" alt="" />
             </div>
@@ -63,19 +75,16 @@
       </div>
     </div>
     <script>
-      function getUsernameFromURL() {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get("username");
-      }
-
       document.addEventListener("DOMContentLoaded", function () {
-        const username = getUsernameFromURL();
+        const username = sessionStorage.getItem("username");
         getUserInfo(username);
       });
 
       function getUserInfo(username) {
         $.ajax({
-          url: "http://dongseong.dothome.co.kr/mypage.php?username=" + encodeURIComponent(username),
+          url:
+            "http://dongseong.dothome.co.kr/mypage.php?username=" +
+            encodeURIComponent(username),
           type: "GET",
           dataType: "json",
           success: function (response) {
