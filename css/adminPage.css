@@ -152,12 +152,11 @@ a {
 body {
   position: relative;
   height: 100%;
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
   margin: 0;
   padding: 0;
+  background: #eee;
 }
 
 .swiper {
@@ -169,7 +168,7 @@ body {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -180,6 +179,10 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.swiper .swiper-pagination-bullet-active {
+  background: var(--mainColor);
 }
 
 #show_title_div {
@@ -258,4 +261,14 @@ body {
   #right_div {
     margin-left: 20%;
   }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #f4f6f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mainColor);
+  border-radius: 10px;
 }
