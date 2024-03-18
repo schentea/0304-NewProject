@@ -292,10 +292,13 @@
 
 .showModalList li .showTit {
   font-weight: 500;
+  max-width: 76%;
 }
 
 .showModalList li .showDate {
   display: flex;
+  flex-wrap: wrap;
+  max-width: 92%;
 }
 
 @media screen and (min-width: 650px) {
