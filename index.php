@@ -333,7 +333,7 @@
         </div>
 
         <!-- 위쪽 공간 -->
-        <h4 class="scroHidden">소제목</h4>
+        <h4 class="scroHidden">입을 즐겁게 해주는 맛집 여행</h4>
         <div id="up_container" class="scroHidden">
           <!-- 왼쪽 메세지 박스부분 -->
           <div class="balloon" id="balloon1">
@@ -399,7 +399,7 @@
           </div>
         </div>
         <!-- 아래쪽 공간 -->
-        <h4 class="scroHidden">소제목</h4>
+        <h4 class="scroHidden">동성로만의 특별한 먹거리를 만나보세요</h4>
         <div id="down_container" class="scroHidden" dir="rtl">
           <!-- 왼쪽 캐러셀 부분 -->
           <div class="swiper mySwiper">
@@ -669,7 +669,7 @@
     <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 30,
         loop: true,
         navigation: {
@@ -678,9 +678,11 @@
         },
         speed: 1000,
         breakpoints: {
-          700: {
+          600 : {
+            slidesPerView: 2,
+          },
+          800: {
             slidesPerView: 3,
-            spaceBetween: 30,
           },
         },
         autoplay: {

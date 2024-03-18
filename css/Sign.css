@@ -174,8 +174,16 @@ button {
   color: white;
 }
 
+.naverBtn a {
+  color: white;
+}
+
 .googleBtn {
   background: #fae100;
+  color: #3a1c1e;
+}
+
+.googleBtn a {
   color: #3a1c1e;
 }
 
