@@ -46,7 +46,7 @@
                         </a>
                     </div>
                 </div>
-                <div id="god"><i class="fa-solid fa-arrow-right-from-bracket"></i>로그아웃</div>
+                <div id="god" style="cursor: pointer"><i class="fa-solid fa-arrow-right-from-bracket"></i>로그아웃</div>
             </div>
             <!-- 오른쪽 목록 -->
             <div id="right_div">
@@ -156,6 +156,26 @@
                     },
                 });
             }
+
+            document.getElementById('god').addEventListener('click', function () {
+                $.ajax({
+                    url: 'http://dongseong.dothome.co.kr/logout.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.success) {
+                            alert(response.message);
+                            sessionStorage.removeItem('username');
+                            window.location.href = 'index.php';
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('AJAX 요청 중 오류 발생:', error);
+                    },
+                });
+            });
         </script>
     </body>
 </html>
