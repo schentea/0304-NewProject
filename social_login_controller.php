@@ -140,7 +140,6 @@ class SocialLoginController {
     }        
     function login () {
         $data = $this->socialLoginRepository->findUserByEmail($this->profileModel->email);
-        
         if ($data == null) {
             // 가입된 이메일이 없으면 회원가입을 진행합니다.
             $this->socialLoginRepository->signup($this->profileModel, $this->state);
