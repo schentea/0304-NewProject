@@ -180,9 +180,7 @@ body {
   height: 100%;
   object-fit: cover;
 }
-/* span {
-  margin-left: 10%;
-} */
+
 #show_title_div {
   padding: 0 0 0 18px;
 }
@@ -195,11 +193,16 @@ body {
   align-items: center;
   font-size: 19px;
   flex-wrap: wrap;
-  gap: 5px 30px;
-  border-left: 5px solid gray;
-  padding: 0 8px;
-  margin: 0 0 10px 10px;
+  gap: 5px 0;
+  margin: 0 0 10px 0;
 }
+#show_title_div p span:nth-child(2) {
+  margin-left: 15px;
+}
+#show_title_div p span:nth-child(3) {
+  margin-left: 40px;
+}
+
 #show_title_div div {
   margin-top: 30px;
 }
@@ -207,7 +210,7 @@ body {
   font-weight: 500;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1090px) {
   #right_div > div {
     width: 90%;
   }
