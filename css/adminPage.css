@@ -158,6 +158,12 @@ a {
     text-align: center;
     margin-bottom: 150px;
 }
+#showList {
+    margin-top: 100px;
+    border-radius: 50px;
+    padding: 50px;
+    background: coral;
+}
 #content div {
     margin: 20px;
 }
@@ -241,7 +247,12 @@ body {
 #show_title_div .showTit {
     font-weight: 500;
 }
-
+#foodWrap {
+    margin-top: 100px;
+    border-radius: 50px;
+    padding: 50px;
+    background-color: coral;
+}
 @media screen and (max-width: 1090px) {
     #right_div > div {
         width: 90%;

@@ -19,6 +19,7 @@
             .button-group {
                 display: flex;
                 gap: 10px;
+                margin-top: 100px;
             }
 
             .button {
@@ -89,8 +90,8 @@
             <div id="right_div">
                 <div>
                     <div class="button-group">
-                        <button class="button selected" onclick="selectButton(1)">버튼 1</button>
-                        <button class="button" onclick="selectButton(2)">버튼 2</button>
+                        <button class="button selected" onclick="selectButton(1)">식당 찜목록</button>
+                        <button class="button" onclick="selectButton(2)">공연 찜목록</button>
                     </div>
                     <!-- 식당찜목록 타이틀 -->
                     <div id="foodWrap" class="content show">
@@ -107,8 +108,8 @@
                         </div>
                     </div>
                     <!-- 공연 찜목록 -->
-                    <div class="content">
-                        <h1 style="margin-top: 7%">공연 찜목록</h1>
+                    <div class="content" id="showList">
+                        <h1>공연 찜목록</h1>
                         <div id="show_title_div">
                             <div>
                                 <h2>대구콘서트하우스</h2>
