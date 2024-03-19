@@ -13,8 +13,8 @@ $dbname = "dongseong"; // 사용할 데이터베이스 이름
 $data = json_decode(file_get_contents("php://input"), true);
 
 // 수정할 비밀번호와 확인용 비밀번호 가져오기
-$username = $data['username'];
-$password = $data['password'];
+$username2 = $data['username'];
+$password2 = $data['password'];
 $confirmPassword = $data['confirmPassword'];
 
 // 비밀번호와 확인용 비밀번호가 일치하는지 확인
@@ -34,15 +34,15 @@ if ($conn->connect_error) {
 }
 
 // 수정할 비밀번호를 해싱하여 저장
-$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+$hashedPassword = password_hash($password2, PASSWORD_DEFAULT);
 
 // 사용자의 비밀번호를 수정하는 SQL 쿼리
-$query = "UPDATE userInfo SET pw = ? WHERE username = ?";
+$query = "UPDATE userInfo SET pw = ? WHERE uid = ?";
 
 // 쿼리를 준비
 if ($stmt = $conn->prepare($query)) {
     // 바인딩
-    $stmt->bind_param("ss", $hashedPassword, $username); // "s"는 string 타입을 의미
+    $stmt->bind_param("ss", $hashedPassword, $username2); // "s"는 string 타입을 의미
     // 실행
     if ($stmt->execute()) {
         // 성공적으로 수정됨을 응답으로 반환
