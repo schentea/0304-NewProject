@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     session_destroy(); // 세션 파기
 
     // 로그아웃 성공 메시지를 JSON 응답으로 반환합니다.
-    echo json_encode(array('success' => true, 'message' => '로그아웃 성공'));
+    echo json_encode(array('success' => true, 'message' => '로그아웃 되었습니다.'));
     exit; // 코드 실행 중지
 } else {
     // POST 요청이 아니면 오류 메시지를 JSON 응답으로 반환합니다.

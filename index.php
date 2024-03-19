@@ -61,12 +61,19 @@
         
         if (usernameWithoutDomain) {
           if (usernameWithoutDomain === "schentea") {
-            const user = createListItem("userinfo", `${usernameWithoutDomain.slice(0,2)}`);
+            let user = createListItem("userinfo", `${usernameWithoutDomain.slice(0,2)}`);
+            let user2 = document.createElement("li");;
+            user2.classList.add("userinfoBig");
+            user2.innerHTML = `<p>${usernameWithoutDomain.slice(0,2)}</p><p>${usernameWithoutDomain}</p>`
             user.addEventListener("click", function () {
               openAdminPage(usernameWithoutDomain);
             });
+            user2.addEventListener("click", function () {
+              openAdminPage(usernameWithoutDomain);
+            });
             hideElements([loginButton, openModalBtn, between]);
-            ul.appendChild(user)
+            ul.appendChild(user);
+            ul.appendChild(user2);
           } else {
             let user = createListItem("userinfo", `${usernameWithoutDomain.slice(0,2)}`);
             let user2 = document.createElement("li");;
@@ -79,7 +86,9 @@
             user.addEventListener("click", function () {
               openMyPage(usernameWithoutDomain);
             });
-            
+            user2.addEventListener("click", function () {
+              openMyPage(usernameWithoutDomain);
+            });
             hideElements([loginButton, openModalBtn, between]);
             ul.appendChild(user)
             ul.appendChild(user2)
