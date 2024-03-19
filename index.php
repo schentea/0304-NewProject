@@ -123,7 +123,6 @@
           dataType: "json",
           success: function (response) {
             if (response.success) {
-              alert(response.message);
               sessionStorage.removeItem("username");
               window.location.reload();
             } else {
