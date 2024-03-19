@@ -36,7 +36,7 @@
                     <!-- 이름 -->
                     <h1 id="adminName">관리자</h1>
                 </div>
-                <div id="god"><i class="fa-solid fa-arrow-right-from-bracket"></i>로그아웃</div>
+                <div id="god" style="cursor: pointer"><i class="fa-solid fa-arrow-right-from-bracket"></i>로그아웃</div>
             </div>
             <!-- 오른쪽 목록 -->
             <div id="right_div" class="admin_right_div" style="position: relative">
@@ -170,7 +170,6 @@
             let nextId = 1;
             const dNone = 'dNone';
             // 'userInfoBig' 요소와 그 하위 자식 요소의 변경을 감시하는 MutationObserver 생성
-            // 'userInfoBig' 요소와 그 하위 자식 요소의 변경을 감시하는 MutationObserver 생성
             const observer = new MutationObserver(function (mutationsList, observer) {
                 // userInfoBig의 자식 요소들이 변경될 때마다 이 부분이 실행됩니다.
                 // 새로운 userInfoBox가 추가되었을 때 작업을 수행하면 됩니다.
@@ -243,6 +242,27 @@
 
             // MutationObserver를 설정한 후 감시 시작
             observer.observe(targetNode, config);
+        </script>
+        <script>
+            document.getElementById('god').addEventListener('click', function () {
+                $.ajax({
+                    url: 'http://dongseong.dothome.co.kr/logout.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.success) {
+                            alert(response.message);
+                            sessionStorage.removeItem('username');
+                            window.location.href = 'index.php';
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('AJAX 요청 중 오류 발생:', error);
+                    },
+                });
+            });
         </script>
     </body>
 </html>
