@@ -46,12 +46,32 @@ a {
 .userInfoBox .userImg {
     width: 150px;
     height: 150px;
-    background: #fff;
+    background: #eee;
     border-radius: 50%;
     margin: 0 0 20px;
 }
 .userInfoBox .userName {
     font-weight: 500;
+}
+
+#right_div.admin_right_div input {
+    height: 70px;
+    width: 88%;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    outline: none;
+    background: #eee;
+}
+
+#right_div.admin_right_div input::-webkit-search-cancel-button {
+    display: none;
+}
+
+#right_div.admin_right_div input ~ .counter {
+    font-size: 17px;
+    margin: 3px 0 0 5px;
 }
 
 /* 공통+개인 페이지 속성 */
@@ -163,7 +183,6 @@ body {
     color: #000;
     margin: 0;
     padding: 0;
-    background: #eee;
 }
 
 .swiper {
