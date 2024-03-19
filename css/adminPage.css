@@ -88,6 +88,10 @@ a {
   font-size: 30px;
 }
 
+#homeBtn * {
+  color: var(--subColor);
+}
+
 #container {
   width: 100%;
   display: flex;
@@ -260,6 +264,13 @@ body {
   }
 }
 @media screen and (max-width: 870px) {
+  #homeBtn {
+    top: 15px;
+    left: 10px;
+  }
+  #homeBtn * {
+    color: white;
+  }
   #container {
     display: block;
     height: 170vh;
