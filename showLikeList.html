@@ -96,19 +96,50 @@
             <button class="button" onclick="selectButton(2)">공연 찜목록</button>
           </div>
           <!-- 식당찜목록 타이틀 -->
-          <div id="foodWrap" class="content show">
+          <section id="foodSect" class="content show">
             <h1>식당 찜목록</h1>
-            <!-- 캐러셀 -->
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 4</div>
+            <div id="foodWrap">
+              <!-- 캐러셀 -->
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">Slide 1</div>
+                  <div class="swiper-slide">Slide 2</div>
+                  <div class="swiper-slide">Slide 3</div>
+                  <div class="swiper-slide">Slide 4</div>
+                </div>
+                <div class="swiper-pagination"></div>
               </div>
-              <div class="swiper-pagination"></div>
             </div>
-          </div>
+            <article>
+              <h2>식당이름</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <div class="iconWrap">
+                <div>
+                  <i class="fa-solid fa-car"></i>
+                  <p>주차 가능</p>
+                </div>
+                <div>
+                  <i class="fa-solid fa-book-open"></i>
+                  <p>예약 가능</p>
+                </div>
+                <div>
+                  <i class="fa-solid fa-shapes"></i>
+                  <p>놀이시설 있음</p>
+                </div>
+              </div>
+              <div class="infoWrap"><i class="fa-solid fa-shapes"></i>주소 ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄹ <i class="fa-solid fa-shapes"></i>전화번호ㅁㄴㅇㄻㄴㅇㄹ <i class="fa-solid fa-shapes"></i>영업시간ㅁㄴㅇㄹ</div>
+              <div class="menuWrap">
+                <div>
+                  <p>메뉴이름</p>
+                  <p>50000원</p>
+                </div>
+                <div>
+                  <p>메뉴이름</p>
+                  <p>50000원</p>
+                </div>
+              </div>
+            </article>
+          </section>
           <!-- 공연 찜목록 -->
           <div class="content" id="showList">
             <h1>공연 찜목록</h1>
