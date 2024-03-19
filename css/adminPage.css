@@ -78,10 +78,14 @@ a {
 /* 공통+개인 페이지 속성 */
 #homeBtn {
   position: absolute;
-  top: -80px;
-  left: 20px;
+  top: -50px;
+  left: 19px;
   text-align: center;
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
 }
 
 #homeBtn i {
@@ -103,7 +107,7 @@ a {
   width: 30%;
   border-radius: 0 100px 0 0;
   max-width: 450px;
-  height: 90%;
+  height: 93%;
   background: var(--subColor);
   display: flex;
   align-items: center;
@@ -267,6 +271,7 @@ body {
   #homeBtn {
     top: 15px;
     left: 10px;
+    flex-direction: column;
   }
   #homeBtn * {
     color: white;
