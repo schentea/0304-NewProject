@@ -1,279 +1,297 @@
 :root {
-    --mainColor: #eb102c;
+  --mainColor: #eb102c;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'SCoreDream';
-    word-break: keep-all;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "SCoreDream";
+  word-break: keep-all;
+  scroll-behavior: smooth;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 a {
-    color: #222;
+  color: #222;
 }
 
 /* 관리자 페이지 속성 */
 #right_div #userInfoBig {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .userInfoBox {
-    position: relative;
-    width: 258px;
-    height: 321px;
-    border: 2px solid gray;
-    border-radius: 10px;
-    margin: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 19px;
-    gap: 2px 0;
+  position: relative;
+  width: 258px;
+  height: 321px;
+  border: 2px solid gray;
+  border-radius: 10px;
+  margin: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 19px;
+  gap: 2px 0;
 }
 .userInfoBox .userImg {
-    width: 150px;
-    height: 150px;
-    background: #fff;
-    border-radius: 50%;
-    margin: 0 0 20px;
+  width: 150px;
+  height: 150px;
+  background: #fff;
+  border-radius: 50%;
+  margin: 0 0 20px;
 }
 .userInfoBox .userName {
-    font-weight: 500;
+  font-weight: 500;
+}
+
+#right_div.admin_right_div input {
+  height: 80px;
+  width: 88%;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+#right_div.admin_right_div input:focus {
+  outline: none;
+  border: 2px solid black;
+}
+
+#right_div.admin_right_div input ~ .counter {
+  font-size: 17px;
+  margin: 3px 0 0 5px;
 }
 
 /* 공통+개인 페이지 속성 */
 #homeBtn {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    text-align: center;
-    font-size: 18px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-align: center;
+  font-size: 18px;
 }
 
 #homeBtn i {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 #container {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #left_div {
-    width: 30%;
-    max-width: 450px;
-    height: 100%;
-    background: lightgray;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
-    position: fixed;
-    left: 0;
-    top: 0;
+  width: 30%;
+  max-width: 450px;
+  height: 100%;
+  background: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 #god {
-    font-size: 19px;
-    font-weight: 500;
+  font-size: 19px;
+  font-weight: 500;
 }
 #god i {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 
 .profImg {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .profImg img {
-    width: 100%;
+  width: 100%;
 }
 
 #right_div {
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    margin: 50px 0 30px 30%;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 30px 30%;
 }
 #right_div h1 {
-    font-size: 35px;
+  font-size: 35px;
 }
 #right_div > div {
-    width: 80%;
+  width: 80%;
 }
 #right_div .noHeartTxt {
-    text-align: center;
-    color: #888;
+  text-align: center;
+  color: #888;
 }
 .delBtn {
-    background: none;
-    padding: 5px;
-    border: none;
-    color: var(--mainColor);
+  background: none;
+  padding: 5px;
+  border: none;
+  color: var(--mainColor);
 }
 .delBtn.delBtnAdmin {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 #content {
-    text-align: center;
-    margin-bottom: 150px;
+  text-align: center;
+  margin-bottom: 150px;
 }
 #content div {
-    margin: 20px;
+  margin: 20px;
 }
 #content h1 {
-    font-size: 32px;
+  font-size: 32px;
 }
 #content h3 {
-    font-size: 20px;
+  font-size: 20px;
 }
 #content #passRewrite {
-    font-size: 16px;
+  font-size: 16px;
 }
 #content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 body {
-    position: relative;
-    height: 100%;
-    font-size: 14px;
-    color: #000;
-    margin: 0;
-    padding: 0;
-    background: #eee;
+  position: relative;
+  height: 100%;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  background: #eee;
 }
 
 .swiper {
-    width: 100%;
-    height: 298px;
-    margin: 30px 0 40px;
+  width: 100%;
+  height: 298px;
+  margin: 30px 0 40px;
 }
 
 .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  text-align: center;
+  font-size: 18px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .swiper .swiper-pagination-bullet-active {
-    background: var(--mainColor);
+  background: var(--mainColor);
 }
 
 #show_title_div {
-    padding: 0 0 0 18px;
+  padding: 0 0 0 18px;
 }
 #show_title_div h2 {
-    font-size: 23px;
-    margin: 0 0 15px;
+  font-size: 23px;
+  margin: 0 0 15px;
 }
 #show_title_div p {
-    display: flex;
-    align-items: center;
-    font-size: 19px;
-    flex-wrap: wrap;
-    gap: 5px 0;
-    margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  font-size: 19px;
+  flex-wrap: wrap;
+  gap: 5px 0;
+  margin: 0 0 10px 0;
 }
 #show_title_div p span:nth-child(2) {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 #show_title_div p span:nth-child(3) {
-    margin-left: 40px;
+  margin-left: 40px;
 }
 
 #show_title_div div {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 #show_title_div .showTit {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 1090px) {
-    #right_div > div {
-        width: 90%;
-    }
+  #right_div > div {
+    width: 90%;
+  }
 }
 @media screen and (max-width: 870px) {
-    #container {
-        display: block;
-        height: 170vh;
-    }
-    #left_div {
-        width: 100%;
-        max-width: none;
-        height: 35%;
-        position: static;
-    }
+  #container {
+    display: block;
+    height: 170vh;
+  }
+  #left_div {
+    width: 100%;
+    max-width: none;
+    height: 35%;
+    position: static;
+  }
 
-    #left_div.admin_left_div {
-        justify-content: center;
-    }
+  #left_div.admin_left_div {
+    justify-content: center;
+  }
 
-    #content {
-        margin: 0;
-    }
-    #god {
-        position: absolute;
-        top: 20px;
-        right: 10px;
-    }
-    #right_div {
-        margin: 0;
-        width: 100%;
-    }
-    #right_div.admin_right_div {
-        margin: 50px 0;
-    }
-    #right_div #userInfoBig {
-        width: 100%;
-    }
-    #right_div #foodWrap {
-        margin: 50px 0 70px 0;
-    }
+  #content {
+    margin: 0;
+  }
+  #god {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+  }
+  #right_div {
+    margin: 0;
+    width: 100%;
+  }
+  #right_div.admin_right_div {
+    margin: 50px 0;
+  }
+  #right_div #userInfoBig {
+    width: 100%;
+  }
+  #right_div #foodWrap {
+    margin: 50px 0 70px 0;
+  }
 }
 @media screen and (min-width: 1500px) {
-    #right_div {
-        margin-left: 20%;
-    }
+  #right_div {
+    margin-left: 20%;
+  }
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
-    background: #f4f6f8;
+  width: 8px;
+  background: #f4f6f8;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--mainColor);
-    border-radius: 10px;
+  background: var(--mainColor);
+  border-radius: 10px;
 }

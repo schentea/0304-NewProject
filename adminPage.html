@@ -1,248 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>관리자 페이지</title>
-        <!-- 폰트어썸 -->
-        <script src="https://kit.fontawesome.com/247e9f18da.js" crossorigin="anonymous"></script>
-        <link rel="icon" href="./image/logo.svg" />
-        <link rel="stylesheet" href="./css/adminPage.css" />
-        <link href="https://webfontworld.github.io/SCoreDream/SCoreDream.css" rel="stylesheet" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <style>
-            .dNone {
-                display: none;
-                background: red;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="container">
-            <!-- 왼쪽 목록 -->
-            <div id="left_div" class="admin_left_div">
-                <a href="index.php">
-                    <div id="homeBtn">
-                        <i class="fa-solid fa-house"></i>
-                        <p>홈페이지</p>
-                    </div>
-                </a>
-                <!-- 각종 컨텐츠들 -->
-                <div id="content">
-                    <!-- 동그란 원 -->
-                    <div class="profImg">
-                        <img src="./image/userImg.png" alt="프로필 사진" />
-                    </div>
-                    <!-- 이름 -->
-                    <h1 id="adminName">관리자</h1>
-                </div>
-                <div id="god"><i class="fa-solid fa-arrow-right-from-bracket"></i>로그아웃</div>
-            </div>
-            <!-- 오른쪽 목록 -->
-            <div id="right_div" class="admin_right_div" style="position: relative">
-                <div style="position: absolute; top: 0; left: 50%; width: 88%; transform: translate(-44%)">
-                    <input type="search" placeholder="검색해주세요.." style="height: 100px; width: 88%" />
-                    <div class="counter">Total user : <span id="spanleng">32</span></div>
-                </div>
-                <div id="userInfoBig" style="margin-top: 150px"></div>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>관리자 페이지</title>
+    <!-- 폰트어썸 -->
+    <script src="https://kit.fontawesome.com/247e9f18da.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./image/logo.svg" />
+    <link rel="stylesheet" href="./css/adminPage.css" />
+    <link href="https://webfontworld.github.io/SCoreDream/SCoreDream.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      .dNone {
+        display: none;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <!-- 왼쪽 목록 -->
+      <div id="left_div" class="admin_left_div">
+        <a href="index.php">
+          <div id="homeBtn">
+            <i class="fa-solid fa-house"></i>
+            <p>홈페이지</p>
+          </div>
+        </a>
+        <!-- 각종 컨텐츠들 -->
+        <div id="content">
+          <!-- 동그란 원 -->
+          <div class="profImg">
+            <img src="./image/userImg.png" alt="프로필 사진" />
+          </div>
+          <!-- 이름 -->
+          <h1 id="adminName">관리자</h1>
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const username = sessionStorage.getItem('username');
-                getUserInfo(username);
-            });
+        <div id="god"><i class="fa-solid fa-arrow-right-from-bracket"></i>로그아웃</div>
+      </div>
+      <!-- 오른쪽 목록 -->
+      <div id="right_div" class="admin_right_div" style="position: relative">
+        <div style="position: absolute; top: 0; left: 50%; width: 88%; transform: translate(-44%)">
+          <input type="search" placeholder="유저 찾기" />
+          <div class="counter">Total user : <span id="spanleng">32</span></div>
+        </div>
+        <div id="userInfoBig" style="margin-top: 150px"></div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const username = sessionStorage.getItem("username");
+        getUserInfo(username);
+      });
 
-            function getUserInfo(username) {
-                $.ajax({
-                    url: 'http://dongseong.dothome.co.kr/mypage.php?username=' + encodeURIComponent(username),
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function (response) {
-                        if (response.success) {
-                            // console.log(response.userInfo); // 사용자 정보를 받아옴
-                            // console.log(response.userInfo.name);
-                            document.getElementById('adminName').innerText = response.userInfo.name;
-                            // getUserList 호출
-                            getUserList();
-                        } else {
-                            alert(response.message);
-                        }
-                    },
-                    error: function (xhr, status, error) {
-                        console.error('AJAX 요청 중 오류 발생:', error);
-                    },
-                });
+      function getUserInfo(username) {
+        $.ajax({
+          url: "http://dongseong.dothome.co.kr/mypage.php?username=" + encodeURIComponent(username),
+          type: "GET",
+          dataType: "json",
+          success: function (response) {
+            if (response.success) {
+              // console.log(response.userInfo); // 사용자 정보를 받아옴
+              // console.log(response.userInfo.name);
+              document.getElementById("adminName").innerText = response.userInfo.name;
+              // getUserList 호출
+              getUserList();
+            } else {
+              alert(response.message);
             }
-        </script>
-        <script>
-            function deleteUser(userId) {
-                $.ajax({
-                    url: 'http://dongseong.dothome.co.kr/deleteUser.php',
-                    type: 'POST',
-                    data: { userId: userId }, // userId를 데이터로 전달
-                    dataType: 'json',
-                    success: function (response) {
-                        if (response.success) {
-                            alert('회원 정보가 성공적으로 삭제되었습니다.');
-                            // 성공적으로 삭제되었을 때 사용자 목록을 갱신하도록 호출
-                            getUserList();
-                        } else {
-                            alert('회원 정보 삭제 실패: ' + response.message);
-                        }
-                    },
-                    error: function (xhr, status, error) {
-                        console.error('AJAX 요청 중 오류 발생:', error);
-                    },
-                });
+          },
+          error: function (xhr, status, error) {
+            console.error("AJAX 요청 중 오류 발생:", error);
+          },
+        });
+      }
+    </script>
+    <script>
+      function deleteUser(userId) {
+        $.ajax({
+          url: "http://dongseong.dothome.co.kr/deleteUser.php",
+          type: "POST",
+          data: { userId: userId }, // userId를 데이터로 전달
+          dataType: "json",
+          success: function (response) {
+            if (response.success) {
+              alert("회원 정보가 성공적으로 삭제되었습니다.");
+              // 성공적으로 삭제되었을 때 사용자 목록을 갱신하도록 호출
+              getUserList();
+            } else {
+              alert("회원 정보 삭제 실패: " + response.message);
             }
+          },
+          error: function (xhr, status, error) {
+            console.error("AJAX 요청 중 오류 발생:", error);
+          },
+        });
+      }
 
-            function getUserList() {
-                $.ajax({
-                    url: 'http://dongseong.dothome.co.kr/userInfo.php',
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function (response) {
-                        if (response.success) {
-                            // 성공적으로 사용자 정보를 받아온 경우 사용자 목록을 갱신
-                            const userList = response.userList;
-                            // 기존의 사용자 목록을 지우고 새로운 목록을 추가
-                            const userInfoBig = document.getElementById('userInfoBig');
-                            userInfoBig.innerHTML = ''; // 이전 목록 초기화
-                            userList.forEach(function (user) {
-                                const userInfoBox = document.createElement('div');
-                                userInfoBox.classList.add('userInfoBox');
+      function getUserList() {
+        $.ajax({
+          url: "http://dongseong.dothome.co.kr/userInfo.php",
+          type: "GET",
+          dataType: "json",
+          success: function (response) {
+            if (response.success) {
+              // 성공적으로 사용자 정보를 받아온 경우 사용자 목록을 갱신
+              const userList = response.userList;
+              // 기존의 사용자 목록을 지우고 새로운 목록을 추가
+              const userInfoBig = document.getElementById("userInfoBig");
+              userInfoBig.innerHTML = ""; // 이전 목록 초기화
+              userList.forEach(function (user) {
+                const userInfoBox = document.createElement("div");
+                userInfoBox.classList.add("userInfoBox");
 
-                                const delBtn = document.createElement('button');
-                                delBtn.classList.add('delBtn', 'delBtnAdmin');
-                                delBtn.addEventListener('click', function () {
-                                    deleteUser(user.id); // 사용자 id를 전달하여 삭제 함수 호출
-                                });
-                                delBtn.innerHTML = '<i class="fa-solid fa-xmark fa-2xl"></i>';
-                                userInfoBox.appendChild(delBtn);
-
-                                const userImg = document.createElement('div');
-                                userImg.classList.add('userImg');
-                                userImg.innerHTML = '<img src="" alt="" />';
-                                userInfoBox.appendChild(userImg);
-
-                                const userName = document.createElement('div');
-                                userName.classList.add('userName');
-                                userName.textContent = user.name;
-                                userInfoBox.appendChild(userName);
-                                const userEmail = user.email.split('@')[0];
-
-                                const userId = document.createElement('div');
-                                userId.classList.add('userId');
-                                userId.textContent = userEmail;
-                                userInfoBox.appendChild(userId);
-
-                                const userMail = document.createElement('div');
-                                userMail.classList.add('userMail');
-                                userMail.textContent = user.email;
-                                userInfoBox.appendChild(userMail);
-
-                                const usedPhone = document.createElement('div');
-                                usedPhone.classList.add('usedPhone');
-                                usedPhone.textContent = user.tel;
-
-                                // 전화번호가 '010'으로 시작하는지 확인
-                                const startsWith010 = /^010/.test(user.tel);
-
-                                // '010'으로 시작하는 경우에만 출력
-                                if (startsWith010) {
-                                    userInfoBox.appendChild(usedPhone);
-                                }
-                                userInfoBig.appendChild(userInfoBox);
-                            });
-                        } else {
-                            alert(response.message);
-                        }
-                    },
-                    error: function (xhr, status, error) {
-                        console.error('AJAX 요청 중 오류 발생:', error);
-                    },
+                const delBtn = document.createElement("button");
+                delBtn.classList.add("delBtn", "delBtnAdmin");
+                delBtn.addEventListener("click", function () {
+                  deleteUser(user.id); // 사용자 id를 전달하여 삭제 함수 호출
                 });
-            }
-        </script>
-        <script>
-            // 초기 ID 값을 1로 설정합니다.
-            let nextId = 1;
-            const dNone = 'dNone';
-            // 'userInfoBig' 요소와 그 하위 자식 요소의 변경을 감시하는 MutationObserver 생성
-            // 'userInfoBig' 요소와 그 하위 자식 요소의 변경을 감시하는 MutationObserver 생성
-            const observer = new MutationObserver(function (mutationsList, observer) {
-                // userInfoBig의 자식 요소들이 변경될 때마다 이 부분이 실행됩니다.
-                // 새로운 userInfoBox가 추가되었을 때 작업을 수행하면 됩니다.
-                for (let mutation of mutationsList) {
-                    if (mutation.type === 'childList') {
-                        // userInfoBig의 자식 요소가 추가되었는지 확인
-                        const addedNodes = mutation.addedNodes;
-                        for (let node of addedNodes) {
-                            if (node.classList && node.classList.contains('userInfoBox')) {
-                                // 새로운 userInfoBox가 추가되었을 때 작업을 수행합니다.
+                delBtn.innerHTML = '<i class="fa-solid fa-xmark fa-2xl"></i>';
+                userInfoBox.appendChild(delBtn);
 
-                                // 여기에 작업을 추가하면 됩니다.
-                                const captions = [...document.querySelectorAll('#userInfoBig .userInfoBox')];
-                                const myArray = [];
-                                for (const caption of captions) {
-                                    const userIdElement = caption.querySelector('.userId');
-                                    if (userIdElement) {
-                                        const userId = userIdElement.textContent.trim();
-                                        const userIdValue = nextId++; // 고유한 ID 값을 할당합니다.
-                                        myArray.push({
-                                            id: userIdValue,
-                                            text: userId,
-                                        });
-                                    }
-                                }
+                const userImg = document.createElement("div");
+                userImg.classList.add("userImg");
+                userImg.innerHTML = '<img src="" alt="" />';
+                userInfoBox.appendChild(userImg);
 
-                                const searchInput = document.querySelector('input[type="search"]');
-                                const photosCounter = document.querySelector('#spanleng');
-                                // photosCounter.innerText = '3';
-                                searchInput.addEventListener('keyup', keyUpHandler);
+                const userName = document.createElement("div");
+                userName.classList.add("userName");
+                userName.textContent = user.name;
+                userInfoBox.appendChild(userName);
+                const userEmail = user.email.split("@")[0];
 
-                                function keyUpHandler() {
-                                    const keywords = this.value.toLowerCase().trim();
-                                    if (!keywords) {
-                                        // 검색어가 비어 있을 때는 모든 사용자 정보를 표시합니다.
-                                        for (const item of captions) {
-                                            item.classList.remove('dNone');
-                                            photosCounter.innerText = captions.length;
-                                        }
-                                    } else {
-                                        let filteredCount = 0;
-                                        for (const item of captions) {
-                                            const userIdElement = item.querySelector('.userId');
-                                            if (userIdElement) {
-                                                const userId = userIdElement.textContent.trim().toLowerCase();
+                const userId = document.createElement("div");
+                userId.classList.add("userId");
+                userId.textContent = userEmail;
+                userInfoBox.appendChild(userId);
 
-                                                if (userId.includes(keywords)) {
-                                                    item.classList.remove('dNone');
-                                                    // photosCounter.innerText = item.length;
-                                                    filteredCount++;
-                                                } else {
-                                                    item.classList.add('dNone');
-                                                }
-                                            }
-                                        }
-                                        photosCounter.innerText = filteredCount;
-                                    }
-                                }
-                            }
-                        }
-                    }
+                const userMail = document.createElement("div");
+                userMail.classList.add("userMail");
+                userMail.textContent = user.email;
+                userInfoBox.appendChild(userMail);
+
+                const usedPhone = document.createElement("div");
+                usedPhone.classList.add("usedPhone");
+                usedPhone.textContent = user.tel;
+
+                // 전화번호가 '010'으로 시작하는지 확인
+                const startsWith010 = /^010/.test(user.tel);
+
+                // '010'으로 시작하는 경우에만 출력
+                if (startsWith010) {
+                  userInfoBox.appendChild(usedPhone);
                 }
-            });
+                userInfoBig.appendChild(userInfoBox);
+              });
+            } else {
+              alert(response.message);
+            }
+          },
+          error: function (xhr, status, error) {
+            console.error("AJAX 요청 중 오류 발생:", error);
+          },
+        });
+      }
+    </script>
+    <script>
+      // 초기 ID 값을 1로 설정합니다.
+      let nextId = 1;
+      const dNone = "dNone";
+      // 'userInfoBig' 요소와 그 하위 자식 요소의 변경을 감시하는 MutationObserver 생성
+      // 'userInfoBig' 요소와 그 하위 자식 요소의 변경을 감시하는 MutationObserver 생성
+      const observer = new MutationObserver(function (mutationsList, observer) {
+        // userInfoBig의 자식 요소들이 변경될 때마다 이 부분이 실행됩니다.
+        // 새로운 userInfoBox가 추가되었을 때 작업을 수행하면 됩니다.
+        for (let mutation of mutationsList) {
+          if (mutation.type === "childList") {
+            // userInfoBig의 자식 요소가 추가되었는지 확인
+            const addedNodes = mutation.addedNodes;
+            for (let node of addedNodes) {
+              if (node.classList && node.classList.contains("userInfoBox")) {
+                // 새로운 userInfoBox가 추가되었을 때 작업을 수행합니다.
 
-            // 감시할 대상 노드 선택
-            const targetNode = document.getElementById('userInfoBig');
+                // 여기에 작업을 추가하면 됩니다.
+                const captions = [...document.querySelectorAll("#userInfoBig .userInfoBox")];
+                const myArray = [];
+                for (const caption of captions) {
+                  const userIdElement = caption.querySelector(".userId");
+                  if (userIdElement) {
+                    const userId = userIdElement.textContent.trim();
+                    const userIdValue = nextId++; // 고유한 ID 값을 할당합니다.
+                    myArray.push({
+                      id: userIdValue,
+                      text: userId,
+                    });
+                  }
+                }
 
-            // 감시할 대상 노드와 옵션 설정
-            const config = { childList: true };
+                const searchInput = document.querySelector('input[type="search"]');
+                const photosCounter = document.querySelector("#spanleng");
+                // photosCounter.innerText = '3';
+                searchInput.addEventListener("keyup", keyUpHandler);
 
-            // MutationObserver를 설정한 후 감시 시작
-            observer.observe(targetNode, config);
-        </script>
-    </body>
+                function keyUpHandler() {
+                  const keywords = this.value.toLowerCase().trim();
+                  if (!keywords) {
+                    // 검색어가 비어 있을 때는 모든 사용자 정보를 표시합니다.
+                    for (const item of captions) {
+                      item.classList.remove("dNone");
+                      photosCounter.innerText = captions.length;
+                    }
+                  } else {
+                    let filteredCount = 0;
+                    for (const item of captions) {
+                      const userIdElement = item.querySelector(".userId");
+                      if (userIdElement) {
+                        const userId = userIdElement.textContent.trim().toLowerCase();
+
+                        if (userId.includes(keywords)) {
+                          item.classList.remove("dNone");
+                          // photosCounter.innerText = item.length;
+                          filteredCount++;
+                        } else {
+                          item.classList.add("dNone");
+                        }
+                      }
+                    }
+                    photosCounter.innerText = filteredCount;
+                  }
+                }
+              }
+            }
+          }
+        }
+      });
+
+      // 감시할 대상 노드 선택
+      const targetNode = document.getElementById("userInfoBig");
+
+      // 감시할 대상 노드와 옵션 설정
+      const config = { childList: true };
+
+      // MutationObserver를 설정한 후 감시 시작
+      observer.observe(targetNode, config);
+    </script>
+  </body>
 </html>
