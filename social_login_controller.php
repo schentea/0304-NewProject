@@ -155,7 +155,6 @@ class SocialLoginController {
             echo("
             <script>
                 sessionStorage.setItem('username', '" . $data['email'] . "');
-                alert('로그인 성공');
                 location.href = 'index.php';
             </script>
             ");
