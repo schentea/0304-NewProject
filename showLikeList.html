@@ -15,6 +15,43 @@
         <link href="https://webfontworld.github.io/SCoreDream/SCoreDream.css" rel="stylesheet" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <title>개인 페이지</title>
+        <style>
+            .button-group {
+                display: flex;
+                gap: 10px;
+            }
+
+            .button {
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                /* 버튼 배경색 */
+                color: 4caf50; /* 버튼 텍스트 색상 */
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                border: 1px solid #45a049;
+            }
+
+            .button.selected {
+                /* 선택된 버튼 배경색 */
+                border-color: #4caf50; /* 선택된 버튼 테두리색 */
+                background-color: #45a049;
+                color: white;
+            }
+
+            .button:hover:not(.selected) {
+                background-color: #45a049; /* 마우스 호버 시 배경색 */
+            }
+
+            .content {
+                display: none;
+            }
+
+            .content.show {
+                display: block;
+            }
+        </style>
     </head>
     <body>
         <div id="container">
@@ -51,8 +88,12 @@
             <!-- 오른쪽 목록 -->
             <div id="right_div">
                 <div>
+                    <div class="button-group">
+                        <button class="button selected" onclick="selectButton(1)">버튼 1</button>
+                        <button class="button" onclick="selectButton(2)">버튼 2</button>
+                    </div>
                     <!-- 식당찜목록 타이틀 -->
-                    <div id="foodWrap">
+                    <div id="foodWrap" class="content show">
                         <h1>식당 찜목록</h1>
                         <!-- 캐러셀 -->
                         <div class="swiper mySwiper">
@@ -66,37 +107,39 @@
                         </div>
                     </div>
                     <!-- 공연 찜목록 -->
-                    <h1 style="margin-top: 7%">공연 찜목록</h1>
-                    <div id="show_title_div">
-                        <div>
-                            <h2>대구콘서트하우스</h2>
-                            <p>
-                                <button class="delBtn">
-                                    <i class="fa-solid fa-xmark fa-xl"></i></button
-                                ><span class="showTit">공연제목LOREM IPSUMasdfasdfasdf</span
-                                ><span>📅 2024-00-00 ~ 2024-00-00</span>
-                            </p>
-                            <p>
-                                <button class="delBtn">
-                                    <i class="fa-solid fa-xmark fa-xl"></i></button
-                                ><span class="showTit">공연제목LOREM IPSUMasdf</span
-                                ><span>📅 2024-00-00 ~ 2024-00-00</span>
-                            </p>
-                        </div>
-                        <!-- 아트플러스씨어터 -->
-                        <div>
-                            <h2>아트플러스씨어터</h2>
-                            <p class="noHeartTxt">즐겨찾기한 항목이 없습니다.</p>
-                        </div>
-                        <!-- 라이크디즈위드 -->
-                        <div>
-                            <h2>라이크디즈위드</h2>
-                            <p>
-                                <button class="delBtn">
-                                    <i class="fa-solid fa-xmark fa-xl"></i></button
-                                ><span class="showTit">공연제목LOREM IPSUM</span>
-                                <span>📅 2024-00-00 ~ 2024-00-00</span>
-                            </p>
+                    <div class="content">
+                        <h1 style="margin-top: 7%">공연 찜목록</h1>
+                        <div id="show_title_div">
+                            <div>
+                                <h2>대구콘서트하우스</h2>
+                                <p>
+                                    <button class="delBtn">
+                                        <i class="fa-solid fa-xmark fa-xl"></i></button
+                                    ><span class="showTit">공연제목LOREM IPSUMasdfasdfasdf</span
+                                    ><span>📅 2024-00-00 ~ 2024-00-00</span>
+                                </p>
+                                <p>
+                                    <button class="delBtn">
+                                        <i class="fa-solid fa-xmark fa-xl"></i></button
+                                    ><span class="showTit">공연제목LOREM IPSUMasdf</span
+                                    ><span>📅 2024-00-00 ~ 2024-00-00</span>
+                                </p>
+                            </div>
+                            <!-- 아트플러스씨어터 -->
+                            <div>
+                                <h2>아트플러스씨어터</h2>
+                                <p class="noHeartTxt">즐겨찾기한 항목이 없습니다.</p>
+                            </div>
+                            <!-- 라이크디즈위드 -->
+                            <div>
+                                <h2>라이크디즈위드</h2>
+                                <p>
+                                    <button class="delBtn">
+                                        <i class="fa-solid fa-xmark fa-xl"></i></button
+                                    ><span class="showTit">공연제목LOREM IPSUM</span>
+                                    <span>📅 2024-00-00 ~ 2024-00-00</span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -176,6 +219,22 @@
                     },
                 });
             });
+        </script>
+        <script>
+            function selectButton(index) {
+                var buttons = document.querySelectorAll('.button');
+                var contents = document.querySelectorAll('.content');
+
+                buttons.forEach(function (button, i) {
+                    if (i === index - 1) {
+                        button.classList.add('selected');
+                        contents[i].classList.add('show');
+                    } else {
+                        button.classList.remove('selected');
+                        contents[i].classList.remove('show');
+                    }
+                });
+            }
         </script>
     </body>
 </html>
