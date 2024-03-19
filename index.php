@@ -61,18 +61,17 @@
         
         if (usernameWithoutDomain) {
           if (usernameWithoutDomain === "schentea") {
-            const user = createListItem("userinfo", `${usernameWithoutDomain}님`);
-            // const logout = createListItem("logout", "로그아웃");
-            // logout.addEventListener("click", function () {
-            //   logoutUser();
-            // });
+            const user = createListItem("userinfo", `${usernameWithoutDomain.slice(0,2)}`);
             user.addEventListener("click", function () {
               openAdminPage(usernameWithoutDomain);
             });
             hideElements([loginButton, openModalBtn, between]);
-            appendElements(ul, [user]);
+            ul.appendChild(user)
           } else {
-            const user = createListItem("userinfo", `${usernameWithoutDomain.slice(0,2)}`);
+            let user = createListItem("userinfo", `${usernameWithoutDomain.slice(0,2)}`);
+            let user2 = document.createElement("li");;
+            user2.classList.add("userinfoBig");
+            user2.innerHTML = `<p>${usernameWithoutDomain.slice(0,2)}</p><p>${usernameWithoutDomain}</p>`
             // const logout = createListItem("logout", "로그아웃");
             // logout.addEventListener("click", function () {
             //   logoutUser();
@@ -82,7 +81,8 @@
             });
             
             hideElements([loginButton, openModalBtn, between]);
-            appendElements(ul, [user]);
+            ul.appendChild(user)
+            ul.appendChild(user2)
           }
         } else {
           console.log("사용자가 존재하지 않습니다");
@@ -99,12 +99,6 @@
       function hideElements(elements) {
         elements.forEach((element) => {
           element.style.display = "none";
-        });
-      }
-
-      function appendElements(parent, elements) {
-        elements.forEach((element) => {
-          parent.appendChild(element);
         });
       }
       function openMyPage(username) {
@@ -623,10 +617,11 @@
           <a href="http://www.daegucvb.com/mice/main/" target="_blank">
             <p>컨벤션뷰로</p>
           </a>
-        </div>
-        <a href="https://github.com/schentea/0304-NewProject">
+          <a href="https://github.com/schentea/0304-NewProject">
           깃허브
         </a>
+        </div>
+        
         <div id="footer_mid">
           <p>
             <b>대구광역시 시청</b>&nbsp;&nbsp; 대구광역시 중구 공평로 88(동인동
