@@ -15,9 +15,6 @@
                 display: none;
                 background: red;
             }
-            input {
-                width: 500px;
-            }
         </style>
     </head>
     <body>
@@ -43,8 +40,8 @@
             </div>
             <!-- 오른쪽 목록 -->
             <div id="right_div" class="admin_right_div" style="position: relative">
-                <div style="position: absolute; top: 0; left: 50%; width: 500px; transform: translate(-50%)">
-                    <input type="search" placeholder="검색해주세요.." style="height: 100px; width: 500px" />
+                <div style="position: absolute; top: 0; left: 50%; width: 88%; transform: translate(-44%)">
+                    <input type="search" placeholder="검색해주세요.." style="height: 100px; width: 88%" />
                     <div class="counter">Total user : <span id="spanleng">32</span></div>
                 </div>
                 <div id="userInfoBig" style="margin-top: 150px"></div>
@@ -202,6 +199,7 @@
 
                                 const searchInput = document.querySelector('input[type="search"]');
                                 const photosCounter = document.querySelector('#spanleng');
+                                // photosCounter.innerText = '3';
                                 searchInput.addEventListener('keyup', keyUpHandler);
 
                                 function keyUpHandler() {
@@ -210,23 +208,27 @@
                                         // 검색어가 비어 있을 때는 모든 사용자 정보를 표시합니다.
                                         for (const item of captions) {
                                             item.classList.remove('dNone');
+                                            photosCounter.innerText = captions.length;
                                         }
                                     } else {
+                                        let filteredCount = 0;
                                         for (const item of captions) {
                                             const userIdElement = item.querySelector('.userId');
                                             if (userIdElement) {
                                                 const userId = userIdElement.textContent.trim().toLowerCase();
+
                                                 if (userId.includes(keywords)) {
                                                     item.classList.remove('dNone');
+                                                    // photosCounter.innerText = item.length;
+                                                    filteredCount++;
                                                 } else {
                                                     item.classList.add('dNone');
                                                 }
                                             }
                                         }
+                                        photosCounter.innerText = filteredCount;
                                     }
                                 }
-                                const span = document.querySelector('#spanleng');
-                                span.innerHTML = filteredCount.length;
                             }
                         }
                     }
