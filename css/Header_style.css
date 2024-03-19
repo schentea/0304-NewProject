@@ -1,5 +1,4 @@
 /* 헤더 */
-
 header {
   width: 100%;
   height: 100vh;
@@ -53,14 +52,19 @@ nav #logo img {
   cursor: pointer;
   padding: 10px 15px;
 }
-.gnb_menu li.userinfo {
+.gnb_menu li.userinfo,
+.gnb_menu li.userinfoBig p:nth-child(1) {
   display: flex;
+  justify-content: center;
   align-items: center;
-}
-.gnb_menu li.userinfo {
   background: lightcoral;
   border-radius: 50%;
   border: 3px solid white;
+  width: 56px;
+  height: 56px;
+}
+.gnb_menu li.userinfoBig {
+  display: none;
 }
 .gnb_menu a {
   color: white;
@@ -203,8 +207,16 @@ video {
     font-size: 24px;
   }
   .gnb_menu li.userinfo {
-    margin: 0 80px;
+    display: none;
   }
+  .gnb_menu li.userinfoBig {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+  }
+
   /* 로고 */
   #logo {
     display: none;
