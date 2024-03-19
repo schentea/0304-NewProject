@@ -201,7 +201,7 @@ body {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: white;
+  background: gray;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -269,6 +269,7 @@ body {
     max-width: none;
     height: 35%;
     position: static;
+    border-radius: 0;
   }
 
   #left_div.admin_left_div {
