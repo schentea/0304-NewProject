@@ -659,7 +659,6 @@
     <script src="./js/Api.js" type="module"></script>
     <!-- 스크롤 애니메이션 -->
     <script src="./js/wheelAni.js"></script>
-    <!-- <script src="./js/wheel.js"></script> -->
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- 맛집모달 -->
