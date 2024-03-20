@@ -48,7 +48,7 @@ if ($result->num_rows > 0) {
         // 세션에 사용자명 저장
         $_SESSION['username'] = $username2;
         // JSON 응답으로 반환
-        echo json_encode(array('success' => true, 'message' => '로그인 되었습니다.', 'username' => $username2));
+        echo json_encode(array('success' => true, 'message' => '로그인 성공', 'username' => $username2));
     } else {
         echo json_encode(array('success' => false, 'message' => '사용자명 또는 비밀번호가 잘못되었습니다.'));
     }

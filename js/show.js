@@ -1,22 +1,64 @@
-console.log(
-  `%c 
-             ⣶⣿⣶⣤⣄⠀⠀⠀ 
-             ⣿⣿⣿⣿⣿⣶⣿⠛⠁
-⠀⠀⠀⢀⣠⣤⣤⣄⡀⠀⠿⣿⠿⠛⠛⠉⠁⠀⠀⠀
-⠀⣠⣶⣿⣿⠿⠿⠿⣿⣷⣿⣿⠀⠀⠀⠀⠀
-⢰⣿⣿⠛⠤⠤⠤⠤⠻⣿⣿⣿⠀⠀⠀⠀⠀
-⣿⣿⣿⠤⠤⠤⠤⠤⠤⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀
-⣿⣿⣿⣄⠤⠤⠤⠤⣤⣿⣿⠿⠀⠀⠀⠀⠀⠀⠀⠀
-⠘⠿⣿⣿⣶⣤⣤⣶⣿⣿⠿⠃⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠙⠻⠻⠿⠿⠿⠿⠛⠉⠀⠀⠀⠀⠀
-즐거운 동성로`,
-  "color:red"
-);
-
+// api 데이터 불러오기
+import { eventData, performData, fetchData } from "./Api.js";
 // 모달창
 let showModal1 = document.querySelector("#showModal1");
 let showModal2 = document.querySelector("#showModal2");
 let showModal3 = document.querySelector("#showModal3");
+// 모달 가져오기
+let foodmodal = document.getElementById("foodModal");
+
+// 모달 닫기 버튼 가져오기
+let foodspan = document.getElementsByClassName("foodclose")[0];
+
+let div = document.querySelectorAll(".swiper-slide");
+
+// 버튼을 클릭하면 모달 열기
+div.forEach(function (item) {
+  item.onclick = function () {
+    foodmodal.style.display = "flex";
+    document.querySelector(".foodmodal-content").classList.add("modalAni");
+
+    // 클릭한 음식의 이름을 저장하는 클로저
+    (function () {
+      let clickedFoodName = item.querySelector("p").textContent + " ";
+
+      // 모달이 열릴 때 찜 정보와 선택한 음식의 이름을 함께 가져오기
+      const username = sessionStorage.getItem("username");
+      if (username) {
+        $.ajax({
+          url: "http://dongseong.dothome.co.kr/get_saved_food_info.php",
+          type: "POST",
+          dataType: "json",
+          contentType: "application/json",
+          data: JSON.stringify({ uid: username, foodName: clickedFoodName }), // 선택한 음식의 이름을 함께 보냄
+          success: function (response) {
+            let isLiked = response.isLiked;
+
+            // 선택한 음식이 DB에 있는지 확인하고, 찜한 경우 하트를 활성화
+            if (isLiked) {
+              document.querySelector(".heartBtn").classList.add("active");
+            }
+          },
+          error: function (xhr, status, error) {
+            console.error("찜 정보를 가져오는 중 오류가 발생했습니다:", error);
+          },
+        });
+      }
+    })(); // 클로저 즉시 실행
+  };
+});
+
+// 닫기 버튼을 클릭하면 모달 닫기
+foodspan.onclick = function () {
+  foodmodal.style.display = "none";
+};
+
+// 모달 외부를 클릭하면 모달 닫기
+window.onclick = function (event) {
+  if (event.target == foodmodal) {
+    foodmodal.style.display = "none";
+  }
+};
 
 // 콘서트하우스 모달 열기
 document.querySelector("#show_right_img_div").onclick = () => {
@@ -78,8 +120,6 @@ window.addEventListener("click", function (event) {
   }
 });
 
-// api 데이터 불러오기
-import { eventData, performData, fetchData } from "./Api.js";
 const venueNames = {
   showModalList1: "대구 콘서트 하우스",
   showModalList2: "라이크디즈 위즈",
@@ -235,6 +275,7 @@ const observer = new MutationObserver((mutations) => {
   mutations.forEach((mutation) => {
     // 추가된 요소가 있는지 확인
     const username = sessionStorage.getItem("username");
+
     if (mutation.type === "childList") {
       mutation.addedNodes.forEach((node) => {
         // 추가된 요소가 .heartBtn인지 확인
@@ -242,6 +283,94 @@ const observer = new MutationObserver((mutations) => {
           node.addEventListener("click", () => {
             if (username) {
               node.classList.toggle("active");
+              if (node.nodeType === 1 && node.classList.contains("heartBtn") && node.classList.contains("active")) {
+                const isLiked = node.classList.contains("active") ? 1 : 0;
+                const img = document.querySelector(".imgbox img");
+                const menuItems = [];
+                document.querySelectorAll(".foodMenu").forEach(function (menu) {
+                  const menuItem = {
+                    name: menu.querySelector("p").textContent,
+                    description: menu.querySelector("p:nth-child(2)").textContent,
+                  };
+                  menuItems.push(menuItem);
+                });
+
+                // 모달에 나와있는 정보들을 콘솔에 출력
+                const IMAGE = img.src;
+                const BZ_NM = foodname.textContent;
+                const SMPL_DESC = foodname2.textContent;
+                const GNG_CS = foodadr.textContent;
+                const TLNO = foodnum.textContent;
+                const MBZ_HR = foodtime.textContent;
+                const PKPL = document.querySelector(".foodIcons .foodCarIcon p").textContent;
+                const BKN_YN = document.querySelector(".foodIcons .foodBookIcon p").textContent;
+                const INFN_FCL = document.querySelector(".foodIcons .foodToyIcon p").textContent;
+                const firstMN = menuItems[0].name + "/" + menuItems[0].description;
+                const secondMN = menuItems[1].name + "/" + menuItems[1].description;
+                const thirdMN = menuItems[2].name + "/" + menuItems[2].description;
+                // console.log(IMAGE);
+                // console.log(BZ_NM);
+                // console.log(SMPL_DESC);
+                // console.log(GNG_CS);
+                // console.log(TLNO);
+                // console.log(MBZ_HR);
+                // console.log(PKPL);
+                // console.log(BKN_YN);
+                // console.log(INFN_FCL);
+                // console.log(firstMN);
+                // console.log(secondMN);
+                // console.log(thirdMN);
+                const data = {
+                  uid: username,
+                  BZ_NM: BZ_NM,
+                  SMPL_DESC: SMPL_DESC,
+                  GNG_CS: GNG_CS,
+                  TLNO: TLNO,
+                  MBZ_HR: MBZ_HR,
+                  PKPL: PKPL,
+                  BKN_YN: BKN_YN,
+                  INFN_FCL: INFN_FCL,
+                  MNU1: firstMN,
+                  MNU2: secondMN,
+                  MNU3: thirdMN,
+                  IMAGE: IMAGE,
+                  isLiked: isLiked, // 하트의 상태를 저장합니다.
+                };
+                console.log(data);
+                $.ajax({
+                  url: "http://dongseong.dothome.co.kr/save_food_info.php",
+                  type: "POST",
+                  dataType: "json",
+                  contentType: "application/json",
+                  data: JSON.stringify(data),
+                  success: function (response) {
+                    console.log("음식 정보를 서버에 전송했습니다.");
+                  },
+                  error: function (xhr, status, error) {
+                    console.error("음식 정보 전송 중 오류가 발생했습니다:", error);
+                  },
+                });
+              } else {
+                const BZ_NM = foodname.textContent;
+                const data = {
+                  uid: username,
+                  BZ_NM: BZ_NM,
+                  isLiked: 0, // 삭제를 의미하는 값으로 설정
+                };
+                $.ajax({
+                  url: "http://dongseong.dothome.co.kr/delete_food_info.php",
+                  type: "POST",
+                  dataType: "json",
+                  contentType: "application/json",
+                  data: JSON.stringify(data),
+                  success: function (response) {
+                    console.log("음식 정보를 서버에서 삭제했습니다.");
+                  },
+                  error: function (xhr, status, error) {
+                    console.error("음식 정보 삭제 중 오류가 발생했습니다:", error);
+                  },
+                });
+              }
             } else {
               alert("로그인 후 이용해주세요.");
               window.location.href = "login_form.php";
