@@ -253,7 +253,7 @@ body {
   color: white;
 }
 #show_title_div div {
-  margin-top: 30px;
+  margin: 40px 0;
 }
 #show_title_div .showTit {
   font-weight: 500;
