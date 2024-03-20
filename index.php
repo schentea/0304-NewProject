@@ -697,39 +697,31 @@
     </script>
     <!-- 폭죽 -->
     <script>
-      var defaults = {
-        spread: 360,
-        ticks: 50,
-        gravity: 0,
-        decay: 0.94,
-        startVelocity: 30,
-        colors: ['eb102c', 'eb8b10', 'F08080', 'ff0021', 'eb5c10']
-      };
-
-      function shoot() {
-        confetti({
-          ...defaults,
-          particleCount: 40,
-          scalar: 1.2,
-          shapes: ['star']
-        });
-
-        confetti({
-          ...defaults,
-          particleCount: 10,
-          scalar: 0.75,
-          shapes: ['circle']
-        });
-      }
-
       function multiShoot() {
-        setTimeout(shoot, 0);
-        setTimeout(shoot, 100);
-        setTimeout(shoot, 200);
-        setTimeout(shoot, 300);
-        setTimeout(shoot, 400);
-        setTimeout(shoot, 500);
+      var end = Date.now() + 500;
+      function frame() {
+        confetti({
+          particleCount: 6,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0, y: 0.7 },
+          colors: ['#eb102c', '#fbc8c8']
+        });
+        confetti({
+          particleCount: 6,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1, y: 0.7 },
+          colors: ['#eb102c', '#fbc8c8']
+        });
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
       }
+
+      frame();
+    }
+
     </script>
   </body>
 </html>
