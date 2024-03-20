@@ -4,26 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 폰트어썸 -->
-    <script
-      src="https://kit.fontawesome.com/247e9f18da.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/247e9f18da.js" crossorigin="anonymous"></script>
     <!-- 스와이퍼 -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="./css/adminPage.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="icon" href="./image/logo.svg" />
-    <link
-      href="https://webfontworld.github.io/SCoreDream/SCoreDream.css"
-      rel="stylesheet"
-    />
+    <link href="https://webfontworld.github.io/SCoreDream/SCoreDream.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>개인 페이지</title>
     <style>
@@ -97,20 +85,14 @@
             </a>
           </div>
         </div>
-        <div id="god" style="cursor: pointer">
-          <i class="fa-solid fa-arrow-right-from-bracket"></i>로그아웃
-        </div>
+        <div id="god" style="cursor: pointer"><i class="fa-solid fa-arrow-right-from-bracket"></i>로그아웃</div>
       </div>
       <!-- 오른쪽 목록 -->
       <div id="right_div">
         <div>
           <div class="button-group">
-            <button class="button selected" onclick="selectButton(1)">
-              식당 찜목록
-            </button>
-            <button class="button" onclick="selectButton(2)">
-              공연 찜목록
-            </button>
+            <button class="button selected" onclick="selectButton(1)">식당 찜목록</button>
+            <button class="button" onclick="selectButton(2)">공연 찜목록</button>
           </div>
           <!-- 식당찜목록 타이틀 -->
           <section id="foodSect" class="content show">
@@ -129,10 +111,7 @@
             </div>
             <article id="infoArticle">
               <h2>식당이름</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <div class="iconWrap">
                 <div>
                   <i class="fa-solid fa-car"></i>
@@ -148,13 +127,8 @@
                 </div>
               </div>
               <div class="infoWrap">
-                <div>
-                  <i class="fa-solid fa-location-crosshairs"></i>주소
-                  ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄹ
-                </div>
-                <div>
-                  <i class="fa-solid fa-phone"></i>전화번호ㅁㄴㅇㄻㄴㅇㄹ
-                </div>
+                <div><i class="fa-solid fa-location-crosshairs"></i>주소 ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄹ</div>
+                <div><i class="fa-solid fa-phone"></i>전화번호ㅁㄴㅇㄻㄴㅇㄹ</div>
                 <div><i class="fa-regular fa-clock"></i>영업시간ㅁㄴㅇㄹ</div>
               </div>
               <div class="menuWrap">
@@ -174,35 +148,19 @@
             <h1 id="JJimH1">공연 찜목록</h1>
             <div id="showList">
               <div id="show_title_div">
-                <div>
+                <div id="consertList">
                   <h2>대구콘서트하우스</h2>
-                  <p>
-                    <button class="delBtn">
-                      <i class="fa-solid fa-xmark fa-xl"></i></button
-                    ><span class="showTit">공연제목LOREM IPSUMasdfasdfasdf</span
-                    ><span>📅 2024-00-00 ~ 2024-00-00</span>
-                  </p>
-                  <p>
-                    <button class="delBtn">
-                      <i class="fa-solid fa-xmark fa-xl"></i></button
-                    ><span class="showTit">공연제목LOREM IPSUMasdf</span
-                    ><span>📅 2024-00-00 ~ 2024-00-00</span>
-                  </p>
+                  <p class="noHeartTxt">즐겨찾기한 항목이 없습니다.</p>
                 </div>
                 <!-- 아트플러스씨어터 -->
-                <div>
+                <div id="artList">
                   <h2>아트플러스씨어터</h2>
                   <p class="noHeartTxt">즐겨찾기한 항목이 없습니다.</p>
                 </div>
                 <!-- 라이크디즈위드 -->
-                <div>
+                <div id="likeList">
                   <h2>라이크디즈위드</h2>
-                  <p>
-                    <button class="delBtn">
-                      <i class="fa-solid fa-xmark fa-xl"></i></button
-                    ><span class="showTit">공연제목LOREM IPSUM</span>
-                    <span>📅 2024-00-00 ~ 2024-00-00</span>
-                  </p>
+                  <p class="noHeartTxt">즐겨찾기한 항목이 없습니다.</p>
                 </div>
               </div>
             </div>
@@ -211,7 +169,6 @@
       </div>
     </div>
     <!-- 스와이퍼 js -->
-    <script></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       var swiper = new Swiper(".mySwiper", {
@@ -241,18 +198,14 @@
       });
       function getUserInfo(username) {
         $.ajax({
-          url:
-            "http://dongseong.dothome.co.kr/mypage.php?username=" +
-            encodeURIComponent(username),
+          url: "http://dongseong.dothome.co.kr/mypage.php?username=" + encodeURIComponent(username),
           type: "GET",
           dataType: "json",
           success: function (response) {
             if (response.success) {
               //   console.log("이건", response.userInfo); // 사용자 정보를 받아옴
-              document.getElementById("name1").innerText =
-                response.userInfo.name;
-              document.getElementById("email1").innerText =
-                response.userInfo.email;
+              document.getElementById("name1").innerText = response.userInfo.name;
+              document.getElementById("email1").innerText = response.userInfo.email;
               if (!/010/.test(response.userInfo.tel)) {
                 // '010'이 포함되어 있지 않은 경우
                 // 여기에 처리할 내용을 작성하세요.
@@ -274,14 +227,29 @@
       function getUserList(username) {
         // 사용자의 공연 정보를 가져오는 AJAX 요청
         $.ajax({
-          url:
-            "http://dongseong.dothome.co.kr/mypage.php?username=" +
-            encodeURIComponent(username),
+          url: "http://dongseong.dothome.co.kr/mypage.php?username=" + encodeURIComponent(username),
           type: "GET",
           dataType: "json",
           success: function (response) {
             if (response.success) {
               console.log(response.showInfo);
+              let items = response.showInfo;
+              function addItem(item, listId) {
+                document.querySelector(listId).innerHTML += `<p>
+                  <button class="delBtn">
+                    <i class="fa-solid fa-xmark fa-xl"></i>
+                  </button>
+                  <span class="showTit">${item.showname}</span>
+                  <span>${item.showtime.trim().split("\n").join("")}</span>
+                </p>`;
+              }
+              items.map((item) => {
+                if (item.showplace.includes("콘서트")) {
+                  addItem(item, "#consertList");
+                } else if (item.showplace.includes("씨어터")) {
+                  addItem(item, "#artList");
+                } else addItem(item, "#likeList");
+              });
             } else {
               alert(response.message);
             }
@@ -327,6 +295,34 @@
           }
         });
       }
+
+      // 공연 찜목록 있는지 확인, 있으면 대체 텍스트 삭제
+      const observeMutation = (targetSelector) => {
+        const observer = new MutationObserver((mutationsList, observer) => {
+          mutationsList.forEach((mutation) => {
+            if (mutation.type === "childList") {
+              const target = document.querySelector(targetSelector);
+              const noHeartTxt = target.querySelector(".noHeartTxt");
+              if (noHeartTxt) {
+                noHeartTxt.remove();
+              }
+            }
+          });
+        });
+
+        const targetNode = document.querySelector(targetSelector);
+        if (targetNode) {
+          observer.observe(targetNode, {
+            childList: true,
+            subtree: true,
+          });
+        }
+      };
+
+      // #consertList, #artList, #likeList 각각에 대해 변이 감지를 설정합니다.
+      observeMutation("#consertList");
+      observeMutation("#artList");
+      observeMutation("#likeList");
     </script>
   </body>
 </html>
