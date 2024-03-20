@@ -301,8 +301,6 @@ section#foodSect h1 {
 }
 #infoArticle {
   border-radius: 20px;
-  padding: 50px;
-  background-color: #eee;
 }
 #foodSect article .menuWrap div {
   display: flex;
