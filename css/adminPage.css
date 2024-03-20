@@ -374,6 +374,6 @@ section#foodSect h1 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--mainColor);
+  background: var(--subColor);
   border-radius: 10px;
 }
