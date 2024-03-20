@@ -23,8 +23,11 @@ if ($conn->connect_error) {
 }
 
 // 데이터베이스에서 해당 공연 정보 삭제
-$sql = "DELETE FROM userShowInfo WHERE uid='$username2' AND showplace='$venue' AND showname='$showName' AND showtime='$showDate'";
-if ($conn->query($sql) === TRUE) {
+$sql = "DELETE FROM userShowInfo WHERE uid=? AND showplace=? AND showname=? AND showtime=?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ssss", $username2, $venue, $showName, $showDate);
+
+if ($stmt->execute()) {
     // 삭제 성공
     $response = array("success" => true);
     echo json_encode($response);
@@ -35,5 +38,6 @@ if ($conn->query($sql) === TRUE) {
 }
 
 // 데이터베이스 연결 종료
+$stmt->close();
 $conn->close();
 ?>

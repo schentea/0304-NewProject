@@ -4,14 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 폰트어썸 -->
-    <script src="https://kit.fontawesome.com/247e9f18da.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/247e9f18da.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- 스와이퍼 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="./css/adminPage.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="icon" href="./image/logo.svg" />
-    <link href="https://webfontworld.github.io/SCoreDream/SCoreDream.css" rel="stylesheet" />
+    <link
+      href="https://webfontworld.github.io/SCoreDream/SCoreDream.css"
+      rel="stylesheet"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>개인 페이지</title>
     <style>
@@ -47,19 +59,11 @@
       }
 
       .content {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.4s;
         display: none;
       }
 
       .content.show {
         display: block;
-      }
-
-      .content.visible {
-        opacity: 1;
-        transform: translateY(0);
       }
     </style>
   </head>
@@ -93,17 +97,23 @@
             </a>
           </div>
         </div>
-        <div id="god" style="cursor: pointer"><i class="fa-solid fa-arrow-right-from-bracket"></i>로그아웃</div>
+        <div id="god" style="cursor: pointer">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>로그아웃
+        </div>
       </div>
       <!-- 오른쪽 목록 -->
       <div id="right_div">
         <div>
           <div class="button-group">
-            <button class="button selected" onclick="selectButton(1)">식당 찜목록</button>
-            <button class="button" onclick="selectButton(2)">공연 찜목록</button>
+            <button class="button selected" onclick="selectButton(1)">
+              식당 찜목록
+            </button>
+            <button class="button" onclick="selectButton(2)">
+              공연 찜목록
+            </button>
           </div>
           <!-- 식당찜목록 타이틀 -->
-          <section id="foodSect" class="content show visible">
+          <section id="foodSect" class="content show">
             <h1>식당 찜목록</h1>
             <div id="foodWrap">
               <!-- 캐러셀 -->
@@ -114,13 +124,15 @@
                   <div class="swiper-slide">Slide 3</div>
                   <div class="swiper-slide">Slide 4</div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
               </div>
             </div>
             <article id="infoArticle">
               <h2>식당이름</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
               <div class="iconWrap">
                 <div>
                   <i class="fa-solid fa-car"></i>
@@ -136,8 +148,13 @@
                 </div>
               </div>
               <div class="infoWrap">
-                <div><i class="fa-solid fa-location-crosshairs"></i>주소 ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄹ</div>
-                <div><i class="fa-solid fa-phone"></i>전화번호ㅁㄴㅇㄻㄴㅇㄹ</div>
+                <div>
+                  <i class="fa-solid fa-location-crosshairs"></i>주소
+                  ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄹ
+                </div>
+                <div>
+                  <i class="fa-solid fa-phone"></i>전화번호ㅁㄴㅇㄻㄴㅇㄹ
+                </div>
                 <div><i class="fa-regular fa-clock"></i>영업시간ㅁㄴㅇㄹ</div>
               </div>
               <div class="menuWrap">
@@ -162,12 +179,14 @@
                   <p>
                     <button class="delBtn">
                       <i class="fa-solid fa-xmark fa-xl"></i></button
-                    ><span class="showTit">공연제목LOREM IPSUMasdfasdfasdf</span><span>📅 2024-00-00 ~ 2024-00-00</span>
+                    ><span class="showTit">공연제목LOREM IPSUMasdfasdfasdf</span
+                    ><span>📅 2024-00-00 ~ 2024-00-00</span>
                   </p>
                   <p>
                     <button class="delBtn">
                       <i class="fa-solid fa-xmark fa-xl"></i></button
-                    ><span class="showTit">공연제목LOREM IPSUMasdf</span><span>📅 2024-00-00 ~ 2024-00-00</span>
+                    ><span class="showTit">공연제목LOREM IPSUMasdf</span
+                    ><span>📅 2024-00-00 ~ 2024-00-00</span>
                   </p>
                 </div>
                 <!-- 아트플러스씨어터 -->
@@ -200,9 +219,9 @@
         slidesPerView: 1,
         spaceBetween: 30,
         freeMode: true,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
         },
         breakpoints: {
           620: {
@@ -218,17 +237,22 @@
       document.addEventListener("DOMContentLoaded", function () {
         const username = sessionStorage.getItem("username");
         getUserInfo(username);
+        getUserList(username);
       });
       function getUserInfo(username) {
         $.ajax({
-          url: "http://dongseong.dothome.co.kr/mypage.php?username=" + encodeURIComponent(username),
+          url:
+            "http://dongseong.dothome.co.kr/mypage.php?username=" +
+            encodeURIComponent(username),
           type: "GET",
           dataType: "json",
           success: function (response) {
             if (response.success) {
-              console.log("이건", response.userInfo); // 사용자 정보를 받아옴
-              document.getElementById("name1").innerText = response.userInfo.name;
-              document.getElementById("email1").innerText = response.userInfo.email;
+              //   console.log("이건", response.userInfo); // 사용자 정보를 받아옴
+              document.getElementById("name1").innerText =
+                response.userInfo.name;
+              document.getElementById("email1").innerText =
+                response.userInfo.email;
               if (!/010/.test(response.userInfo.tel)) {
                 // '010'이 포함되어 있지 않은 경우
                 // 여기에 처리할 내용을 작성하세요.
@@ -238,7 +262,26 @@
               }
 
               // getUserList 호출
-              getUserList();
+            } else {
+              alert(response.message);
+            }
+          },
+          error: function (xhr, status, error) {
+            console.error("AJAX 요청 중 오류 발생:", error);
+          },
+        });
+      }
+      function getUserList(username) {
+        // 사용자의 공연 정보를 가져오는 AJAX 요청
+        $.ajax({
+          url:
+            "http://dongseong.dothome.co.kr/mypage.php?username=" +
+            encodeURIComponent(username),
+          type: "GET",
+          dataType: "json",
+          success: function (response) {
+            if (response.success) {
+              console.log(response.showInfo);
             } else {
               alert(response.message);
             }
@@ -278,15 +321,9 @@
           if (i === index - 1) {
             button.classList.add("selected");
             contents[i].classList.add("show");
-            setTimeout(() => {
-              contents[i].classList.add("visible");
-            }, 50);
           } else {
             button.classList.remove("selected");
             contents[i].classList.remove("show");
-            setTimeout(() => {
-              contents[i].classList.remove("visible");
-            }, 50);
           }
         });
       }

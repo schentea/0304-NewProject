@@ -7,10 +7,10 @@ let showModal3 = document.querySelector("#showModal3");
 document.querySelector("#show_right_img_div").onclick = () => {
   showModal1.style.display = "flex";
   document.querySelector("#showModalIn1").classList.add("modalAni");
-  getSavedShowInfo(
-    sessionStorage.getItem("username"),
-    venueNames.showModalList1
-  );
+  const username = sessionStorage.getItem("username");
+  if (username) {
+    getSavedShowInfo(username, venueNames.showModalList1);
+  }
 };
 // X 모달 닫기
 document.querySelector("#showModalClose1").onclick = () => {
@@ -27,10 +27,10 @@ window.addEventListener("click", function (event) {
 document.querySelector("#show_left2").onclick = () => {
   showModal2.style.display = "flex";
   document.querySelector("#showModalIn2").classList.add("modalAni");
-  getSavedShowInfo(
-    sessionStorage.getItem("username"),
-    venueNames.showModalList2
-  );
+  const username = sessionStorage.getItem("username");
+  if (username) {
+    getSavedShowInfo(username, venueNames.showModalList2);
+  }
 };
 // X 모달 닫기
 document.querySelector("#showModalClose2").onclick = () => {
@@ -47,10 +47,10 @@ window.addEventListener("click", function (event) {
 document.querySelector("#show_left1").onclick = () => {
   showModal3.style.display = "flex";
   document.querySelector("#showModalIn3").classList.add("modalAni");
-  getSavedShowInfo(
-    sessionStorage.getItem("username"),
-    venueNames.showModalList3
-  );
+  const username = sessionStorage.getItem("username");
+  if (username) {
+    getSavedShowInfo(username, venueNames.showModalList3);
+  }
 };
 // X 모달 닫기
 document.querySelector("#showModalClose3").onclick = () => {
@@ -131,18 +131,16 @@ fetchData()
 
     // 하트 버튼에 이벤트 리스너 추가
     for (let h of document.querySelectorAll(".heartBtn")) {
+      const venueId = h.closest("ul").id;
+      const venue = venueNames[venueId];
+      const showName = h.closest("li").querySelector(".showTit").textContent;
+      const showDate = h.closest("li").querySelector(".showDate").textContent;
+
+      getSavedShowInfo(username, venue, showName, showDate, h); // 수정된 부분: 하트 버튼과 관련된 정보를 인자로 전달합니다.
+
       h.addEventListener("click", () => {
         if (username) {
           h.classList.toggle("active");
-          const venueId = h.closest("ul").id;
-          const venue = venueNames[venueId];
-          const showName = h
-            .closest("li")
-            .querySelector(".showTit").textContent;
-          const showDate = h
-            .closest("li")
-            .querySelector(".showDate").textContent;
-
           const isLiked = h.classList.contains("active");
           saveShowInfo(venue, showName, showDate, username, isLiked);
         } else {
@@ -201,7 +199,7 @@ function deleteSavedShowInfo(username, venue, showName, showDate) {
   });
 }
 
-function getSavedShowInfo(username, venue) {
+function getSavedShowInfo(username, venue, showName, showDate, heartBtn) {
   // 서버에서 하트 상태 확인
   $.ajax({
     url: "http://dongseong.dothome.co.kr/get_saved_show_info.php",
@@ -211,18 +209,13 @@ function getSavedShowInfo(username, venue) {
     data: JSON.stringify({
       username: username,
       venue: venue,
+      showName: showName, // 수정된 부분: 공연 이름과 날짜도 함께 전달합니다.
+      showDate: showDate,
     }),
     success: function (response) {
       // 하트 상태에 따라 클래스 추가
       if (response.isLiked) {
-        const venueId = Object.keys(venueNames).find(
-          (key) => venueNames[key] === venue
-        );
-        // 수정된 부분: heartBtn 요소를 찾기 위해 ID 선택자를 사용합니다.
-        const heartBtn = document.querySelector(`#${venueId} .heartBtn`);
-        if (heartBtn) {
-          heartBtn.classList.add("active");
-        }
+        heartBtn.classList.add("active"); // 수정된 부분: 전달된 하트 버튼에 active 클래스 추가
       }
     },
     error: function (xhr, status, error) {
@@ -230,7 +223,6 @@ function getSavedShowInfo(username, venue) {
     },
   });
 }
-
 const observer = new MutationObserver((mutations) => {
   mutations.forEach((mutation) => {
     // 추가된 요소가 있는지 확인
