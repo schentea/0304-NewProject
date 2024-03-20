@@ -608,7 +608,7 @@
     </section>
     <!-- 푸터 -->
     <footer class="sections">
-      <img src="./image/logo.svg" alt="logo" />
+      <img src="./image/logo.svg" alt="logo" onclick="multiShoot()" />
       <!-- 제일위  -->
       <div id="footer_container">
         <div id="footer_top">
@@ -653,6 +653,8 @@
     <script src="./js/show.js" type="module"></script>
     <!-- api -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
     <script src="./js/youtube.js"></script>
     <!-- <script src="./js/Sign.js"></script>
     <script src="./js/Login.js"></script> -->
@@ -692,6 +694,42 @@
           delay: 3000,
         },
       });
+    </script>
+    <!-- 폭죽 -->
+    <script>
+      var defaults = {
+        spread: 360,
+        ticks: 50,
+        gravity: 0,
+        decay: 0.94,
+        startVelocity: 30,
+        colors: ['eb102c', 'eb8b10', 'F08080', 'ff0021', 'eb5c10']
+      };
+
+      function shoot() {
+        confetti({
+          ...defaults,
+          particleCount: 40,
+          scalar: 1.2,
+          shapes: ['star']
+        });
+
+        confetti({
+          ...defaults,
+          particleCount: 10,
+          scalar: 0.75,
+          shapes: ['circle']
+        });
+      }
+
+      function multiShoot() {
+        setTimeout(shoot, 0);
+        setTimeout(shoot, 100);
+        setTimeout(shoot, 200);
+        setTimeout(shoot, 300);
+        setTimeout(shoot, 400);
+        setTimeout(shoot, 500);
+      }
     </script>
   </body>
 </html>
