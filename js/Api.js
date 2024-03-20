@@ -71,6 +71,7 @@ $(document).ready(function () {
                                 }
                             });
                         }
+                        console.log(sameNameItems);
                     });
 
                     const Slide = Array.from(document.querySelectorAll('.swiper-slide'));
