@@ -209,7 +209,7 @@ body {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: gray;
+  background: white;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -223,8 +223,9 @@ body {
   object-fit: cover;
 }
 
-.swiper .swiper-pagination-bullet-active {
-  background: var(--mainColor);
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev {
+  color: var(--mainColor);
 }
 
 #show_title_div {
