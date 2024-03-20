@@ -703,7 +703,7 @@
         gravity: 0,
         decay: 0.94,
         startVelocity: 30,
-        colors: ['eb102c', 'dd4342', 'F08080', 'ff0021', 'ff7385']
+        colors: ['eb102c', 'eb8b10', 'F08080', 'ff0021', 'eb5c10']
       };
 
       function shoot() {
