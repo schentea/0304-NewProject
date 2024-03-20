@@ -1,9 +1,9 @@
 <?php
 // 데이터베이스 연결 정보
 $servername = "localhost";
-$username = "yj4newproject";
+$username = "dongseong";
 $password = "ghflqud1220!";
-$dbname = "yj4newproject";
+$dbname = "dongseong";
 
 // 암호화된 비밀번호 생성
 $hashed_password = password_hash("admin_password", PASSWORD_DEFAULT);

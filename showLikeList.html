@@ -193,92 +193,137 @@
     </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const username = sessionStorage.getItem("username");
-        getUserInfo(username);
-        getUserList(username);
+          const username = sessionStorage.getItem("username");
+          getUserInfo(username);
+          getUserList(username);
+          getUserFood(username);
       });
+  
       function getUserInfo(username) {
-        $.ajax({
-          url: "http://dongseong.dothome.co.kr/mypage.php?username=" + encodeURIComponent(username),
-          type: "GET",
-          dataType: "json",
-          success: function (response) {
-            if (response.success) {
-              //   console.log("이건", response.userInfo); // 사용자 정보를 받아옴
-              document.getElementById("name1").innerText = response.userInfo.name;
-              document.getElementById("email1").innerText = response.userInfo.email;
-              if (!/010/.test(response.userInfo.tel)) {
-                // '010'이 포함되어 있지 않은 경우
-                // 여기에 처리할 내용을 작성하세요.
-                document.getElementById("p1").style.display = "none";
-              } else {
-                document.getElementById("p1").style.display = "block";
-              }
-
-              // getUserList 호출
-            } else {
-              alert(response.message);
-            }
-          },
-          error: function (xhr, status, error) {
-            console.error("AJAX 요청 중 오류 발생:", error);
-          },
-        });
+          $.ajax({
+              url: "http://dongseong.dothome.co.kr/mypage.php?username=" + encodeURIComponent(username),
+              type: "GET",
+              dataType: "json",
+              success: function (response) {
+                  if (response.success) {
+                      document.getElementById("name1").innerText = response.userInfo.name;
+                      document.getElementById("email1").innerText = response.userInfo.email;
+                      if (!/010/.test(response.userInfo.tel)) {
+                          document.getElementById("p1").style.display = "none";
+                      } else {
+                          document.getElementById("p1").style.display = "block";
+                      }
+                  } else {
+                      alert(response.message);
+                  }
+              },
+              error: function (xhr, status, error) {
+                  console.error("AJAX 요청 중 오류 발생:", error);
+              },
+          });
       }
+  
       function getUserList(username) {
-        // 사용자의 공연 정보를 가져오는 AJAX 요청
-        $.ajax({
-          url: "http://dongseong.dothome.co.kr/mypage.php?username=" + encodeURIComponent(username),
-          type: "GET",
-          dataType: "json",
-          success: function (response) {
+    $.ajax({
+        url: "http://dongseong.dothome.co.kr/mypage.php?username=" + encodeURIComponent(username),
+        type: "GET",
+        dataType: "json",
+        success: function (response) {
             if (response.success) {
-              function addItem(item, listId) {
-                document.querySelector(listId).innerHTML += `<p>
-                  <button class="delBtn">
-                    <i class="fa-solid fa-xmark fa-xl"></i>
-                  </button>
-                  <span class="showTit">${item.showname}</span>
-                  <span>${item.showtime.trim().split("\n").join("")}</span>
-                </p>`;
-              }
-              response.showInfo.map((item) => {
-                if (item.showplace.includes("콘서트")) {
-                  addItem(item, "#consertList");
-                } else if (item.showplace.includes("씨어터")) {
-                  addItem(item, "#artList");
-                } else addItem(item, "#likeList");
-              });
-            } else {
-              alert(response.message);
-            }
-          },
-          error: function (xhr, status, error) {
-            console.error("AJAX 요청 중 오류 발생:", error);
-          },
-        });
-      }
+                function addItem(item, listId) {
+                    const listItem = document.createElement("p");
+                    listItem.innerHTML = `
+                        <button class="delBtn">
+                            <i class="fa-solid fa-xmark fa-xl"></i>
+                        </button>
+                        <span class="showTit">${item.showname}</span>
+                        <span>${item.showtime.trim().split("\n").join("")}</span>
+                    `;
+                    document.querySelector(listId).appendChild(listItem);
 
-      document.getElementById("god").addEventListener("click", function () {
-        $.ajax({
-          url: "http://dongseong.dothome.co.kr/logout.php",
-          type: "POST",
-          dataType: "json",
-          success: function (response) {
-            if (response.success) {
-              alert(response.message);
-              sessionStorage.removeItem("username");
-              window.location.href = "index.php";
+                    // 삭제 버튼에 클릭 이벤트 추가
+                    listItem.querySelector(".delBtn").addEventListener("click", function () {
+                        deleteShowInfo(username, item.showname, item.showtime); // 공연 정보 삭제 함수 호출
+                    });
+                }
+
+                response.showInfo.map((item) => {
+                    if (item.showplace.includes("콘서트")) {
+                        addItem(item, "#consertList");
+                    } else if (item.showplace.includes("씨어터")) {
+                        addItem(item, "#artList");
+                    } else {
+                        addItem(item, "#likeList");
+                    }
+                });
             } else {
-              alert(response.message);
+                alert(response.message);
             }
-          },
-          error: function (xhr, status, error) {
+        },
+        error: function (xhr, status, error) {
             console.error("AJAX 요청 중 오류 발생:", error);
-          },
-        });
+        },
+    });
+}
+function deleteShowInfo(username, showname, showtime) {
+    $.ajax({
+        url: "http://dongseong.dothome.co.kr/delete_mypage_showInfo.php",
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify({ username: username, showname: showname, showtime: showtime }),
+        success: function (response) {
+            if (response.success) {
+                alert("공연 정보가 삭제되었습니다.");
+                location.reload(); // 페이지 리로드
+            } else {
+                alert(response.message);
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error("AJAX 요청 중 오류 발생:", error);
+        },
+    });
+}
+  
+      function getUserFood(username) {
+          $.ajax({
+              url: "http://dongseong.dothome.co.kr/mypage.php?username=" + encodeURIComponent(username),
+              type: "GET",
+              dataType: "json",
+              success: function (response) {
+                  if (response.success) {
+                      console.log(response.foodInfo);
+                  } else {
+                      alert(response.message);
+                  }
+              },
+              error: function (xhr, status, error) {
+                  console.error("AJAX 요청 중 오류 발생:", error);
+              },
+          });
+      }
+  
+      document.getElementById("god").addEventListener("click", function () {
+          $.ajax({
+              url: "http://dongseong.dothome.co.kr/logout.php",
+              type: "POST",
+              dataType: "json",
+              success: function (response) {
+                  if (response.success) {
+                      alert(response.message);
+                      sessionStorage.removeItem("username");
+                      window.location.href = "index.php";
+                  } else {
+                      alert(response.message);
+                  }
+              },
+              error: function (xhr, status, error) {
+                  console.error("AJAX 요청 중 오류 발생:", error);
+              },
+          });
       });
-    </script>
+  </script>
     <script>
       function selectButton(index) {
         var buttons = document.querySelectorAll(".button");
