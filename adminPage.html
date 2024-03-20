@@ -125,6 +125,7 @@
             if (response.success) {
               // 성공적으로 사용자 정보를 받아온 경우 사용자 목록을 갱신
               const userList = response.userList;
+              document.getElementById("spanleng").innerText = userList.length;
               // 기존의 사용자 목록을 지우고 새로운 목록을 추가
               const userInfoBig = document.getElementById("userInfoBig");
               userInfoBig.innerHTML = ""; // 이전 목록 초기화
