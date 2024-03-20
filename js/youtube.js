@@ -3,10 +3,10 @@ KEY1 = "AIzaSyCQQflyO0tAoDpSR2wnLzHKGKoDgZSopRU";
 KEY2 = "AIzaSyB_cf29bvli99gbgzRsQBP8RC-OpSpMqGI";
 KEY3 = "AIzaSyDdSBLt3NPSg1UZ2ZPYBDIuzNmTIbpWUD8";
 
-fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=%EB%8C%80%EA%B5%AC%20%EB%8F%99%EC%84%B1%EB%A1%9C&type=video&videoDefinition=high&videoEmbeddable=true&videoSyndicated=true&key=${KEY1}`)
+fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=%EB%8C%80%EA%B5%AC%20%EB%8F%99%EC%84%B1%EB%A1%9C&type=video&videoDefinition=high&videoEmbeddable=true&videoSyndicated=true&key=${KEY}`)
   .then((res) => res.json())
   .then((data) => {
-    const words = ["위험", "동성로 말고", "25년", "또간집", "초라해진", "흉물", "클럽", "2007년", "밤거리", "망함?", "판슥", "랜덤플레이댄스", "탄핵", "쳐직", "이준석", "핫플🔥?!", "3차 먹방", "임영웅", "당일치기 코스 추천♥️", "험지", "관광특구", "참사", "빈 상가"];
+    const words = ["위험", "동성로 말고", "25년", "또간집", "초라해진", "흉물", "클럽", "2007년", "밤거리", "망함?", "판슥", "랜덤플레이댄스", "탄핵", "쳐직", "이준석", "핫플🔥?!", "3차 먹방", "임영웅", "당일치기 코스 추천♥️", "험지", "관광특구", "참사", "빈 상가", "감각 없는", "상실중인"];
     const youtube = data?.items?.filter((item) => !words.some((keyword) => item.snippet.title.includes(keyword))).slice(0, 5);
     document.querySelector("#youtube_container #Main_Grid").innerHTML = youtube.map((tube) => `<a data-video="${tube.id.videoId}"><div class="tubeImgWrap"><img src="${tube.snippet.thumbnails.medium.url}" /></div><span class="tubeTit">${tube.snippet.title}</span></a>`).join("");
     // 클릭 이벤트 바인딩
