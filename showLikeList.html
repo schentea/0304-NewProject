@@ -232,8 +232,6 @@
           dataType: "json",
           success: function (response) {
             if (response.success) {
-              console.log(response.showInfo);
-              let items = response.showInfo;
               function addItem(item, listId) {
                 document.querySelector(listId).innerHTML += `<p>
                   <button class="delBtn">
@@ -243,7 +241,7 @@
                   <span>${item.showtime.trim().split("\n").join("")}</span>
                 </p>`;
               }
-              items.map((item) => {
+              response.showInfo.map((item) => {
                 if (item.showplace.includes("콘서트")) {
                   addItem(item, "#consertList");
                 } else if (item.showplace.includes("씨어터")) {
