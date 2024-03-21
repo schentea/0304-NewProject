@@ -339,11 +339,12 @@
                       <p>${item.BZ_NM}</p>
                   </div>
               `;
-                document
-                  .querySelector(".foodDel")
-                  .addEventListener("click", function () {
-                    deleteFoodInfo(username, item.BZ_NM);
+                document.querySelectorAll(".foodDel").forEach((btn, index) => {
+                  btn.addEventListener("click", function (event) {
+                    event.stopPropagation(); // 이벤트 전파 방지
+                    deleteFoodInfo(username, response.foodInfo[index].BZ_NM);
                   });
+                });
               });
               // swiper 초기화
               var swiper = new Swiper(".mySwiper", {
