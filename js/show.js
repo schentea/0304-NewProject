@@ -15,6 +15,32 @@ console.log(
   "color:#eb102c"
 );
 
+document.querySelector(".fa-fish-fins").addEventListener("click", function () {
+  this.classList.toggle("fa-bounce");
+});
+document.querySelector(".fa-drumstick-bite").addEventListener("click", function () {
+  this.classList.toggle("fa-flip");
+});
+document.querySelector(".fa-utensils").addEventListener("click", function () {
+  this.classList.toggle("fa-shake");
+});
+document.querySelector(".fa-solid.wine").addEventListener("click", function () {
+  if (this.classList.contains("fa-wine-glass")) {
+    this.classList.remove("fa-wine-glass");
+    this.classList.add("fa-wine-glass-empty");
+  } else {
+    this.classList.remove("fa-wine-glass-empty");
+    this.classList.add("fa-wine-glass");
+  }
+});
+document.querySelector("#topBtn1").addEventListener("click", function () {
+  this.classList.add("topBtnAni");
+
+  setTimeout(() => {
+    this.classList.remove("topBtnAni");
+  }, 500);
+});
+
 // api 데이터 불러오기
 import { eventData, performData, fetchData } from "./Api.js";
 // 모달창

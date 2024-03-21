@@ -1,179 +1,194 @@
 :root {
-    --mainColor: #eb102c;
-    --mainBlack: #362f2f;
+  --mainColor: #eb102c;
+  --mainBlack: #362f2f;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'SCoreDream';
-    word-break: keep-all;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "SCoreDream";
+  word-break: keep-all;
+  scroll-behavior: smooth;
 }
 #gnb_menu {
-    padding-left: 0;
+  padding-left: 0;
 }
 .redTxt {
-    font-weight: bold;
+  font-weight: bold;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 h2 {
-    font-size: 40px;
+  font-size: 40px;
 }
 h3 {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .redTxt {
-    color: var(--mainColor);
+  color: var(--mainColor);
 }
 
 .bckTxt {
-    color: var(--mainBlack);
+  color: var(--mainBlack);
 }
 
 /* 스크롤 모션 */
 .scroHidden {
-    opacity: 0.2;
-    transform: translateY(30px);
-    transition: transform 0.5s;
+  opacity: 0.2;
+  transform: translateY(30px);
+  transition: transform 0.5s;
 }
 .heightOn {
-    transition: 1s;
+  transition: 1s;
 }
 .scroVisible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .blurImg {
-    transition: all 1s;
+  transition: all 1s;
 }
 
 .scroBlur {
-    filter: blur(5px);
+  filter: blur(5px);
 }
 
 /* 하트 버튼 */
 .heartBtn {
-    position: absolute;
-    content: '';
-    display: inline-block;
-    top: -20px;
-    right: -10px;
-    width: 100px;
-    height: 100px;
-    background: url('../image/heart.png') no-repeat;
-    background-position: 0 0;
-    cursor: pointer;
-    will-change: background-position;
+  position: absolute;
+  content: "";
+  display: inline-block;
+  top: -20px;
+  right: -10px;
+  width: 100px;
+  height: 100px;
+  background: url("../image/heart.png") no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  will-change: background-position;
 }
 
 .heartBtn.active {
-    background-position: -2800px 0;
-    transition: background-position 1s steps(28);
+  background-position: -2800px 0;
+  transition: background-position 1s steps(28);
 }
 
 /* 탑 버튼 */
 #topWrap {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 10;
-    transition: all 0.4s;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  transition: all 0.4s;
 }
 
 #topWrap.none {
-    right: -100px;
+  right: -100px;
 }
 
 .topBtn {
-    font-weight: bold;
-    font-size: 18px;
-    border-radius: 50%;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .topBtn a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 20px;
 }
 
 #topBtn1 {
-    background: #fff;
-    margin-bottom: 20px;
+  background: #fff;
+  margin-bottom: 20px;
+  transition: all 0.2s;
+  transform-origin: bottom;
+}
+.topBtnAni {
+  animation: topAni 0.3s ease-in;
 }
 
+@keyframes topAni {
+  from,
+  to {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3, 0.7);
+  }
+}
 #topBtn1 a {
-    color: var(--mainColor);
-    font-size: 20px;
+  color: var(--mainColor);
+  font-size: 20px;
 }
 #topBtn2 {
-    background: #222;
-    color: white;
-    line-height: 22px;
-    flex-direction: column;
-    cursor: pointer;
+  background: #222;
+  color: white;
+  line-height: 22px;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
 }
 
 #topBtn2 p {
-    font-size: 12px;
-    margin: 0;
+  font-size: 12px;
+  margin: 0;
 }
 
 @media screen and (min-width: 600px) {
-    h2 {
-        font-size: 60px;
-    }
-    h3 {
-        font-size: 35px;
-    }
+  h2 {
+    font-size: 60px;
+  }
+  h3 {
+    font-size: 35px;
+  }
 }
 
 @media screen and (max-width: 700px) {
-    #topWrap {
-        display: none;
-    }
+  #topWrap {
+    display: none;
+  }
 }
 
 .modalAni {
-    animation: modalZoom 0.3s;
+  animation: modalZoom 0.3s;
 }
 
 @keyframes modalZoom {
-    from {
-        transform: scale(1.1);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+  from {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
-    background: #f4f6f8;
+  width: 8px;
+  background: #f4f6f8;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--mainColor);
-    border-radius: 10px;
+  background: var(--mainColor);
+  border-radius: 10px;
 }

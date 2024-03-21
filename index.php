@@ -338,7 +338,7 @@
           <!-- 왼쪽 메세지 박스부분 -->
           <div class="balloon" id="balloon1">
             입을 즐겁게 해주는 맛집 여행
-            <div><i class="fa-solid fa-utensils"></i> <i class="fa-solid fa-bowl-food"></i></div>
+            <div><i class="fa-solid fa-utensils"></i> <i class="fa-solid fa-wine-glass wine"></i></div>
           </div>
           <!-- 오른쪽 캐러셀 부분 -->
           <div class="swiper mySwiper">
