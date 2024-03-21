@@ -209,6 +209,7 @@ body {
 }
 
 .swiper-slide {
+  max-width: 310px !important;
   text-align: center;
   font-size: 18px;
   background: white;
