@@ -18,8 +18,16 @@ console.log(
 document.querySelector(".fa-fish-fins").addEventListener("click", function () {
   this.classList.toggle("fa-bounce");
 });
-document.querySelector(".fa-drumstick-bite").addEventListener("click", function () {
-  this.classList.toggle("fa-flip");
+document.querySelector(".fa-solid.meet").addEventListener("click", function () {
+  if (this.classList.contains("fa-drumstick-bite")) {
+    this.classList.remove("fa-drumstick-bite");
+    this.classList.add("fa-bone", "fa-rotate-by");
+    this.style.setProperty("--fa-rotate-angle", "-43deg");
+  } else {
+    this.classList.add("fa-drumstick-bite");
+    this.classList.remove("fa-bone", "fa-rotate-by");
+    this.style.removeProperty("--fa-rotate-angle");
+  }
 });
 document.querySelector(".fa-utensils").addEventListener("click", function () {
   this.classList.toggle("fa-shake");

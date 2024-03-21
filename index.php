@@ -451,7 +451,7 @@
           <!-- 오른쪽 메시지 박스 부분 -->
           <div class="balloon" id="balloon2">
             동성로만의 특별한 먹거리를 만나보세요<br />
-            <div><i class="fa-solid fa-fish-fins"></i><i class="fa-solid fa-drumstick-bite"></i></div>
+            <div><i class="fa-solid fa-fish-fins"></i><i class="fa-solid fa-drumstick-bite meet"></i></div>
           </div>
         </div>
       </div>

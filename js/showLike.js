@@ -15,6 +15,10 @@ console.log(
   "color:#eb102c"
 );
 
+document.querySelector(".fa-heart").addEventListener("click", function () {
+  this.classList.toggle("fa-flip");
+});
+
 function selectButton(index) {
   var buttons = document.querySelectorAll(".button");
   var contents = document.querySelectorAll(".content");
