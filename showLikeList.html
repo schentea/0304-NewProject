@@ -106,7 +106,7 @@
               </div>
             </div>
             <article id="infoArticle">
-              <h2>식당이름</h2>
+              <h2>식당 이름</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <div class="iconWrap">
                 <div>
@@ -268,17 +268,16 @@
           dataType: "json",
           success: function (response) {
             if (response.success) {
-              console.log(response.foodInfo);
+              let item = response.foodInfo[0];
+              showFood(event, item.BZ_NM, item.SMPL_DESC, item.PKPL, item.BKN_YN, item.INFN_FCL, item.GNG_CS, item.TLNO, item.MBZ_HR, item.MNU1, item.MNU2, item.MNU3);
               response.foodInfo.map((item) => {
                 document.querySelector(".swiper-wrapper").innerHTML += `
                   <div class="swiper-slide" style="background-image: url('${item.IMAGE}');" onclick="showFood(event, '${item.BZ_NM}', '${item.SMPL_DESC}', '${item.PKPL}', '${item.BKN_YN}', '${item.INFN_FCL}', '${item.GNG_CS}', '${item.TLNO}', '${item.MBZ_HR}', '${item.MNU1}', '${item.MNU2}', '${item.MNU3}')">
-
                       <button class="foodDel"><i class="fa-solid fa-xmark fa-xl"></i></button>
                       <p>${item.BZ_NM}</p>
                   </div>
               `;
               });
-
               // swiper 초기화
               var swiper = new Swiper(".mySwiper", {
                 loop: true,
