@@ -106,7 +106,7 @@
               </div>
             </div>
             <article id="infoArticle">
-              <h2>식당 이름</h2>
+              <h2>식당이름</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <div class="iconWrap">
                 <div>
@@ -246,7 +246,11 @@
           type: "POST",
           dataType: "json",
           contentType: "application/json",
-          data: JSON.stringify({ username: username, showname: showname, showtime: showtime }),
+          data: JSON.stringify({
+            username: username,
+            showname: showname,
+            showtime: showtime,
+          }),
           success: function (response) {
             if (response.success) {
               alert("공연 정보가 삭제되었습니다.");
@@ -260,7 +264,26 @@
           },
         });
       }
-
+      function deleteFoodInfo(username, BZ_NM) {
+        $.ajax({
+          url: "http://dongseong.dothome.co.kr/delete_mypage_foodInfo.php",
+          type: "POST",
+          dataType: "json",
+          contentType: "application/json",
+          data: JSON.stringify({ username: username, BZ_NM: BZ_NM }),
+          success: function (response) {
+            if (response.success) {
+              alert("식당 정보가 삭제되었습니다.");
+              location.reload();
+            } else {
+              alert(response.message);
+            }
+          },
+          error: function (xhr, status, error) {
+            console.error("AJAX 요청 중 오류 발생", error);
+          },
+        });
+      }
       function getUserFood(username) {
         $.ajax({
           url: "http://dongseong.dothome.co.kr/mypage.php?username=" + encodeURIComponent(username),
@@ -277,6 +300,9 @@
                       <p>${item.BZ_NM}</p>
                   </div>
               `;
+                document.querySelector(".foodDel").addEventListener("click", function () {
+                  deleteFoodInfo(username, item.BZ_NM);
+                });
               });
               // swiper 초기화
               var swiper = new Swiper(".mySwiper", {
