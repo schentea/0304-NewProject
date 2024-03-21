@@ -1,3 +1,19 @@
+console.log(
+  `%c 
+             ⣶⣿⣶⣤⣄⠀⠀⠀ 
+             ⣿⣿⣿⣿⣿⣶⣿⠛⠁
+⠀⠀⠀⢀⣠⣤⣤⣄⡀⠀⠿⣿⠿⠛⠛⠉⠁⠀⠀⠀
+⠀⣠⣶⣿⣿⠿⠿⠿⣿⣷⣿⣿⠀⠀⠀⠀⠀
+⢰⣿⣿⠛⠤⠤⠤⠤⠻⣿⣿⣿⠀⠀⠀⠀⠀
+⣿⣿⣿⠤⠤⠤⠤⠤⠤⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⣿⣿⣄⠤⠤⠤⠤⣤⣿⣿⠿⠀⠀⠀⠀⠀⠀⠀⠀
+⠘⠿⣿⣿⣶⣤⣤⣶⣿⣿⠿⠃⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠙⠻⠻⠿⠿⠿⠿⠛⠉⠀⠀⠀⠀
+
+즐거운 동성로`,
+  "color:#eb102c"
+);
+
 function selectButton(index) {
   var buttons = document.querySelectorAll(".button");
   var contents = document.querySelectorAll(".content");
