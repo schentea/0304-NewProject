@@ -22,7 +22,7 @@ if ($conn->connect_error) {
 // 사용자 이름을 받아옴
 $username2 = isset($_GET['username']) ? $_GET['username'] : null;
 
-// 사용자 정보를 가져오는 SQL 쿼리 작성
+// 사용자 정보 및 공연, 음식 정보를 가져오는 SQL 쿼리 작성
 if ($username2) {
     $sql = "SELECT * FROM userInfo WHERE uid = ?";
     $stmt = $conn->prepare($sql);
@@ -31,32 +31,31 @@ if ($username2) {
     $result = $stmt->get_result();
     $userInfo = $result->fetch_assoc();
 
-    // 공연 정보를 가져오는 SQL 쿼리 작성
-    $sql2 = "SELECT * FROM userShowInfo WHERE uid = ?";
-    $stmt2 = $conn->prepare($sql2);
-    $stmt2->bind_param('s', $username2);
-    $stmt2->execute();
-    $result2 = $stmt2->get_result();
-    $showInfo = array();
+    // 사용자 정보가 있는 경우에만 추가 작업 수행
+    if ($userInfo) {
+        $sql = "SELECT * FROM userShowInfo WHERE uid = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('s', $username2);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $showInfo = array();
 
-    $sql3 = "SELECT * FROM userFoodInfo WHERE uid = ?";
-    $stmt3 = $conn->prepare($sql3);
-    $stmt3->bind_param('s', $username2);
-    $stmt3->execute();
-    $result3 = $stmt3->get_result();
-    $foodInfo = array();
+        while ($row = $result->fetch_assoc()) {
+            $showInfo[] = $row;
+        }
 
-    // 공연 정보를 배열로 저장
-    while ($row = $result2->fetch_assoc()) {
-        $showInfo[] = $row;
-    }
-    while ($row = $result3->fetch_assoc()) {
-        $foodInfo[] = $row;
-    }
+        $sql = "SELECT * FROM userFoodInfo WHERE uid = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('s', $username2);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $foodInfo = array();
 
-    // 결과가 없을 경우에 대한 처리
-    if (!$userInfo || !$showInfo || !$foodInfo) {
-        die("사용자 정보나 공연 정보가 존재하지 않습니다.");
+        while ($row = $result->fetch_assoc()) {
+            $foodInfo[] = $row;
+        }
+    } else {
+        die("사용자 정보가 존재하지 않습니다.");
     }
 
     // JSON 응답
