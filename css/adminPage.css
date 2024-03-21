@@ -14,6 +14,7 @@
   scroll-behavior: smooth;
 }
 
+.swiper-slide.curSlid,
 button {
   cursor: pointer;
 }
@@ -208,6 +209,7 @@ body {
 }
 
 .swiper-slide {
+  max-width: 310px !important;
   text-align: center;
   font-size: 18px;
   background: white;
@@ -229,6 +231,7 @@ body {
   align-items: center;
   width: 25px;
   height: 25px;
+  padding: 11px;
 }
 
 .swiper-slide .foodDel i {
