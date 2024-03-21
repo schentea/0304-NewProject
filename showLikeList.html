@@ -106,8 +106,8 @@
               </div>
             </div>
             <article id="infoArticle">
-              <h2>식당이름</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h2>-</h2>
+              <p>-</p>
               <div class="iconWrap">
                 <div>
                   <i class="fa-solid fa-car"></i>
@@ -123,18 +123,18 @@
                 </div>
               </div>
               <div class="infoWrap">
-                <div><i class="fa-solid fa-location-crosshairs"></i>주소 ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄹ</div>
-                <div><i class="fa-solid fa-phone"></i>전화번호ㅁㄴㅇㄻㄴㅇㄹ</div>
-                <div><i class="fa-regular fa-clock"></i>영업시간ㅁㄴㅇㄹ</div>
+                <div><i class="fa-solid fa-location-crosshairs"></i>-</div>
+                <div><i class="fa-solid fa-phone"></i>-</div>
+                <div><i class="fa-regular fa-clock"></i>-</div>
               </div>
               <div class="menuWrap">
                 <div>
-                  <p>메뉴이름</p>
-                  <p>50000원</p>
+                  <p>-</p>
+                  <p>-</p>
                 </div>
                 <div>
-                  <p>메뉴이름</p>
-                  <p>50000원</p>
+                  <p>-</p>
+                  <p>-</p>
                 </div>
               </div>
             </article>
@@ -295,7 +295,7 @@
               showFood(event, item.BZ_NM, item.SMPL_DESC, item.PKPL, item.BKN_YN, item.INFN_FCL, item.GNG_CS, item.TLNO, item.MBZ_HR, item.MNU1, item.MNU2, item.MNU3);
               response.foodInfo.map((item) => {
                 document.querySelector(".swiper-wrapper").innerHTML += `
-                  <div class="swiper-slide" style="background-image: url('${item.IMAGE}');" onclick="showFood(event, '${item.BZ_NM}', '${item.SMPL_DESC}', '${item.PKPL}', '${item.BKN_YN}', '${item.INFN_FCL}', '${item.GNG_CS}', '${item.TLNO}', '${item.MBZ_HR}', '${item.MNU1}', '${item.MNU2}', '${item.MNU3}')">
+                  <div class="swiper-slide curSlid" style="background-image: url('${item.IMAGE}');" onclick="showFood(event, '${item.BZ_NM}', '${item.SMPL_DESC}', '${item.PKPL}', '${item.BKN_YN}', '${item.INFN_FCL}', '${item.GNG_CS}', '${item.TLNO}', '${item.MBZ_HR}', '${item.MNU1}', '${item.MNU2}', '${item.MNU3}')">
                       <button class="foodDel"><i class="fa-solid fa-xmark fa-xl"></i></button>
                       <p>${item.BZ_NM}</p>
                   </div>
