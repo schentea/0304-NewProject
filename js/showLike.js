@@ -39,3 +39,27 @@ const observeMutation = (targetSelector) => {
 observeMutation("#consertList");
 observeMutation("#artList");
 observeMutation("#likeList");
+
+// 식당 찜목록 있는지 확인, 있으면 대체 텍스트 삭제
+const observeFood = () => {
+  const observer = new MutationObserver((mutationsList, observer) => {
+    mutationsList.forEach((mutation) => {
+      if (mutation.type === "childList") {
+        const noHeartTxt2 = document.querySelector(".swiper-wrapper .noHeartTxt2");
+        if (noHeartTxt2) {
+          noHeartTxt2.remove();
+        }
+      }
+    });
+  });
+
+  const swiperWrapper = document.querySelector(".swiper-wrapper");
+  if (swiperWrapper) {
+    observer.observe(swiperWrapper, {
+      childList: true,
+      subtree: true,
+    });
+  }
+};
+
+observeFood();
