@@ -38,8 +38,8 @@ class SocialLoginRepository{
     public function signup($profileModel, $state){
         try {
             //회원가입과 동일한 sql문 + login_div 추가해서 넣기
-            $sql = "insert into userInfo(uid, pw, name, email, tel) ";
-            $sql .= "values('$profileModel->email', '$profileModel->uid', '$profileModel->nickname', '$profileModel->email', '$profileModel->uid')";
+            $sql = "insert into userInfo(uid, pw, name, email) ";
+            $sql .= "values('$profileModel->email', '$profileModel->uid', '$profileModel->nickname', '$profileModel->email')";
             //쿼리 실행
             mysqli_query($this->con,$sql);
             //쿼리 종료
