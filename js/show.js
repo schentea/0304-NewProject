@@ -40,6 +40,12 @@ document.querySelector("#topBtn1").addEventListener("click", function () {
     this.classList.remove("topBtnAni");
   }, 500);
 });
+document.querySelector("#topBtn1").addEventListener("mousedown", function () {
+  this.style.transform = "scale(1.1, 0.8)";
+});
+document.querySelector("#topBtn1").addEventListener("mouseup", function () {
+  this.style.transform = "";
+});
 
 // api 데이터 불러오기
 import { eventData, performData, fetchData } from "./Api.js";
