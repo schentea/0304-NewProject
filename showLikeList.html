@@ -219,7 +219,7 @@
                 document.querySelector(listId).appendChild(listItem);
 
                 // 삭제 버튼에 클릭 이벤트 추가
-                listItem.querySelector(".delBtn").addEventListener("click", function () {
+                listItem.querySelector(".delBtn").addEventListener("click", function (e) {
                   deleteShowInfo(username, item.showname, item.showtime); // 공연 정보 삭제 함수 호출
                 });
               }

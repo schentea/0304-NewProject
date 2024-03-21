@@ -150,9 +150,9 @@ a {
 #right_div > div {
   width: 80%;
 }
-#right_div .noHeartTxt {
-  text-align: center;
-  color: #888;
+.noHeartTxt,
+.noHeartTxt2 {
+  color: gray;
 }
 .noHeartTxt2 {
   position: absolute;
