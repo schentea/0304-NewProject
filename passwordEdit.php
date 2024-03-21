@@ -18,7 +18,7 @@ $password2 = $data['password'];
 $confirmPassword = $data['confirmPassword'];
 
 // 비밀번호와 확인용 비밀번호가 일치하는지 확인
-if ($password !== $confirmPassword) {
+if ($password2 !== $confirmPassword) {
     // 일치하지 않으면 오류 메시지 반환
     $response = array("success" => false, "message" => "비밀번호가 일치하지 않습니다.");
     echo json_encode($response);
