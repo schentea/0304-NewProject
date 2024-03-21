@@ -215,6 +215,35 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
+}
+
+.swiper-slide .foodDel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 2px solid var(--subColor);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+}
+
+.swiper-slide .foodDel i {
+  color: var(--subColor);
+}
+
+.swiper-slide p {
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  color: #eee;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 20px;
 }
 
 .swiper-slide img {
