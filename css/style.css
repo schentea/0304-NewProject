@@ -19,6 +19,9 @@
 .redTxt {
   font-weight: bold;
 }
+.noSelec {
+  user-select: none;
+}
 a {
   text-decoration: none;
 }

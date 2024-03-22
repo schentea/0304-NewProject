@@ -272,7 +272,6 @@ function saveShowInfo(venue, showName, showDate, username, isLiked) {
       isLiked: isLiked,
     }),
     success: function (response) {
-      console.log("공연 정보를 서버에 전송했습니다.");
       if (!isLiked) {
         deleteSavedShowInfo(username, venue, showName, showDate);
       }
@@ -295,9 +294,7 @@ function deleteSavedShowInfo(username, venue, showName, showDate) {
       showName: showName,
       showDate: showDate,
     }),
-    success: function (response) {
-      console.log("공연 정보를 서버에서 삭제했습니다.");
-    },
+    success: function (response) {},
     error: function (xhr, status, error) {
       console.error("공연 정보 삭제 중 오류가 발생했습니다:", error);
     },

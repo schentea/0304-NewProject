@@ -242,7 +242,7 @@
       <article>
         <!-- 동성로 소개 타이틀 -->
         <div class="scroHidden">
-          <h3 style="color: #bbb" id="introH3">
+          <h3 style="color: #bbb" id="introH3" class="noSelec">
             <span class="redTxt">젊음</span>과
             <span class="redTxt">열정</span>의 거리
           </h3>
@@ -258,7 +258,7 @@
           />
         </div>
         <!-- 동성로 소개 글 -->
-        <div class="dongsungroTxt scroHidden">
+        <div class="dongsungroTxt scroHidden noSelec">
           <h4>대구의 중심가</h4>
           <p>
             대구의 간판이자 중심삼권으로 동성로는 젊음의 열기가 느껴진다. 서울에
@@ -267,7 +267,7 @@
             가 생기면서 더 많은 사람들이 동성로를 찾는다.
           </p>
         </div>
-        <div class="dongsungroTxt scroHidden">
+        <div class="dongsungroTxt scroHidden noSelec">
           <h4>문화와 축제의 거리, 동성로</h4>
           <p>
             동성로에서는 매년 5월 지역 문화와 지역 산업이 함께 호흡하는 동성로
@@ -322,21 +322,21 @@
       <div id="container">
         <!-- 제목 -->
         <div id="foodTitWrap">
-          <h3 class="scroHidden">
+          <h3 class="scroHidden noSelec">
             <span class="redTxt">맛집</span>
             <span class="bckTxt">핫플레이스</span>
           </h3>
-          <h2 class="scroHidden">
+          <h2 class="scroHidden noSelec">
             <span class="bckTxt">놓치면 안될</span>
             <span class="redTxt">식당 투어</span>
           </h2>
         </div>
 
         <!-- 위쪽 공간 -->
-        <h4 class="scroHidden">입을 즐겁게 해주는 맛집 여행</h4>
+        <h4 class="scroHidden noSelec">입을 즐겁게 해주는 맛집 여행</h4>
         <div id="up_container" class="scroHidden">
           <!-- 왼쪽 메세지 박스부분 -->
-          <div class="balloon" id="balloon1">
+          <div class="balloon noSelec" id="balloon1">
             입을 즐겁게 해주는 맛집 여행
             <div><i class="fa-solid fa-utensils"></i> <i class="fa-solid fa-wine-glass wine"></i></div>
           </div>
@@ -399,7 +399,7 @@
           </div>
         </div>
         <!-- 아래쪽 공간 -->
-        <h4 class="scroHidden">동성로만의 특별한 먹거리를 만나보세요</h4>
+        <h4 class="scroHidden noSelec">동성로만의 특별한 먹거리를 만나보세요</h4>
         <div id="down_container" class="scroHidden" dir="rtl">
           <!-- 왼쪽 캐러셀 부분 -->
           <div class="swiper mySwiper">
@@ -449,7 +449,7 @@
             <div class="swiper-button-prev"></div>
           </div>
           <!-- 오른쪽 메시지 박스 부분 -->
-          <div class="balloon" id="balloon2">
+          <div class="balloon noSelec" id="balloon2">
             동성로만의 특별한 먹거리를 만나보세요<br />
             <div><i class="fa-solid fa-fish-fins"></i><i class="fa-solid fa-drumstick-bite meet"></i></div>
           </div>
@@ -460,7 +460,7 @@
     <section id="Show_section" class="sections">
       <div id="Show_container">
         <!-- Show 타이틀 -->
-        <div id="show_title_div">
+        <div id="show_title_div" class="noSelec">
           <h3 class="scroHidden"><span class="redTxt">문화</span>와의 만남</h3>
           <h2 class="scroHidden">
             기억에 남을 <span class="redTxt">공연·전시</span>
@@ -589,11 +589,11 @@
       <div id="youtube_container">
         <!-- 유튜브 타이틀 -->
         <div id="youtube_title">
-          <h3 class="scroHidden">
+          <h3 class="scroHidden noSelec">
             <span class="bckTxt">트렌드를</span>
             <span class="redTxt">한눈에!</span>
           </h3>
-          <h2 class="scroHidden">
+          <h2 class="scroHidden noSelec">
             <span class="redTxt"
               ><i class="fa-brands fa-youtube" style="color: #eb102c"></i
               >유튜브</span
@@ -612,7 +612,7 @@
       <!-- 제일위  -->
       <div id="footer_container">
         <div id="footer_top">
-          <p style="font-weight: bold">관련 사이트</p>
+          <p style="font-weight: bold" class="noSelec">관련 사이트</p>
           <a href="https://thegoodnight.daegu.go.kr/kr/" target="_blank">
             <p>더굿나잇</p>
           </a>
@@ -630,7 +630,7 @@
         </a>
         </div>
         
-        <div id="footer_mid">
+        <div id="footer_mid" class="noSelec">
           <p>
             <b>대구광역시 시청</b>&nbsp;&nbsp; 대구광역시 중구 공평로 88(동인동
             1가) | TEL: 053-803-2896(일반민원) | FAX: 053-803-2879
