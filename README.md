@@ -22,8 +22,8 @@ http://dongseong.dothome.co.kr/
 
 ### 💾활용 요소
 - 네이버 & 카카오 로그인
-- 대구광역시 맛집
-- 대구광역시 전시정보
+- 대구광역시 맛집 API
+- 대구광역시 전시정보 API
 - Bootstrap
 - Google Cloud API
 - Swiper JS
