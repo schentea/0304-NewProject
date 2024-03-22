@@ -30,6 +30,6 @@ http://dongseong.dothome.co.kr/
   
 ### ✔ 미리보기
 ![preview](./image/preview/preview1.png)
-![preview](./image/preview/preview2.png)
 ![preview](./image/preview/preview5.png)
+![preview](./image/preview/preview2.png)
 ![preview](./image/preview/preview4.png)
