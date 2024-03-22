@@ -53,7 +53,7 @@ include "const.php";
         <button id="signSubmitBtn" type="submit">가입하기</button>
         <div id="goSign">
           이미 아이디가 있다면?
-          <a href="login.php" target="_self">로그인하기</a>
+          <a href="login_form.php" target="_self">로그인하기</a>
         </div>
 
         <button class="naverBtn" type="button" style="margin-top: 50px">
