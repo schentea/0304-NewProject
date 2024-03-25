@@ -3,9 +3,6 @@
 ### 🔗링크
 http://dongseong.dothome.co.kr/
 
-### 🔎소개
-대구 광역시의 동성로를 소개하는 사이트.
-
 ### 📅제작 기간
 2024.03.04 ~ 2024.03.28
 
@@ -30,6 +27,6 @@ http://dongseong.dothome.co.kr/
   
 ### ✔ 미리보기
 ![preview](./image/preview/preview1.png)
+![preview](./image/preview/preview5.png)
 ![preview](./image/preview/preview2.png)
-![preview](./image/preview/preview3.png)
 ![preview](./image/preview/preview4.png)
