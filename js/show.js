@@ -185,7 +185,9 @@ const venueNames = {
 
 fetchData()
   .then(() => {
-    let art = performData.filter((a) => /아트플러스씨어터|여우별아트홀/.test(a.place));
+    let art = performData.filter((a) =>
+      /아트플러스씨어터|여우별아트홀/.test(a.place)
+    );
     art = art
       .map(
         (a) => `<li>
@@ -217,11 +219,16 @@ fetchData()
       .join("");
     document.querySelector("#showModalList2").innerHTML = eve;
     let today = new Date().toISOString().split("T")[0];
-    let cons = performData.filter((a) => a.place.includes("콘서트하우스") && a.end_date >= today);
+    let cons = performData.filter(
+      (a) => a.place.includes("콘서트하우스") && a.end_date >= today
+    );
     cons = cons
       .map(
         (a) => `<li>
-      <p class="showTit">${a.subject.replace(/ \- 대구|\(대구\)|－대구/g, "")}</p>
+      <p class="showTit">${a.subject.replace(
+        / \- 대구|\(대구\)|－대구/g,
+        ""
+      )}</p>
       <div class="showDate">
         <p class="showStart">📅 ${a.start_date.slice(2)}</p>
         ~
@@ -337,14 +344,19 @@ const observer = new MutationObserver((mutations) => {
           node.addEventListener("click", () => {
             if (username) {
               node.classList.toggle("active");
-              if (node.nodeType === 1 && node.classList.contains("heartBtn") && node.classList.contains("active")) {
+              if (
+                node.nodeType === 1 &&
+                node.classList.contains("heartBtn") &&
+                node.classList.contains("active")
+              ) {
                 const isLiked = node.classList.contains("active") ? 1 : 0;
                 const img = document.querySelector(".imgbox img");
                 const menuItems = [];
                 document.querySelectorAll(".foodMenu").forEach(function (menu) {
                   const menuItem = {
                     name: menu.querySelector("p").textContent,
-                    description: menu.querySelector("p:nth-child(2)").textContent,
+                    description:
+                      menu.querySelector("p:nth-child(2)").textContent,
                   };
                   menuItems.push(menuItem);
                 });
@@ -356,12 +368,21 @@ const observer = new MutationObserver((mutations) => {
                 const GNG_CS = foodadr.textContent;
                 const TLNO = foodnum.textContent;
                 const MBZ_HR = foodtime.textContent;
-                const PKPL = document.querySelector(".foodIcons .foodCarIcon p").textContent;
-                const BKN_YN = document.querySelector(".foodIcons .foodBookIcon p").textContent;
-                const INFN_FCL = document.querySelector(".foodIcons .foodToyIcon p").textContent;
-                const firstMN = menuItems[0].name + "/" + menuItems[0].description;
-                const secondMN = menuItems[1].name + "/" + menuItems[1].description;
-                const thirdMN = menuItems[2].name + "/" + menuItems[2].description;
+                const PKPL = document.querySelector(
+                  ".foodIcons .foodCarIcon p"
+                ).textContent;
+                const BKN_YN = document.querySelector(
+                  ".foodIcons .foodBookIcon p"
+                ).textContent;
+                const INFN_FCL = document.querySelector(
+                  ".foodIcons .foodToyIcon p"
+                ).textContent;
+                const firstMN =
+                  menuItems[0].name + "/" + menuItems[0].description;
+                const secondMN =
+                  menuItems[1].name + "/" + menuItems[1].description;
+                const thirdMN =
+                  menuItems[2].name + "/" + menuItems[2].description;
                 // console.log(IMAGE);
                 // console.log(BZ_NM);
                 // console.log(SMPL_DESC);
@@ -390,7 +411,7 @@ const observer = new MutationObserver((mutations) => {
                   IMAGE: IMAGE,
                   isLiked: isLiked, // 하트의 상태를 저장합니다.
                 };
-                console.log(data);
+
                 $.ajax({
                   url: "http://dongseong.dothome.co.kr/save_food_info.php",
                   type: "POST",
@@ -401,7 +422,10 @@ const observer = new MutationObserver((mutations) => {
                     console.log("음식 정보를 서버에 전송했습니다.");
                   },
                   error: function (xhr, status, error) {
-                    console.error("음식 정보 전송 중 오류가 발생했습니다:", error);
+                    console.error(
+                      "음식 정보 전송 중 오류가 발생했습니다:",
+                      error
+                    );
                   },
                 });
               } else {
@@ -421,7 +445,10 @@ const observer = new MutationObserver((mutations) => {
                     console.log("음식 정보를 서버에서 삭제했습니다.");
                   },
                   error: function (xhr, status, error) {
-                    console.error("음식 정보 삭제 중 오류가 발생했습니다:", error);
+                    console.error(
+                      "음식 정보 삭제 중 오류가 발생했습니다:",
+                      error
+                    );
                   },
                 });
               }
