@@ -5,10 +5,11 @@ header("Access-Control-Allow-Headers: Content-Type");
 session_start();
 
 // 데이터베이스 연결 정보
-$servername = "localhost";
-$username = "dongseong";
-$password = "ghflqud1220!";
-$dbname = "dongseong";
+require_once 'const.php';
+$servername = NetworkInfo::$HOST;
+$username = NetworkInfo::$USER;
+$password = NetworkInfo::$PASSWORD;
+$dbname = NetworkInfo::$DB;
 
 // POST로부터 받은 사용자 입력값
 $username2 = $_POST['username'];

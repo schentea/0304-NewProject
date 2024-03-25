@@ -3,11 +3,11 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 session_start();
-
-$servername = "localhost";
-$username = "dongseong";
-$password = "ghflqud1220!";
-$dbname = "dongseong";
+require_once 'const.php';
+$servername = NetworkInfo::$HOST;
+$username = NetworkInfo::$USER;
+$password = NetworkInfo::$PASSWORD;
+$dbname = NetworkInfo::$DB;
 
 $request_body = file_get_contents('php://input');
 $data = json_decode($request_body);

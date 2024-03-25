@@ -4,10 +4,11 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 
 // 데이터베이스 연결 정보
-$servername = "localhost"; // MySQL 호스트 이름
-$username = "dongseong"; // MySQL 사용자 이름
-$password = "ghflqud1220!"; // MySQL 비밀번호
-$dbname = "dongseong"; // 사용할 데이터베이스 이름
+require_once 'const.php';
+$servername = NetworkInfo::$HOST;
+$username = NetworkInfo::$USER;
+$password = NetworkInfo::$PASSWORD;
+$dbname = NetworkInfo::$DB;
 
 // POST 데이터로부터 사용자명(username), 장소(venue), 공연 이름(showName), 공연 날짜(showDate)를 가져옵니다.
 $request_body = file_get_contents('php://input');

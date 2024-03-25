@@ -6,10 +6,11 @@ header("Access-Control-Allow-Headers: Content-Type");
 session_start();
 
 // DB 연결
-$servername = "localhost";
-$username = "dongseong";
-$password = "ghflqud1220!";
-$dbname = "dongseong";
+require_once 'const.php';
+$servername = NetworkInfo::$HOST;
+$username = NetworkInfo::$USER;
+$password = NetworkInfo::$PASSWORD;
+$dbname = NetworkInfo::$DB;
 
 // 데이터베이스 연결 생성
 $conn = new mysqli($servername, $username, $password, $dbname);

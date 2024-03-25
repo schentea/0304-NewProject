@@ -1,9 +1,10 @@
 <?php
 // 데이터베이스 연결 설정
-$servername = "localhost";
-$username = "dongseong";
-$password = "ghflqud1220!";
-$dbname = "dongseong";
+require_once 'const.php';
+$servername = NetworkInfo::$HOST;
+$username = NetworkInfo::$USER;
+$password = NetworkInfo::$PASSWORD;
+$dbname = NetworkInfo::$DB;
 
 // POST 요청으로부터 받은 데이터 추출
 $data = json_decode(file_get_contents("php://input"));

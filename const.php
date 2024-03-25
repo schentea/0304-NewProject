@@ -1,18 +1,26 @@
 <?php
 // php 상수설정
+require_once __DIR__ . '/vendor/autoload.php';
 
-define("KAKAO_API", "b40af43bcbd5aceac6b39a836dec3700");
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+define("KAKAO_API", $_ENV['KAKAO_API']);
 // define("KAKAO_API", "test");
 
-define("NAVER_API","pcCPupyj8FxDvPx41pPK");
-define("NAVER_CLIENT_SECRET", "giXhPlaTJh");
+define("NAVER_API",$_ENV['NAVER_API']);
+define("NAVER_CLIENT_SECRET", $_ENV['NAVER_CLIENT_SECRET']);
 
 class NetworkInfo {
-    const HOST = "localhost";
-    const USER = "dongseong";
-    const PASSWORD ="ghflqud1220!";
-    const DB = "dongseong";
+    public static $HOST;
+    public static $USER;
+    public static $PASSWORD;
+    public static $DB;
 }
+
+NetworkInfo::$HOST = $_ENV['DB_HOST'];
+NetworkInfo::$USER = $_ENV['DB_USERNAME'];
+NetworkInfo::$PASSWORD = $_ENV['DB_PASSWORD'];
+NetworkInfo::$DB = $_ENV['DB_NAME'];
 
 class SocialLogin {
     const REDIRECT_URL = "http://dongseong.dothome.co.kr/social_login.php";
@@ -31,6 +39,6 @@ class SocialLogin {
     }
 
 }
-$mysqlConnect = mysqli_connect(NetworkInfo::HOST,NetworkInfo::USER,NetworkInfo::PASSWORD, NetworkInfo::DB)
+$mysqlConnect = mysqli_connect(NetworkInfo::$HOST, NetworkInfo::$USER, NetworkInfo::$PASSWORD, NetworkInfo::$DB);
 
 ?>
